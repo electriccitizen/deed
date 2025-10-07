@@ -9,7 +9,6 @@ third_party_settings:
     available_menus:
       - footer
       - main
-      - secondary
     parent: 'main:'
 _core:
   default_config_hash: lynFVHnuciYlMYjBCvO754nalb8sbm3rSMebNyP8sUs

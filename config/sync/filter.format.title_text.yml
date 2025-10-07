@@ -1,0 +1,35 @@
+uuid: 4651ff4b-08eb-4ff8-ac3e-c232f0074e79
+langcode: en
+status: true
+dependencies:
+  module:
+    - pathologic
+name: 'TItle Text'
+format: title_text
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <mark class>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: true
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''

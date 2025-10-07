@@ -1,4 +1,4 @@
-uuid: 0ac91714-9514-4399-a5dc-df2be0cc210e
+uuid: 55e00ce4-63a4-490e-98b8-5469d696384b
 langcode: en
 status: true
 dependencies:
@@ -8,21 +8,20 @@ dependencies:
     - menu_block
   theme:
     - citizen_dart
-_core:
-  default_config_hash: 2VA69XayHZewRlk5D2y0nLUtkrvITcyLRTCOsCDiJUA
 id: citizen_dart_footer
 theme: citizen_dart
-region: prefooter
-weight: -6
+region: footer
+weight: 0
 provider: null
 plugin: 'menu_block:footer'
 settings:
   id: 'menu_block:footer'
-  label: Quicklinks
-  label_display: visible
+  label: Footer
+  label_display: '0'
   provider: menu_block
   follow: false
   follow_parent: child
+  display_empty: false
   label_link: false
   label_type: block
   level: 1
