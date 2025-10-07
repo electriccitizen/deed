@@ -40,19 +40,21 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" media="all" href="/themes/custom/citizen_dart/dist/critical.css?mtime={{ critical_css_mtime }}">
 		<js-placeholder token="{{ placeholder_token|raw }}">
-		{% block headInsert %}
-			{# place for any site or page specific <head> additions #}
-			<link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/citizen_dart/images/favicons/apple-touch-icon.png">
-			<link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/citizen_dart/images/favicons/favicon-32x32.png">
-			<link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/citizen_dart/images/favicons/favicon-16x16.png">
-			<link rel="manifest" href="/themes/custom/citizen_dart/images/favicons/site.webmanifest">
-			<link rel="mask-icon" href="/themes/custom/citizen_dart/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-			<link rel="shortcut icon" href="/themes/custom/citizen_dart/images/favicons/favicon.ico">
-			<meta name="msapplication-TileColor" content="#da532c">
-			<meta name="msapplication-config" content="/themes/custom/citizen_dart/images/favicons/browserconfig.xml">
-			<meta name="theme-color" content="#ffffff">
-			<link rel="preconnect" href="https://fonts.gstatic.com">
-		{% endblock %}
+
+    {# place for any site or page specific <head> additions #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/citizen_dart/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/citizen_dart/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/citizen_dart/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/themes/custom/citizen_dart/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/themes/custom/citizen_dart/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/themes/custom/citizen_dart/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/themes/custom/citizen_dart/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Public+Sans:wght@700&display=swap" rel="stylesheet">
+
 	</head>
 	<body {{ attributes.addClass(body_classes) }}>
 		<div class="overflow-guard">

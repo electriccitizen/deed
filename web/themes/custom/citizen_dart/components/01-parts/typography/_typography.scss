@@ -89,7 +89,8 @@ html,
 code {
   font-family: $bodyFont;
   font-size: $em-base;
-  line-height: 1.4;
+  font-weight: $semi;
+  line-height: 1.5;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: normal;

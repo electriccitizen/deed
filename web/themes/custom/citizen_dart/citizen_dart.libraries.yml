@@ -17,40 +17,18 @@ accordion:
     components/03-composites/paragraphs/accordions/accordions.js: {}
   dependencies:
     - core/drupal.debounce
-drawers:
-  js:
-    components/02-chunks/drawers/drawers.js: {}
-featherlight:
-  version: 1.7.13
-  css:
-    theme:
-      components-addons/featherlight/featherlight.css: {}
-      components-addons/featherlight/featherlight.gallery.css: {}
-  js:
-    components-addons/featherlight/featherlight.min.js: { minified: true }
-    components-addons/featherlight/featherlight.gallery.min.js: { minified: true }
-fonts:
-  css:
-    theme:
-      https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400: { type: external, preprocess: false }
 forms:
   js:
     components/01-parts/forms/forms.js: {}
-galleries:
-  js:
-    components/03-composites/paragraphs/gallery/gallery.js: {}
-modal:
-  js:
-    components/02-chunks/modals/modals.js: {}
 pager:
   js:
     components/02-chunks/pagers/pager.js: {}
 search-block:
   js:
     components/03-composites/blocks/search/search-block.js: {}
-section-menu:
+on-page-menu:
   js:
-    components/02-chunks/navigation/section-menu/section-menu.js: {}
+    components/02-chunks/navigation/on-page-menu/on-page-menu.js: {}
   dependencies:
     - core/drupal.debounce
 select:
@@ -61,14 +39,6 @@ select:
   js:
     components-addons/select2/select2.min.js: { minified: true }
     components/01-parts/forms/forms.js: {}
-slick:
-  version: 1.8.1
-  css:
-    theme:
-      components-addons/slick/slick.css: {}
-      components-addons/slick/slick-theme.css: {}
-  js:
-    components-addons/slick/slick.min.js: { minified: true }
 table:
   css:
     theme:

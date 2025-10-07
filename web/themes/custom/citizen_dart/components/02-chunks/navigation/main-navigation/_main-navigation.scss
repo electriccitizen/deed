@@ -52,6 +52,8 @@
 ul.menu-main-navigation li {
   a {
     color: $sfChildLink;
+    font-family: $navFont;
+    font-weight: $heavy;
     display: block;
     text-align: left;
 

@@ -6,7 +6,6 @@ core_version_requirement: ^10 || ^11
 # Defines libraries group in which we can add css/js.
 libraries:
   - citizen_dart/global
-  - citizen_dart/fonts
 ckeditor5-stylesheets:
   - dist/cke.css
 base theme: stable9

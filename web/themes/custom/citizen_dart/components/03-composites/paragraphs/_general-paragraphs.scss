@@ -18,26 +18,4 @@
   &:not(.layout-section) {
     margin-bottom: $elementSpace;
   }
-
-  &.layout-section {
-    &.background {
-      padding-top: $elementSpace;
-
-      &.light-grey {
-        background: $offWhite;
-      }
-
-      &.light-blue {
-        background: $iceBlue;
-      }
-
-      & + .backless {
-        margin-top: $elementSpace;
-      }
-
-      &:last-child {
-        margin-bottom: -$siteBottomSpace;
-      }
-    }
-  }
 }
