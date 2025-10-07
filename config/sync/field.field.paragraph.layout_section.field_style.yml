@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_style
     - paragraphs.paragraphs_type.layout_section
-    - taxonomy.vocabulary.section_styles
 id: paragraph.layout_section.field_style
 field_name: field_style
 entity_type: paragraph
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      section_styles: section_styles
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

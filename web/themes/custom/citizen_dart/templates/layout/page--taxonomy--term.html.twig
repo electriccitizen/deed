@@ -44,8 +44,41 @@
  */
 #}
 
-{% extends "page--support-book.html.twig" %}
+{% extends "page.html.twig" %}
+
+{# check if a user is authenticated and replace the support page content if they are not #}
+{% block pageMain %}
+	{%- if logged_in -%}
+    {% if node.field_support_type.0.value == 'site_management' %} 
+      {% if 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
+		    {{ parent() }}
+      {% else %}
+        <main role="main">
+          <div class="layout-content">
+            <div class="restricted-node">
+              <div>You do not have permission to view {% block restrictedType %}this taxonomy term{% endblock %}. Please contact a site administrator if you feel this is an error.</div>
+            </div>
+          </div>
+        </main>
+      {% endif %}
+    {% else %}
+      {{ parent() }}
+    {% endif %}
+	{%- else -%}
+		<main role="main">
+      <div class="layout-content">
+        <div class="restricted-node">
+          
+          <div>You must be <a href="/user">logged in</a> to view {% block restrictedAnonMessage %}taxonomy terms{% endblock %}.</div>
+        </div>
+      </div>
+    </main>
+	{%- endif -%}
+{% endblock %}
   
- {% block restrictedAnonMessage %}taxonomy terms{% endblock %}
+
+  
+
+
   
 

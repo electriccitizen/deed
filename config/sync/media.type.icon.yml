@@ -1,0 +1,13 @@
+uuid: 95b0d586-0d75-4999-b76d-a55d2ff42426
+langcode: en
+status: true
+dependencies: {  }
+id: icon
+label: Icon
+description: 'Add icons to the media library.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_icon
+field_map: {  }

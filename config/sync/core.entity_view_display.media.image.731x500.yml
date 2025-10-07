@@ -1,32 +1,35 @@
-uuid: 7b68c9bd-c6fc-4da1-bc06-d068ca231363
+uuid: 6ae82937-1339-41a5-8ff8-92147c1786ed
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.731x500
     - field.field.media.image.field_media_image
     - media.type.image
+    - responsive_image.styles.731x500
   module:
+    - layout_builder
     - lazy
-    - svg_image
+    - responsive_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: 1iCnAlf6G1vE96vB1vuUJGlz4MdnNTVZm8NhaG1lxTg
-id: media.image.default
+id: media.image.731x500
 targetEntityType: media
 bundle: image
-mode: default
+mode: 731x500
 content:
   field_media_image:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: 731x500
       image_link: ''
-      image_style: ''
       image_loading:
-        attribute: lazy
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
+        attribute: eager
     third_party_settings:
       lazy:
         lazy_image: '0'

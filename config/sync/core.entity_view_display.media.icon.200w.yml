@@ -1,32 +1,37 @@
-uuid: 7b68c9bd-c6fc-4da1-bc06-d068ca231363
+uuid: 0fc4dddd-0cfd-4d2c-b260-7d8ddb3addad
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_media_image
-    - media.type.image
+    - core.entity_view_mode.media.200w
+    - field.field.media.icon.field_icon
+    - image.style.200w
+    - media.type.icon
   module:
+    - layout_builder
     - lazy
     - svg_image
-_core:
-  default_config_hash: 1iCnAlf6G1vE96vB1vuUJGlz4MdnNTVZm8NhaG1lxTg
-id: media.image.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.icon.200w
 targetEntityType: media
-bundle: image
-mode: default
+bundle: icon
+mode: 200w
 content:
-  field_media_image:
+  field_icon:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: 200w
       image_loading:
-        attribute: lazy
+        attribute: eager
       svg_attributes:
         width: null
         height: null
-      svg_render_as_image: true
+      svg_render_as_image: false
     third_party_settings:
       lazy:
         lazy_image: '0'
