@@ -28,5 +28,5 @@ The Drupal database connection must be defined dynamically using environment var
 | `RDS_PASSWORD`         | Database Password | Access credential (Best sourced from AWS Secrets Manager).                                                           |
 | `RDS_DB_NAME`          | Database Name | Specifies the target database instance.                                                                              |
 | `DRUPAL_HASH_SALT`     | Unique Site Hash Salt | Required for security and session management. Must be long and unique.                                 |
-| `APP_ENV`              | Application Environment Indicator | Used for activating specific configuration splits (e.g., `dev`, `prod`, `uat`).                             |
+| `APP_ENV`              | Application Environment Indicator | Used for activating specific configuration splits (e.g., `dev`, `prod`).                             |
 | `TRUSTED_HOST_PATTERN` | Trusted Host Security |  Must match the domain name(s) used by the AWS Load Balancer (e.g., `^example\.com$`). |
