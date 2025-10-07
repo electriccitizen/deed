@@ -1,0 +1,14 @@
+uuid: 0d0b457c-874b-41ac-aa4d-046206e97fc2
+langcode: en
+status: 0
+dependencies: {  }
+_core:
+  default_config_hash: la2RT-xO9S-ACFWU2BSlyhvK0QxDwCg9n6AW9WC766k
+id: preview
+label: Preview
+weight: -5
+orientation: portrait
+dimensions:
+  width: 512
+  height: 800
+  dppx: 1.0

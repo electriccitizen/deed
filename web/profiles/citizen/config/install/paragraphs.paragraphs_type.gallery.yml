@@ -1,0 +1,12 @@
+uuid: 23311ec2-f4ce-4fb7-8bb0-67619ac8280a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: R2OCqxZerbh6vkywCbfmsjTp2AHSPTtc6m4B4qhTyxU
+id: gallery
+label: Gallery
+icon_uuid: null
+icon_default: null
+description: 'Create a lightbox or slide show photo gallery.'
+behavior_plugins: {  }

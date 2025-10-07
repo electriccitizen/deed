@@ -1,0 +1,16 @@
+uuid: 71ebd739-4066-47c5-8f24-91e6cd8275f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.site_manager
+  module:
+    - user
+_core:
+  default_config_hash: ECcIbGrpvMcHvMT0Kk4yLh78y8ZGuFCOQ-KPfIcoWm0
+id: user_add_role_action.site_manager
+label: 'Add the Site Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: site_manager

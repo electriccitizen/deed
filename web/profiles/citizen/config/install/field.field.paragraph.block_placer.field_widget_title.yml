@@ -1,0 +1,21 @@
+uuid: 24538d7f-02b5-45ef-9e0b-17c3da82f431
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_widget_title
+    - paragraphs.paragraphs_type.block_placer
+_core:
+  default_config_hash: 5CKsFJTQbRlkaWJGqG4g4Ns_-YdZSo9-Kn3E1aXDVkM
+id: paragraph.block_placer.field_widget_title
+field_name: field_widget_title
+entity_type: paragraph
+bundle: block_placer
+label: 'Block Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

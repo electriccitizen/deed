@@ -1,0 +1,21 @@
+uuid: 1875cf35-17c4-4b78-b800-70c35ee226de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.horizontal_rule.field_width
+    - paragraphs.paragraphs_type.horizontal_rule
+id: paragraph.horizontal_rule.default
+targetEntityType: paragraph
+bundle: horizontal_rule
+mode: default
+content:
+  field_width:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,19 @@
+uuid: c0cad5f5-7590-4c72-9056-114812c37b3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_widget_title
+    - paragraphs.paragraphs_type.content_placer
+id: paragraph.content_placer.field_widget_title
+field_name: field_widget_title
+entity_type: paragraph
+bundle: content_placer
+label: 'List Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

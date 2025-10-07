@@ -1,0 +1,43 @@
+uuid: 6aee2f13-d589-491f-b941-76b36da9c27b
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.linkit_result_thumbnail
+  module:
+    - file
+    - image
+    - node
+_core:
+  default_config_hash: OGbleuOgYZQiCASrbT-9bJDKb7L4TH281LhY0p5CeBM
+label: WYSIWYG
+id: wysiwyg
+description: ''
+matchers:
+  50988d03-448b-43e9-926e-fe6f6a804bd6:
+    id: 'entity:node'
+    uuid: 50988d03-448b-43e9-926e-fe6f6a804bd6
+    settings:
+      metadata: ''
+      bundles: {  }
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: false
+    weight: 0
+  d0611905-3b16-41b4-a70f-05577b12b3a1:
+    id: 'entity:file'
+    uuid: d0611905-3b16-41b4-a70f-05577b12b3a1
+    settings:
+      metadata: ''
+      bundles: null
+      group_by_bundle: null
+      substitution_type: file
+      limit: 100
+      file_extensions: 'txt pdf doc docx zip xls xlsx ppt pptx'
+      file_status: 1
+      images:
+        show_dimensions: false
+        show_thumbnail: true
+        thumbnail_image_style: linkit_result_thumbnail
+    weight: 0

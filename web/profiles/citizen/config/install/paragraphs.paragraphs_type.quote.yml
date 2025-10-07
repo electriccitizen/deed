@@ -1,0 +1,12 @@
+uuid: 5ca1a58b-a173-4754-b9e4-628d99346f1c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: A6544GnTnYLl6aFBHx8z-iw1-R4o0x2dEUIeaNIEFug
+id: quote
+label: Quote
+icon_uuid: null
+icon_default: null
+description: 'Displays text with stylized quotation marks and an optional source and image.'
+behavior_plugins: {  }

@@ -1,0 +1,20 @@
+uuid: 6a820fe5-5415-4af3-840a-87d6b7cee295
+langcode: en
+status: true
+dependencies:
+  theme:
+    - citizen_dart
+_core:
+  default_config_hash: 5GJ2p4I_EeFqtPksYve78IDxw9QB5FY2HZ9VKymHoX4
+id: citizen_dart_local_actions
+theme: citizen_dart
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

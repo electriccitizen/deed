@@ -1,0 +1,33 @@
+uuid: b655b7f9-592c-40f9-8ba9-10aaf06b4762
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: uy3xLH1L1uasoA4MaBHmpT9YJCtKYWTunzX2Y9kszFs
+id: node
+label: Content
+tags:
+  article_modified_time: '[node:changed:custom:c]'
+  article_published_time: '[node:created:custom:c]'
+  article_section: '[node:content-type]'
+  canonical_url: '[current-page:url:absolute]'
+  content_language: en
+  description: '[node:summary]'
+  generator: 'Drupal 9 (http://drupal.org)'
+  image_src: '[node:field_image:entity:field_media_image:entity:url]'
+  og_country_name: US
+  og_description: '[node:summary]'
+  og_image: '[node:field_image:entity:field_media_image:entity:url]'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  og_type: 'Article (inc blog)'
+  og_updated_time: '[node:changed:custom:c]'
+  og_url: '[current-page:url:absolute]'
+  shortlink: '[current-page:url:unaliased]'
+  title: '[node:title] | [site:name]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_image: '[node:field_image:entity:field_media_image:entity:url]'
+  twitter_cards_image_alt: '[node:field_image:entity:field_media_image:entity:alt]'
+  twitter_cards_page_url: '[current-page:url:absolute]'
+  twitter_cards_title: '[node:title]'
+  twitter_cards_type: summary

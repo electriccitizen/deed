@@ -1,0 +1,13 @@
+uuid: 87e554ea-a9ee-4707-86ef-02c92f845381
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: GykuyV5j65DUoGUD9p6Tdb6bJD6pgBcCWUscp2uKvSw
+id: webform_submission_delete_action
+label: 'Delete submission'
+type: webform_submission
+plugin: webform_submission_delete_action
+configuration: {  }

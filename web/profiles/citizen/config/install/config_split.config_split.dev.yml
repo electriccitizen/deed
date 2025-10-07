@@ -1,0 +1,22 @@
+uuid: f48b8b29-958e-41a3-a3da-805c9295c8eb
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: FksCVtAXTa0H9ubW5BjqvuHM96qKzq7MWZx7koiFoJQ
+id: dev
+label: Dev
+description: 'Config split for Dev and Multi-Dev.'
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/dev
+module:
+  dblog: 0
+  devel: 0
+  devel_generate: 0
+  webform_devel: 0
+theme: {  }
+complete_list: {  }
+partial_list:
+  - system.logging

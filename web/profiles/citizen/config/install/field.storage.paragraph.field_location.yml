@@ -1,0 +1,21 @@
+uuid: 04f2d449-1d5c-4c95-ac2d-77b78697cfc1
+langcode: en
+status: true
+dependencies:
+  module:
+    - geolocation
+    - paragraphs
+_core:
+  default_config_hash: '-AWELBEz3Yanmg8AUANgh0UP2I_nSQamCIUUuJAir58'
+id: paragraph.field_location
+field_name: field_location
+entity_type: paragraph
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

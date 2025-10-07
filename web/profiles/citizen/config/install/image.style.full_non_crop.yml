@@ -1,0 +1,23 @@
+uuid: aa38a0c9-bee2-48f0-b7e4-e1f59402faff
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: PvQTdM0xXUfeY5fYMS5KURJqmLZxSx7vdGRsQbELBWM
+name: full_non_crop
+label: 'Full non-crop'
+effects:
+  2141b170-3fa4-4ed8-a16a-aa5fe0adb529:
+    uuid: 2141b170-3fa4-4ed8-a16a-aa5fe0adb529
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: true
+  0b3e379c-a70c-4c9c-ae56-f7bd465e3cb3:
+    uuid: 0b3e379c-a70c-4c9c-ae56-f7bd465e3cb3
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

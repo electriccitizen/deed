@@ -1,0 +1,22 @@
+uuid: 92d31544-5220-4105-a44f-f5dfcc5a44ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+      - secondary
+    parent: 'main:'
+_core:
+  default_config_hash: lynFVHnuciYlMYjBCvO754nalb8sbm3rSMebNyP8sUs
+name: 'Basic page'
+type: page
+description: 'Use basic pages for text heavy lower-level pages that can be reached through the sidebar menu.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

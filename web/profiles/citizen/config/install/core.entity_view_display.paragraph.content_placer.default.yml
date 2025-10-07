@@ -1,0 +1,98 @@
+uuid: 42f0b0e9-5b16-4c7e-a087-91b3fd022113
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_placer.field_bios_list_type
+    - field.field.paragraph.content_placer.field_content_type
+    - field.field.paragraph.content_placer.field_events_category
+    - field.field.paragraph.content_placer.field_events_list_type
+    - field.field.paragraph.content_placer.field_limit_list
+    - field.field.paragraph.content_placer.field_link
+    - field.field.paragraph.content_placer.field_news_category
+    - field.field.paragraph.content_placer.field_news_list_type
+    - field.field.paragraph.content_placer.field_widget_title
+    - paragraphs.paragraphs_type.content_placer
+  module:
+    - link
+    - options
+id: paragraph.content_placer.default
+targetEntityType: paragraph
+bundle: content_placer
+mode: default
+content:
+  field_bios_list_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_content_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_events_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_events_list_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_limit_list:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_news_category:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_news_list_type:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_widget_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,12 @@
+uuid: dbef40d7-fa56-401e-b309-336fef5dba88
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 50DP_mTZk1aV_u2VVpybNVKt6gtYi2tGqZa2uoRdvoc
+id: user
+label: User
+tags:
+  title: '[user:name] | [site:name]'
+  robots: 'noindex, nofollow, noarchive, nosnippet, noodp, noydir, noimageindex, notranslate'
+  description: '[site:name]'

@@ -1,0 +1,10 @@
+uuid: 5c46efc4-d811-47ab-ab37-4fcbd63ea96b
+langcode: en
+status: true
+dependencies: {  }
+id: content_placer
+label: 'Content Placer'
+icon_uuid: null
+icon_default: null
+description: 'Places a views list or a list of content for a specific category'
+behavior_plugins: {  }

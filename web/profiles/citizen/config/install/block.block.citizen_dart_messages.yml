@@ -1,0 +1,22 @@
+uuid: a98d8080-7639-4e85-b026-18ca4b437bca
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen_dart
+_core:
+  default_config_hash: EUZo_g0tDFjOXrdXs8mYZaXx-iMDoxLctBPwnm1gky8
+id: citizen_dart_messages
+theme: citizen_dart
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

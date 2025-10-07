@@ -1,0 +1,35 @@
+uuid: d09a77dd-a093-48de-9ff5-5f55cdb7beba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.map.field_address
+    - field.field.paragraph.map.field_location
+    - field.field.paragraph.map.field_widget_title
+    - paragraphs.paragraphs_type.map
+  module:
+    - address
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: '-SSRqH1TPaES7iAN4RFmHHe6p30n0AepA_BFpTh2IK0'
+id: paragraph.map.preview
+targetEntityType: paragraph
+bundle: map
+mode: preview
+content:
+  field_address:
+    type: address_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_location: true
+  field_widget_title: true
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+uuid: c6a35e8d-d981-4439-8e6c-454837de3e66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bio_order
+    - node.type.bios
+id: node.bios.field_bio_order
+field_name: field_bio_order
+entity_type: node
+bundle: bios
+label: 'Bio Order'
+description: 'Bios are sorted by this number in descending order. Higher numbers will be further up in the list.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

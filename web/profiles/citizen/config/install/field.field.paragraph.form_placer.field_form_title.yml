@@ -1,0 +1,25 @@
+uuid: ab0a319d-5473-4299-acba-862eac9c5235
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_form_title
+    - paragraphs.paragraphs_type.form_placer
+_core:
+  default_config_hash: imQJeJeLu7pIoqAziAXZ2nPTtLABLt0WY_SL_7knhak
+id: paragraph.form_placer.field_form_title
+field_name: field_form_title
+entity_type: paragraph
+bundle: form_placer
+label: 'Show Form Title'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

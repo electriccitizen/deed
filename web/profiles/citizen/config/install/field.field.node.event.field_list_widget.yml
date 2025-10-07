@@ -1,0 +1,33 @@
+uuid: 45091862-b0e8-40c6-95eb-8de7568f6118
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_widget
+    - node.type.event
+    - taxonomy.vocabulary.list_widget
+  content:
+    - 'taxonomy_term:list_widget:a9d72a56-184d-4a78-9508-c1b68dc8757c'
+id: node.event.field_list_widget
+field_name: field_list_widget
+entity_type: node
+bundle: event
+label: 'List Widget'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: a9d72a56-184d-4a78-9508-c1b68dc8757c
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      list_widget: list_widget
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

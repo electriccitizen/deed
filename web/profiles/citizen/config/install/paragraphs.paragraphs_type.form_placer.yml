@@ -1,0 +1,12 @@
+uuid: 79866d47-1866-49a0-9d37-4fb4208e0e48
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2_voy_mtD8OVvf67oajzTq-5Fvjc7mz0UdeCPnkEcbQ
+id: form_placer
+label: 'Form Placer'
+icon_uuid: null
+icon_default: null
+description: 'Display a webform on a page.'
+behavior_plugins: {  }

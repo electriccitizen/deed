@@ -1,0 +1,21 @@
+uuid: 57e73da5-a36e-440d-98b1-51d1b1073162
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_widget_title
+    - paragraphs.paragraphs_type.map
+_core:
+  default_config_hash: mDpGnX4X60IilKoaT0C1xaEuJgh9k2SaOSxf4Vnn1VA
+id: paragraph.map.field_widget_title
+field_name: field_widget_title
+entity_type: paragraph
+bundle: map
+label: 'Map Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

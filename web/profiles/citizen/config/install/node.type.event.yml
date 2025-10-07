@@ -1,0 +1,19 @@
+uuid: ec8766e7-2aff-45b8-9559-d3b6a9fe5561
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: GrCjKq5q78nezfyfRtZ-hgkXD-RG9Wbw8r0mmrm8IDQ
+name: Event
+type: event
+description: 'Create an upcoming event.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

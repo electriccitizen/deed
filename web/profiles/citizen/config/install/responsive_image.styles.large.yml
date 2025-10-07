@@ -1,0 +1,55 @@
+uuid: 74eaae13-ef11-4c3d-b77d-0d0b2cc55e12
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_non_crop
+    - image.style.large_non_crop_non_webp
+    - image.style.medium_non_crop
+    - image.style.medium_non_crop_1_5x
+    - image.style.medium_non_crop_2x
+    - image.style.small_non_crop
+    - image.style.small_non_crop_1_5x
+    - image.style.small_non_crop_2x
+  theme:
+    - citizen_dart
+id: large
+label: Large
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: large_non_crop
+    breakpoint_id: citizen_dart.desk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_non_crop_1_5x
+    breakpoint_id: citizen_dart.tab
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_non_crop
+    breakpoint_id: citizen_dart.tab
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_non_crop_2x
+    breakpoint_id: citizen_dart.tab
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_non_crop_1_5x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_non_crop
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_non_crop_2x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 2x
+breakpoint_group: citizen_dart
+fallback_image_style: large_non_crop_non_webp

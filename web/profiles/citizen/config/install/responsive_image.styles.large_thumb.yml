@@ -1,0 +1,35 @@
+uuid: ee25abc9-6565-401f-9ec0-911d8756cc30
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_thumbnail
+    - image.style.large_thumbnail_2x
+    - image.style.large_thumbnail_non_webp
+  theme:
+    - citizen_dart
+id: large_thumb
+label: 'Large Thumb'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: large_thumbnail
+    breakpoint_id: citizen_dart.desk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_thumbnail_2x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_thumbnail
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_thumbnail_2x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 2x
+breakpoint_group: citizen_dart
+fallback_image_style: large_thumbnail_non_webp

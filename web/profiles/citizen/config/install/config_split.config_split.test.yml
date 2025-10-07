@@ -1,0 +1,15 @@
+uuid: b43fdef2-b33d-46eb-b8df-15e4546bb63d
+langcode: en
+status: false
+dependencies: {  }
+id: test
+label: Test
+description: 'Config split for Test.'
+weight: 0
+storage: folder
+folder: ../config/test
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list:
+  - system.performance

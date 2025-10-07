@@ -1,0 +1,21 @@
+uuid: ff42c550-ec01-4417-a66c-03ad527965b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: ijGrofEGRuPaC2cstvqc3Cwmzv3tn0wmid60oSUrt1Q
+id: paragraph.field_embed_content
+field_name: field_embed_content
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

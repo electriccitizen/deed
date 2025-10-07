@@ -1,0 +1,46 @@
+uuid: 1fd9aca1-6e66-4d2b-9a32-c9c71bb2628c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumbnail_cropped
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_media_image
+    - lazy.settings
+    - media.type.image
+    - responsive_image.styles.thumbnail_cropped
+  module:
+    - layout_builder
+    - lazy
+    - responsive_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: FPmXvMwPqgC2tIm6jDxP-LG8Z9IZsGwi4EsQX88xSj8
+id: media.image.thumbnail_cropped
+targetEntityType: media
+bundle: image
+mode: thumbnail_cropped
+content:
+  field_media_image:
+    type: lazy_responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: thumbnail_cropped
+      image_link: ''
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: thumbnail_cropped
+        data_uri: false
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_caption: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

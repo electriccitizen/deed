@@ -1,0 +1,241 @@
+uuid: 0810ab8e-011c-42d5-bdcb-94a056e73a2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.bios.body
+    - field.field.node.bios.field_bio_order
+    - field.field.node.bios.field_email
+    - field.field.node.bios.field_first_name
+    - field.field.node.bios.field_image
+    - field.field.node.bios.field_last_name
+    - field.field.node.bios.field_list_widget
+    - field.field.node.bios.field_metatags
+    - field.field.node.bios.field_phone
+    - field.field.node.bios.field_position
+    - node.type.bios
+  module:
+    - layout_builder
+    - layout_discovery
+    - system
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e15a1a58-82da-4a7b-9b50-51dd918ba150:
+            uuid: e15a1a58-82da-4a7b-9b50-51dd918ba150
+            region: content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Section 2'
+          context_mapping: {  }
+        components:
+          309fb6a3-f256-4d0e-8b0a-c3eb31997687:
+            uuid: 309fb6a3-f256-4d0e-8b0a-c3eb31997687
+            region: content
+            configuration:
+              id: 'field_block:node:bios:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          40c08fae-ad78-46b3-917b-973e2ba599ce:
+            uuid: 40c08fae-ad78-46b3-917b-973e2ba599ce
+            region: content
+            configuration:
+              id: 'field_block:node:bios:field_position'
+              label: Position
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          96b798b4-02ea-424c-975c-eacfedc89041:
+            uuid: 96b798b4-02ea-424c-975c-eacfedc89041
+            region: content
+            configuration:
+              id: 'field_block:node:bios:field_email'
+              label: 'E:'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: email_mailto
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          fb3202c4-36eb-49e3-8179-3a93348ab6a9:
+            uuid: fb3202c4-36eb-49e3-8179-3a93348ab6a9
+            region: content
+            configuration:
+              id: 'field_block:node:bios:field_phone'
+              label: 'P:'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: telephone_link
+                label: hidden
+                settings:
+                  title: ''
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          b8f1809e-7a20-4e59-a3c8-33097218a597:
+            uuid: b8f1809e-7a20-4e59-a3c8-33097218a597
+            region: content
+            configuration:
+              id: 'field_block:node:bios:body'
+              label: Bio
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          da69263f-8129-4557-ae64-9aac6a561d43:
+            uuid: da69263f-8129-4557-ae64-9aac6a561d43
+            region: content
+            configuration:
+              id: 'field_block:node:bios:field_image'
+              label: 'Bio Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: square
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
+id: node.bios.default
+targetEntityType: node
+bundle: bios
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_bio_order:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_phone:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_position:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_list_widget: true
+  field_metatags: true
+  search_api_excerpt: true

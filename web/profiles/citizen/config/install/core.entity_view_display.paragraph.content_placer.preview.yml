@@ -1,0 +1,52 @@
+uuid: accbea0f-9036-471c-a8ed-634b43fd83e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.content_placer.field_bios_list_type
+    - field.field.paragraph.content_placer.field_content_type
+    - field.field.paragraph.content_placer.field_events_category
+    - field.field.paragraph.content_placer.field_events_list_type
+    - field.field.paragraph.content_placer.field_limit_list
+    - field.field.paragraph.content_placer.field_link
+    - field.field.paragraph.content_placer.field_news_category
+    - field.field.paragraph.content_placer.field_news_list_type
+    - field.field.paragraph.content_placer.field_widget_title
+    - paragraphs.paragraphs_type.content_placer
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.content_placer.preview
+targetEntityType: paragraph
+bundle: content_placer
+mode: preview
+content:
+  field_content_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_widget_title:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bios_list_type: true
+  field_events_category: true
+  field_events_list_type: true
+  field_limit_list: true
+  field_link: true
+  field_news_category: true
+  field_news_list_type: true
+  search_api_excerpt: true

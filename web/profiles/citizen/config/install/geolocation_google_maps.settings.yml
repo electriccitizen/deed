@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: 7njla24aQlKupc0HsgGzeoDMAZ3svARheCDAvz4Sj0Y
+google_map_api_key: AIzaSyAtf6oxNuckIQHxFgfq4bZPWKhueFHKgIk
+google_map_api_server_key: ''
+use_current_language: true
+china_mode: false
+google_maps_base_url: ''
+google_map_custom_url_parameters:
+  region: US
+  language: en
+  v: ''
+  client: ''
+  channel: ''
+  libraries: {  }

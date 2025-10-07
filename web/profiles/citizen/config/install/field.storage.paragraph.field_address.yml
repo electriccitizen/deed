@@ -1,0 +1,21 @@
+uuid: 5363ae0b-0940-403c-86d0-73735af666be
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - paragraphs
+_core:
+  default_config_hash: S6t7MChQOH-9xpwtwebVyyZu5ATm1fXmiFtFfriRjc8
+id: paragraph.field_address
+field_name: field_address
+entity_type: paragraph
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

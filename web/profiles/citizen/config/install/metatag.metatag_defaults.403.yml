@@ -1,0 +1,13 @@
+uuid: 49102cb2-a463-4859-83bc-21c21e44a48d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RGO81Oj49WhP7mE-iKpLTfz1HnYZhGTjhx2YMjtg08c
+id: '403'
+label: '403 access denied'
+tags:
+  shortlink: '[site:url]'
+  title: '[current-page:title] | [site:name]'
+  robots: 'noindex, nofollow, noarchive, nosnippet, noodp, noydir, noimageindex, notranslate'
+  canonical_url: '[site:url]'

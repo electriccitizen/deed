@@ -1,0 +1,12 @@
+uuid: 6b98abc7-2629-437d-b583-7c4c4b79535e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 9fgxlveVvSHiV8ePgVtlefnKUDxpKLGCrrCchB4npEg
+id: accordions
+label: Accordions
+icon_uuid: null
+icon_default: null
+description: 'Creates structure for accordion items.'
+behavior_plugins: {  }

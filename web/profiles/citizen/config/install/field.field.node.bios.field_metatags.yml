@@ -1,0 +1,23 @@
+uuid: cfd313e4-e595-4c56-8445-566187367faf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.bios
+  module:
+    - metatag
+_core:
+  default_config_hash: 3Gz48telKMqnnHdHwpRhrbXoBR77MFa3EipAhXWsMG0
+id: node.bios.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: bios
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -1,0 +1,12 @@
+uuid: 3f8e84e9-1532-4ea7-9e36-0300191ffadc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4QW4roTTiNBfOU9Ccaq2Tzpo5kktrpMt5QcK2IpoRsk
+id: custom_embed
+label: 'Custom Embed'
+icon_uuid: null
+icon_default: null
+description: 'Add custom HTML/JS code to a page.'
+behavior_plugins: {  }

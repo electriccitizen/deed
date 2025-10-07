@@ -1,0 +1,23 @@
+uuid: 24d67cc8-baa0-4d98-9d60-9f932a3d8174
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: oYIdx8VEoOkehk5gdxljV7C8K-QhOhFT341LUe531yM
+id: taxonomy_term.gathercontent_option_ids
+field_name: gathercontent_option_ids
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: true
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: true
+custom_storage: false

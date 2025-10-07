@@ -1,0 +1,21 @@
+uuid: 0132f11e-31b7-4286-9312-e0bf6fa1833e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_name
+    - node.type.bios
+_core:
+  default_config_hash: lHv9XwOBaQ3KQqV-s_RvdhA9Lhqlc3zdZ1cujYkmNkA
+id: node.bios.field_last_name
+field_name: field_last_name
+entity_type: node
+bundle: bios
+label: 'Last Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

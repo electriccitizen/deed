@@ -1,0 +1,25 @@
+uuid: 03d9c13e-26af-4f12-a59e-8beca13cca30
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:newsletter:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+  module:
+    - block_content
+  theme:
+    - stable9
+id: stable9_stayintouch
+theme: stable9
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'block_content:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+settings:
+  id: 'block_content:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+  label: 'Stay in Touch'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

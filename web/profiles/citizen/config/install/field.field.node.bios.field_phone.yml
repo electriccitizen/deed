@@ -1,0 +1,23 @@
+uuid: e7dc8ddf-1f8e-483e-9187-fd3b06aebf1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.bios
+  module:
+    - telephone
+_core:
+  default_config_hash: FE4zarFyD0u6igIE2IIfV4FWYXfXCI83_Vxw-ktjYrk
+id: node.bios.field_phone
+field_name: field_phone
+entity_type: node
+bundle: bios
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

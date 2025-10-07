@@ -1,0 +1,15 @@
+uuid: 97e8e674-b352-40ed-b6ef-359cc72abc78
+langcode: en
+status: true
+dependencies: {  }
+name: full_non_crop_non_webp
+label: 'Full Non-Crop Non-WebP'
+effects:
+  6225dd9c-c470-40e9-aef1-d969aab66f27:
+    uuid: 6225dd9c-c470-40e9-aef1-d969aab66f27
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: true

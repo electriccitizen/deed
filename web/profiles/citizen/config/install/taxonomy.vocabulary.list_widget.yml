@@ -1,0 +1,8 @@
+uuid: d14522d1-8e6a-4205-8916-ce6a67782e1e
+langcode: en
+status: true
+dependencies: {  }
+name: 'List Widget'
+vid: list_widget
+description: 'Types of lists used in content placer paragraph.'
+weight: 0

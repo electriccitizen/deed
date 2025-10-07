@@ -1,0 +1,33 @@
+uuid: 4e1278e5-3a95-4143-89d7-8d757b720155
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates
+    - node.type.event
+  module:
+    - smart_date
+    - smart_date_recur
+third_party_settings:
+  smart_date_recur:
+    allow_recurring: true
+    month_limit: 12
+_core:
+  default_config_hash: cuzzXSASOeX4Y2-fLutm21L3ifmANvZNHFl8Qxs2n9w
+id: node.event.field_dates
+field_name: field_dates
+entity_type: node
+bundle: event
+label: Dates
+description: 'Add a single date, multiple dates, or add a recurring date.'
+required: true
+translatable: false
+default_value:
+  -
+    default_duration: 60
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_date_type: ''
+    default_date: ''
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

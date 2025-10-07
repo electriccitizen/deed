@@ -1,0 +1,17 @@
+uuid: b3523a76-5673-4cbf-ae41-4e66fe56f805
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-9KGILTTP6aS-frSmMWE9yLpITSRdgDUSjSuT2XP0No'
+id: time_only
+label: 'Time Only'
+date_format: ''
+time_format: 'g:ia'
+time_hour_format: 'g:ia'
+allday_label: 'All day'
+separator: ' - '
+join: ', '
+ampm_reduce: '1'
+date_first: '1'
+site_time_toggle: '1'

@@ -1,0 +1,35 @@
+uuid: 182be019-f61f-4025-999a-7e7718345197
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.form_placer.field_form
+    - field.field.paragraph.form_placer.field_form_title
+    - paragraphs.paragraphs_type.form_placer
+  module:
+    - webform
+_core:
+  default_config_hash: EUlI3gSoMkgjlgv9HESVQgyZdIiNgcAZuyrEIIRiw6M
+id: paragraph.form_placer.default
+targetEntityType: paragraph
+bundle: form_placer
+mode: default
+content:
+  field_form:
+    type: webform_entity_reference_select
+    weight: 0
+    region: content
+    settings:
+      default_data: false
+      webforms: {  }
+    third_party_settings: {  }
+  field_form_title:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

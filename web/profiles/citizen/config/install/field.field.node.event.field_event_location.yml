@@ -1,0 +1,23 @@
+uuid: eef76653-eddd-41ea-bbe3-ec8723f38135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_location
+    - node.type.event
+  module:
+    - geolocation
+_core:
+  default_config_hash: HsvT29aQrgpd_YZODkD9VPQ20UCtaAtJwD0_Y6EyQEo
+id: node.event.field_event_location
+field_name: field_event_location
+entity_type: node
+bundle: event
+label: Location
+description: 'Use the autocomplete search function the map to select an address or well-know place. The location will automatically be added in the address field below (it may take a second or two to appear).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

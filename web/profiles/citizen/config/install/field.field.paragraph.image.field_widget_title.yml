@@ -1,0 +1,21 @@
+uuid: fda3c49e-2344-441f-82ef-f418a6834f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_widget_title
+    - paragraphs.paragraphs_type.image
+_core:
+  default_config_hash: 4xu2LPmKPS1BORvk3mS26cbLmg2l_qaFW6YNU9WtHbE
+id: paragraph.image.field_widget_title
+field_name: field_widget_title
+entity_type: paragraph
+bundle: image
+label: 'Image Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

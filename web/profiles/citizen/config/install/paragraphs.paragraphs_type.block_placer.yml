@@ -1,0 +1,12 @@
+uuid: e40f5f2a-44e7-4189-8261-ee0c8c40ab25
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: boHfZyJ7rSDCFcwKED87Vc2FAyW3fBjh9zYNO9v8Q3A
+id: block_placer
+label: 'Block Placer'
+icon_uuid: null
+icon_default: null
+description: 'Displays blocks from the custom block library.'
+behavior_plugins: {  }

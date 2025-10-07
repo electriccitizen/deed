@@ -1,0 +1,13 @@
+uuid: 5c90d8d8-9e0f-41f5-80a4-ad2388ac088b
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: wrTKuZeUQr3hurJwaiAF5LT6_f2nNtR2cbivuIq4DV0
+id: webform_delete_action
+label: 'Delete webform'
+type: webform
+plugin: webform_delete_action
+configuration: {  }

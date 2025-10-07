@@ -1,0 +1,25 @@
+uuid: 8fab84c6-e6f4-4b65-952d-a4fbd6d07d8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+_core:
+  default_config_hash: 22LcGO-35q6NI4ZmWTl89Nnc7Du19UtsKuXNSp0dBDk
+name: views_card
+label: 'Views Card'
+effects:
+  fd52bf20-054b-4f50-ac4d-c8f571a1c675:
+    uuid: fd52bf20-054b-4f50-ac4d-c8f571a1c675
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300
+      crop_type: focal_point
+  2dbb2f8c-6adb-4fb6-8819-f7bcd22ca0d7:
+    uuid: 2dbb2f8c-6adb-4fb6-8819-f7bcd22ca0d7
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

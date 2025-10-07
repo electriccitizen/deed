@@ -1,0 +1,28 @@
+uuid: 6fb50a9c-2955-4af2-a241-a7e36dc68420
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - paragraphs.paragraphs_type.portal
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - limited_html
+_core:
+  default_config_hash: zGQNuxIcKRFbvXm0qjRRKs2IQRJRJxVrQT4Eh1UyMFo
+id: paragraph.portal.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: portal
+label: 'Additional Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

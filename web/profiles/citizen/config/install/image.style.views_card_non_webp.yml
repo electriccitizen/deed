@@ -1,0 +1,17 @@
+uuid: d83f0198-ac71-48a2-a2bb-33223c838cf5
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: views_card_non_webp
+label: 'Views Card Non-WebP'
+effects:
+  849c1f98-fe36-4ff7-b1d1-91570afd8896:
+    uuid: 849c1f98-fe36-4ff7-b1d1-91570afd8896
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300
+      crop_type: focal_point

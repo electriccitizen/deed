@@ -1,0 +1,25 @@
+uuid: 80362806-b6c9-446d-91bb-f9916929a394
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+_core:
+  default_config_hash: Oan9bs98oskNCi59LeoF71IjLfH0xmgqe_tIXvIW4X0
+name: banner_tablet
+label: 'Banner Tablet'
+effects:
+  7c8d50b9-2a0d-4447-a58c-6287d99f5833:
+    uuid: 7c8d50b9-2a0d-4447-a58c-6287d99f5833
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 448
+      crop_type: focal_point
+  0ee03fc4-cf4e-438d-a281-8d408dabe4b6:
+    uuid: 0ee03fc4-cf4e-438d-a281-8d408dabe4b6
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

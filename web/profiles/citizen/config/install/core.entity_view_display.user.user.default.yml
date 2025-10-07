@@ -1,0 +1,176 @@
+uuid: 85aa8dfc-cea0-4e20-9d93-ca60edfb8ffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_user_image
+    - views.view.user_dashboard
+  module:
+    - layout_builder
+    - user
+    - views
+  theme:
+    - citizen_dart
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: two_column_sidebar_left
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          b3cf5474-b562-4879-832d-7ec36528df25:
+            uuid: b3cf5474-b562-4879-832d-7ec36528df25
+            region: first
+            configuration:
+              id: 'field_block:user:user:field_user_image'
+              label: 'User Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: square
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          103eb759-3d3a-4322-927c-8caea613c448:
+            uuid: 103eb759-3d3a-4322-927c-8caea613c448
+            region: content
+            configuration:
+              id: 'field_block:user:user:roles'
+              label: Roles
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          6834419a-b02b-4dd4-b6d1-f218738f89ff:
+            uuid: 6834419a-b02b-4dd4-b6d1-f218738f89ff
+            region: content
+            configuration:
+              id: 'field_block:user:user:uid'
+              label: 'User ID'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: number_integer
+                label: hidden
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          d7abd6a3-7a97-4d6f-ba9d-939ac08d4d43:
+            uuid: d7abd6a3-7a97-4d6f-ba9d-939ac08d4d43
+            region: content
+            configuration:
+              id: 'field_block:user:user:name'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: tabs
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          561a67c4-f9fa-41d2-af13-235b0ecb6a6b:
+            uuid: 561a67c4-f9fa-41d2-af13-235b0ecb6a6b
+            region: tabs
+            configuration:
+              id: 'views_block:user_dashboard-my_content'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          6daaa12b-a863-41c7-9610-0c818f23a731:
+            uuid: 6daaa12b-a863-41c7-9610-0c818f23a731
+            region: tabs
+            configuration:
+              id: 'views_block:user_dashboard-all_recent_content'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+    is_enabled: true
+_core:
+  default_config_hash: NDtgPdpr9EfNY6km7KdOaxtzoL2y4690tGK21Z90VS0
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_user_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  search_api_excerpt: true

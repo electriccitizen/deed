@@ -1,0 +1,21 @@
+uuid: 548a478d-e40e-4c50-b77a-d3adc0d16da1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.horizontal_rule
+  module:
+    - options
+id: paragraph.horizontal_rule.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: horizontal_rule
+label: Width
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

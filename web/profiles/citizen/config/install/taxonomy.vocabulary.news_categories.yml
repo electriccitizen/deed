@@ -1,0 +1,8 @@
+uuid: 4a9f682b-9c1e-407a-ab9a-4ee92be1d733
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Categories'
+vid: news_categories
+description: 'Categories for news articles.'
+weight: 0

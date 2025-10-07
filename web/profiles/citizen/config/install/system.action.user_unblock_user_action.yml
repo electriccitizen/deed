@@ -1,0 +1,13 @@
+uuid: 58cdaa71-56ae-4c23-953a-77ca969c7655
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: x_qhfu4rKQxzhS1VW7d8qG5AfR_M9_vjZj5mPF-yfI4
+id: user_unblock_user_action
+label: 'Unblock the selected user(s)'
+type: user
+plugin: user_unblock_user_action
+configuration: {  }

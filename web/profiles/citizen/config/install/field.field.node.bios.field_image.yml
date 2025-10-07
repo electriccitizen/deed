@@ -1,0 +1,31 @@
+uuid: d58db3b8-47f4-44ab-a6d5-9a73bb6bfe5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.bios
+_core:
+  default_config_hash: PEK9_Aw7_4w8umdwW_xB64q3TF0yWgPa5F6aoptYIxI
+id: node.bios.field_image
+field_name: field_image
+entity_type: node
+bundle: bios
+label: Headshot
+description: '<strong>Optimal image size:</strong> 720x720px'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: 7AQHu4zyPCyOKCQmPgoqbTtUX2VyExI5-HUWRhz_BO0
+check:
+  disabled_extensions: false
+  interval_days: 1
+fetch:
+  url: ''
+  max_attempts: 2
+  timeout: 30
+notification:
+  emails:
+    - no-reply@electriccitien.com
+  threshold: all

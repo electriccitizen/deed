@@ -1,0 +1,16 @@
+uuid: 034440fa-d840-4de2-9e80-230e3a7d4820
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: layout_section_single
+label: 'Layout Section Single'
+icon_uuid: null
+icon_default: null
+description: 'Single column layout with no additional fields.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'

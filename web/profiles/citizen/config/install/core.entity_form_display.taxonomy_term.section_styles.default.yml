@@ -1,0 +1,31 @@
+uuid: a8661413-9f18-4254-9f11-b81d243ce126
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.section_styles
+_core:
+  default_config_hash: 6h7RgVcHX1DblsBAJ5DYI8p_t_Lf1g41UvpkdBiygLM
+id: taxonomy_term.section_styles.default
+targetEntityType: taxonomy_term
+bundle: section_styles
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

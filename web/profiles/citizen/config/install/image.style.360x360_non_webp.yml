@@ -1,0 +1,17 @@
+uuid: 17a8191f-0227-41fc-90a5-f22044ac35f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 360x360_non_webp
+label: '360x360 Non-WebP'
+effects:
+  0ef816c1-21eb-4e6d-b641-e509d29d89b8:
+    uuid: 0ef816c1-21eb-4e6d-b641-e509d29d89b8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 360
+      crop_type: focal_point

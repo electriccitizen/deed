@@ -1,0 +1,21 @@
+uuid: 66312d1e-218e-4453-9703-640c418f2eb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_position
+    - node.type.bios
+_core:
+  default_config_hash: NbP-cFRZqxkUrXr5TEueKL3xs4MeZDB9kTLStWiv_NE
+id: node.bios.field_position
+field_name: field_position
+entity_type: node
+bundle: bios
+label: Position
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

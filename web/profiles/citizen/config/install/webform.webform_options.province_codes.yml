@@ -1,0 +1,27 @@
+uuid: 519d3350-f1f4-46b5-8bd1-4baec4c36c9d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: I5MLHLzMAqK8nj7AlBclJi943HSLVCrS8_LjoEvmWgE
+id: province_codes
+label: 'Province codes'
+category: Geographic
+likert: false
+options: |
+  AB: Alberta
+  BC: 'British Columbia'
+  MB: Manitoba
+  NB: 'New Brunswick'
+  NL: 'Newfoundland and Labrador'
+  NS: 'Nova Scotia'
+  NT: 'Northwest Territories'
+  NU: Nunavut
+  'ON': Ontario
+  PE: 'Prince Edward Island'
+  QC: Quebec
+  SK: Saskatchewan
+  YT: Yukon

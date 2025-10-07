@@ -1,0 +1,23 @@
+uuid: 4544774c-72a4-4b36-b4a5-fc76050e2329
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_location
+    - paragraphs.paragraphs_type.map
+  module:
+    - geolocation
+_core:
+  default_config_hash: gcQHQCvQQNmzWW-XP93pqugd1bNvQK-17MFsGfZMn8I
+id: paragraph.map.field_location
+field_name: field_location
+entity_type: paragraph
+bundle: map
+label: Location
+description: 'Use the autocomplete search function the map to select an address or well-know place. The location will automatically be added in the address field below (it may take a second or two to appear).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

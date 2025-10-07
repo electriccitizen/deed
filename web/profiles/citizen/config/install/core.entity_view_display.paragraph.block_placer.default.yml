@@ -1,0 +1,41 @@
+uuid: 4d6a4c0f-5eda-4980-a3df-c079509cca9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_placer.field_block
+    - field.field.paragraph.block_placer.field_widget_title
+    - paragraphs.paragraphs_type.block_placer
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+    sections: {  }
+_core:
+  default_config_hash: U9glateKxDKlsEB4qjb_-EqWP6TYDERrwpMZU1qxqqI
+id: paragraph.block_placer.default
+targetEntityType: paragraph
+bundle: block_placer
+mode: default
+content:
+  field_block:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_widget_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

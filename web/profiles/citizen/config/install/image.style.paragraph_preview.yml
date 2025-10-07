@@ -1,0 +1,23 @@
+uuid: b6f89438-a323-4df5-8fcb-91713aafbe5c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2i9HXBr0v22sFZCYZ2e1zR3tcdVBj1x0GopEDKTa6q0
+name: paragraph_preview
+label: 'Paragraph Preview'
+effects:
+  6266b94f-2afc-4a2d-bc3f-849e849ac6e5:
+    uuid: 6266b94f-2afc-4a2d-bc3f-849e849ac6e5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 30
+      anchor: center-center
+  b3b6b091-5e3e-4cd1-80e5-73a90f3a1b7d:
+    uuid: b3b6b091-5e3e-4cd1-80e5-73a90f3a1b7d
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

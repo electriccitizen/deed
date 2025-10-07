@@ -1,0 +1,33 @@
+uuid: 3ea42cbc-c3a9-43c9-8c3d-e7027559d4c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_widget
+    - node.type.bios
+    - taxonomy.vocabulary.list_widget
+  content:
+    - 'taxonomy_term:list_widget:ad7996ed-197a-4f64-a858-04b4f4b73261'
+id: node.bios.field_list_widget
+field_name: field_list_widget
+entity_type: node
+bundle: bios
+label: 'List Widget'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: ad7996ed-197a-4f64-a858-04b4f4b73261
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      list_widget: list_widget
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

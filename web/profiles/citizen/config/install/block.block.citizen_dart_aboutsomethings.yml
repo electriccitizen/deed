@@ -1,0 +1,25 @@
+uuid: e88d6d91-c029-461e-a313-fb897781eb2e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
+  module:
+    - block_content
+  theme:
+    - citizen_dart
+id: citizen_dart_aboutsomethings
+theme: citizen_dart
+region: prefooter
+weight: -6
+provider: null
+plugin: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
+settings:
+  id: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
+  label: 'About Some Things'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,16 @@
+_core:
+  default_config_hash: 77n1ZgtHwqIdWNGAvQwQ2Nve9L0X03q3k9PhWpGSkuo
+entity_type_groups:
+  node:
+    event:
+      basic: basic
+    landing_page:
+      basic: basic
+    news:
+      basic: basic
+    page:
+      basic: basic
+    profiles:
+      basic: basic
+    support_book:
+      basic: basic

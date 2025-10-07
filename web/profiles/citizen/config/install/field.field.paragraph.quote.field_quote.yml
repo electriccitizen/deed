@@ -1,0 +1,21 @@
+uuid: bfc80027-2623-4fa2-8e42-c55971a55a6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote
+    - paragraphs.paragraphs_type.quote
+_core:
+  default_config_hash: n5VgAP814dQL_-M07c7ceDKIBDv6l7bzPtqJheDFvYE
+id: paragraph.quote.field_quote
+field_name: field_quote
+entity_type: paragraph
+bundle: quote
+label: Quote
+description: 'Do not use quotation marks.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

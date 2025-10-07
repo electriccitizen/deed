@@ -1,0 +1,19 @@
+uuid: fe472871-e5cf-4820-827f-e275c6923268
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: Upw3Fr3FdxLI0VGTXqHX7P-dYoBmEAhf3QLMawIwsFA
+name: Bios
+type: bios
+description: 'Add bio information for a person.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

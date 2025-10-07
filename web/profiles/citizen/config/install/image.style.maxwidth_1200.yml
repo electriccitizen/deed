@@ -1,0 +1,23 @@
+uuid: fff46e49-2d4f-48c7-95f2-48f692b76107
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: k7WmjDaSB3rl48ebNTTEz8hvbF7j1jIc5_kqMRHe-0c
+name: maxwidth_1200
+label: 'Max Width (1200)'
+effects:
+  ae5ff580-1b59-44dc-8edb-65b722fb37b1:
+    uuid: ae5ff580-1b59-44dc-8edb-65b722fb37b1
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: true
+  382b88b1-ca3a-4167-9123-1cbf14b24c5f:
+    uuid: 382b88b1-ca3a-4167-9123-1cbf14b24c5f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

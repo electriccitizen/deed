@@ -1,0 +1,21 @@
+uuid: 123a286a-b7f0-497e-9935-31455345dac2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.bios
+_core:
+  default_config_hash: uVXmodTUny3EQOgZgGNEc3gak5xegwIsdhPWaEZs45g
+id: node.bios.field_email
+field_name: field_email
+entity_type: node
+bundle: bios
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

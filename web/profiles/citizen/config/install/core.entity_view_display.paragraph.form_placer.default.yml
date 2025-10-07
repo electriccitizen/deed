@@ -1,0 +1,28 @@
+uuid: 230eb361-12d6-4f12-a144-0085788e41a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.form_placer.field_form
+    - field.field.paragraph.form_placer.field_form_title
+    - paragraphs.paragraphs_type.form_placer
+  module:
+    - webform
+_core:
+  default_config_hash: fx5m-0O_XB5LSM7SKGnFhF26dl44VGWxX5IuPd4RG9U
+id: paragraph.form_placer.default
+targetEntityType: paragraph
+bundle: form_placer
+mode: default
+content:
+  field_form:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_form_title: true
+  search_api_excerpt: true

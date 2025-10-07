@@ -1,0 +1,137 @@
+uuid: a15d1f0d-eb66-4180-9426-7b08e2a74254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.support_book.body
+    - field.field.node.support_book.field_paragraphs
+    - node.type.support_book
+    - system.menu.support-book
+  module:
+    - layout_builder
+    - layout_discovery
+    - menu_block
+    - system
+    - user
+  theme:
+    - citizen_dart
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          4e781ed5-235d-4ca6-bb14-f31ab6fd65cb:
+            uuid: 4e781ed5-235d-4ca6-bb14-f31ab6fd65cb
+            region: content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: two_column_sidebar_left
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          015da07b-45ef-4c58-92e1-1f045860bbb3:
+            uuid: 015da07b-45ef-4c58-92e1-1f045860bbb3
+            region: first
+            configuration:
+              id: 'menu_block:support-book'
+              label: 'Support Book'
+              label_display: visible
+              provider: menu_block
+              context_mapping: {  }
+              follow: false
+              follow_parent: active
+              label_link: true
+              label_type: root
+              level: 2
+              depth: 0
+              expand_all_items: true
+              parent: 'support-book:'
+              suggestion: section_menu
+            weight: 0
+            additional: {  }
+          6613ea32-be87-42cb-af4b-ecfadae7fb05:
+            uuid: 6613ea32-be87-42cb-af4b-ecfadae7fb05
+            region: content
+            configuration:
+              id: 'field_block:node:support_book:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          d0512849-05a1-481a-ac50-b13b6d91f769:
+            uuid: d0512849-05a1-481a-ac50-b13b6d91f769
+            region: content
+            configuration:
+              id: 'field_block:node:support_book:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          2402b966-8a93-4fb3-93ef-caf6263227ce:
+            uuid: 2402b966-8a93-4fb3-93ef-caf6263227ce
+            region: content
+            configuration:
+              id: 'field_block:node:support_book:field_paragraphs'
+              label: Sections
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: layout_paragraphs
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: node.support_book.default
+targetEntityType: node
+bundle: support_book
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_paragraphs: true
+  search_api_excerpt: true

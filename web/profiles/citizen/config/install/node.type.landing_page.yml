@@ -1,0 +1,22 @@
+uuid: 05a5dbb8-7cfd-44a4-9a58-f20983297f53
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+      - secondary
+    parent: 'footer:'
+_core:
+  default_config_hash: N5hiZ0hjQuWJ6-q3E9mEiuVCbwSlH2hWpUMHM51iAms
+name: 'Landing Page'
+type: landing_page
+description: 'Use for the home page and highly designed upper-level pages.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

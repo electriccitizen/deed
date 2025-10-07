@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: 4JgD6tv0zwCdtLA1bu0gbOWgnAtZGUIxAOb_Hvh-Nmg
+ignored_config_entities:
+  - 'webform.webform.*'
+  - geolocation_google_maps.settings

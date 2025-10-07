@@ -1,0 +1,17 @@
+uuid: 0f6df8f5-0dee-4eb4-b48d-8bfcddce46fb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: b-7Oph_GJa05EZ2_TEKJnc9aYen5mNjQCQC4Ds2I4Ug
+id: number_date_short
+label: 'Number Date Short'
+date_format: n/j/y
+time_format: 'g:ia'
+time_hour_format: ga
+allday_label: 'All day'
+separator: ' - '
+join: ', '
+ampm_reduce: '1'
+date_first: '1'
+site_time_toggle: '0'

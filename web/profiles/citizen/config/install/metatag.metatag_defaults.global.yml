@@ -1,0 +1,25 @@
+uuid: 521bf303-9581-44a8-9cd0-cb2c2e34714d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EALJYB-VDBWKZmfIQOKnlEyURKNnx2SuosSSoT5vhfE
+id: global
+label: Global
+tags:
+  article_modified_time: '[node:changed:custom:c]'
+  article_published_time: '[node:created:custom:c]'
+  canonical_url: '[current-page:url:absolute]'
+  content_language: en
+  generator: 'Drupal 9 (http://drupal.org)'
+  geo_region: US-MN
+  og_country_name: US
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  og_type: Article
+  og_url: '[current-page:url:absolute]'
+  shortlink: '[current-page:url:unaliased]'
+  title: '[current-page:title] | [site:name]'
+  twitter_cards_page_url: '[current-page:url:absolute]'
+  twitter_cards_title: '[current-page:title]'
+  twitter_cards_type: summary

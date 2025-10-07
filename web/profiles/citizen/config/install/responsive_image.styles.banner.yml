@@ -1,0 +1,66 @@
+uuid: a5f9175d-f1db-47bf-8012-5e6ee7315fa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_big_desk
+    - image.style.banner_desk
+    - image.style.banner_desk_non_webp
+    - image.style.banner_middesk
+    - image.style.banner_mobile
+    - image.style.banner_mobile_1_5x
+    - image.style.banner_mobile_2x
+    - image.style.banner_tablet
+    - image.style.banner_tablet_2x
+  theme:
+    - citizen_dart
+id: banner
+label: Banner
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_big_desk
+    breakpoint_id: citizen_dart.largedesk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_middesk
+    breakpoint_id: citizen_dart.middesk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_desk
+    breakpoint_id: citizen_dart.desk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_tablet_2x
+    breakpoint_id: citizen_dart.tab
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_tablet
+    breakpoint_id: citizen_dart.tab
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_tablet_2x
+    breakpoint_id: citizen_dart.tab
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_mobile_1_5x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_mobile
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_mobile_2x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 2x
+breakpoint_group: citizen_dart
+fallback_image_style: banner_desk_non_webp
