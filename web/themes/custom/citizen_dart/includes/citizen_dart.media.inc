@@ -18,45 +18,15 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
   $style_id = $variables['responsive_image_style_id'];
 
   switch ($style_id) {
-    case 'banner':
-      $img_width = 1000;
-      $img_height = 400;
-      // Get the url for each image style being preloaded.
-      $deskURL = ImageStyle::load('banner_desk')->buildUrl($variables['uri']);
-      $midDeskURL = ImageStyle::load('banner_middesk')->buildUrl($variables['uri']);
-      $bigDeskURL = ImageStyle::load('banner_big_desk')->buildUrl($variables['uri']);
-      // Construct links for each image style being preloaded.
-      $deskLinkTag = [
-        '#tag' => 'link',
-        '#attributes' => [
-          'rel' => 'preload',
-          'as' => 'image',
-          'href' => $deskURL,
-          'media' => '(min-width:896px) and (max-width:1143.9px)',
-        ],
-      ];
-      $midDeskLinkTag = [
-        '#tag' => 'link',
-        '#attributes' => [
-          'rel' => 'preload',
-          'as' => 'image',
-          'href' => $midDeskURL,
-          'media' => '(min-width:1144px) and (max-width:1319.9px)',
-        ],
-      ];
-      $bigDeskLinkTag = [
-        '#tag' => 'link',
-        '#attributes' => [
-          'rel' => 'preload',
-          'as' => 'image',
-          'href' => $bigDeskURL,
-          'media' => '(min-width:1320px)',
-        ],
-      ];
-      // Attach links for each image style being preloaded.
-      $variables['#attached']['html_head'][] = [$deskLinkTag, 'preloadBannerImageDesk'];
-      $variables['#attached']['html_head'][] = [$midDeskLinkTag, 'preloadBannerImageMidDesk'];
-      $variables['#attached']['html_head'][] = [$bigDeskLinkTag, 'preloadBannerImageBigDesk'];
+
+    case '551x500':
+      $img_width = 551;
+      $img_height = 500;
+      break;
+
+    case '731x500':
+      $img_width = 731;
+      $img_height = 500;
       break;
 
     case 'full':
@@ -67,11 +37,6 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
     case 'large':
       $img_width = 800;
       $img_height = 533;
-      break;
-
-    case 'large_thumb':
-      $img_width = 240;
-      $img_height = 200;
       break;
 
     case 'medium':
@@ -92,11 +57,6 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
     case 'thumbnail_cropped':
       $img_width = 96;
       $img_height = 96;
-      break;
-
-    case 'views_card':
-      $img_width = 400;
-      $img_height = 300;
       break;
 
     default:

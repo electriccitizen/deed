@@ -1,35 +1,40 @@
-uuid: cb27e03f-6cf6-4769-a2d7-116a6b2637bb
+uuid: 6ae82937-1339-41a5-8ff8-92147c1786ed
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.banner
+    - core.entity_view_mode.media.731x500
     - field.field.media.image.field_media_image
     - media.type.image
-    - responsive_image.styles.banner
+    - responsive_image.styles.731x500
   module:
     - layout_builder
+    - lazy
     - responsive_image
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: Ck_6qvDzaY1kFXphJNwBnUS6DMfIqDQdIFidUhBSPlo
-id: media.image.banner
+  default_config_hash: 1iCnAlf6G1vE96vB1vuUJGlz4MdnNTVZm8NhaG1lxTg
+id: media.image.731x500
 targetEntityType: media
 bundle: image
-mode: banner
+mode: 731x500
 content:
   field_media_image:
     type: responsive_image
     label: hidden
     settings:
-      responsive_image_style: banner
+      responsive_image_style: 731x500
       image_link: ''
       image_loading:
         attribute: eager
-    third_party_settings: {  }
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
     weight: 0
     region: content
 hidden:

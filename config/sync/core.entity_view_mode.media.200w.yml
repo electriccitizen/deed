@@ -1,0 +1,11 @@
+uuid: 6121278c-fb45-4bda-85ae-855c9838d2c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.200w
+label: 200w
+description: null
+targetEntityType: media
+cache: true

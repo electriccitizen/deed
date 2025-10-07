@@ -1,0 +1,15 @@
+uuid: c9d417aa-314e-4557-8efa-7951d43b6de0
+langcode: en
+status: true
+dependencies: {  }
+name: 200w
+label: 200w
+effects:
+  773a0837-aa3b-465e-82f7-d1d3a18ede63:
+    uuid: 773a0837-aa3b-465e-82f7-d1d3a18ede63
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      upscale: false

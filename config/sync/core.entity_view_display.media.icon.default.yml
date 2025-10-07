@@ -1,21 +1,19 @@
-uuid: 7b68c9bd-c6fc-4da1-bc06-d068ca231363
+uuid: 7236d24f-0f0f-492e-b551-d0ce01fe40f5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_media_image
-    - media.type.image
+    - field.field.media.icon.field_icon
+    - media.type.icon
   module:
     - lazy
     - svg_image
-_core:
-  default_config_hash: 1iCnAlf6G1vE96vB1vuUJGlz4MdnNTVZm8NhaG1lxTg
-id: media.image.default
+id: media.icon.default
 targetEntityType: media
-bundle: image
+bundle: icon
 mode: default
 content:
-  field_media_image:
+  field_icon:
     type: image
     label: hidden
     settings:

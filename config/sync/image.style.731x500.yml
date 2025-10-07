@@ -1,0 +1,23 @@
+uuid: aa6a712e-b2c7-4919-9c47-53a33f9558b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 731x500
+label: 731x500
+effects:
+  fb19fdd4-afdf-4f83-b289-17575e66f7b3:
+    uuid: fb19fdd4-afdf-4f83-b289-17575e66f7b3
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 731
+      height: 500
+      crop_type: focal_point
+  30d94319-68a2-4c1e-99a1-f52d36baabc0:
+    uuid: 30d94319-68a2-4c1e-99a1-f52d36baabc0
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
