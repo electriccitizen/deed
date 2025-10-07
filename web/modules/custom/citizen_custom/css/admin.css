@@ -1,0 +1,257 @@
+/* ========================
+  ADMIN CSS
+=========================*/
+
+/* hide default drupal preview button
+---------------------------- */
+#edit-gin-actions input[data-drupal-selector="edit-preview"],
+#edit-gin-sticky-actions input[data-drupal-selector="gin-sticky-edit-preview"] {
+  display: none;
+}
+
+/* style disabled buttons in gin
+--------------------------------- */
+button[disabled],
+button.disabled {
+  color: #676767 !important;
+}
+
+button[disabled]:hover,
+button.disabled:hover {
+  background-color: transparent !important;
+}
+
+/* FIX CKE MODALS HIDING BEHIND OTHER MODALS
+------------------ */
+.ck.ck-balloon-panel {
+  z-index: 1261 !important;
+}
+
+/* ADJUST MEDIA LIBRARY
+----------------------- */
+#media-library-wrapper {
+  padding-top: 20px;
+}
+
+#media-library-wrapper .media-library-item--grid .media-library-item__content,
+.views-live-preview .media-library-item--grid .media-library-item__content {
+  flex-direction: column;
+}
+
+#media-library-wrapper .media-library-item--grid .media-library-item__content .dimensions,
+.views-live-preview .media-library-item--grid .media-library-item__content .dimensions {
+  font-size: 12px;
+  width: 100%;
+  padding-left: 8px;
+  margin-top: -8px;
+}
+
+/* ADJUST UI DIALOG CLOSE X */
+.ui-dialog.ui-widget .ui-dialog-titlebar-close.ui-button-icon-only {
+  top: 13px;
+}
+
+/* FIX CKE WRAPPING IN PARAGRAPH SUBFORMS
+-------------------------------*/
+.form-textarea-wrapper .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
+  flex-wrap: wrap;
+}
+
+/* ADD LAYOUT PARAGRAPH UI IMPROVEMENTS */
+.ui-widget-content.lpb-dialog {
+  width: 75% !important;
+}
+
+.ui-widget-content.lpb-dialog .ui-dialog-buttonpane .button.button--small {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.lpb-component-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.lpb-component-list__search .lpb-component-list-search-input {
+  width: 60%;
+  min-height: 2rem;
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+  background: #fff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  appearance: none;
+  font-family: inherit;
+  border: 1px solid #444;
+  border-radius: 10px;
+}
+
+.lpb-component-list__search .lpb-component-list-search-input:hover {
+  border-color: #000;
+  box-shadow: inset 0 0 0 1px #000;
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.lpb-component-list__item {
+  width: 33.33%;
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.lpb-component-list__item>a {
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.lpb-component-list__item>a:hover {
+  color: #676767;
+  text-decoration: underline;
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.lpb-component-list__item>a:hover::before {
+  opacity: .6;
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.lpb-component-list__item>a:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+
+/* CUSTOM ICONS ARE ALL DOWNLOADED FROM MATERIAL ICONS */
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-accordions>a:before {
+  background-image: url('../icons/accordions.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-block_placer>a:before {
+  background-image: url('../icons/block-placer.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_list>a:before {
+  background-image: url('../icons/content-list.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_placer>a:before {
+  background-image: url('../icons/content-placer.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-custom_embed>a:before {
+  background-image: url('../icons/custom-embed.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-form_placer>a:before {
+  background-image: url('../icons/form-placer.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-gallery>a:before {
+  background-image: url('../icons/gallery.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-horizontal_rule>a:before {
+  background-image: url('../icons/horizontal-rule.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-image>a:before {
+  background-image: url('../icons/image.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-links_files>a:before {
+  background-image: url('../icons/links-files.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-portals>a:before {
+  background-image: url('../icons/portals.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-quote>a:before {
+  background-image: url('../icons/quote.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-text>a:before {
+  background-image: url('../icons/text.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-video>a:before {
+  background-image: url('../icons/video.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-view_placer>a:before {
+  background-image: url('../icons/view-placer.svg');
+}
+
+.js-lpb-component.paragraph--view-mode--preview {
+  padding: 10px 5px;
+  margin: 2px;
+  min-height: 30px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.paragraph--type--layout-section.paragraph--view-mode--preview .js-lpb-component.paragraph--view-mode--preview .field a {
+  pointer-events: none;
+  color: #676767;
+}
+
+.js-lpb-component.paragraph--view-mode--preview .para-preview-label {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  color: #4176d9;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.js-lpb-component.paragraph--view-mode--preview:not(.paragraph--type--layout-section):not(.paragraph--type--layout-section-single) .para-preview-label {
+  font-size: 14px;
+}
+
+.js-lpb-component.paragraph--view-mode--preview:last-of-type {
+  margin-bottom: 15px;
+}
+
+/* INDIVIDUAL PARAGRAPH PREVIEW TWEAKS
+------------------------------- */
+.paragraph--type--form-placer.paragraph--view-mode--preview .field--name-field-form a {
+  pointer-events: none;
+  color: #444;
+}
+
+/* FIELD ADJUSTMENTS
+------------------------ */
+.field--name-field-geolocation fieldset.geolocation-widget-input,
+.field--name-field-address #edit-field-address-0-address-country-code {
+  display: none;
+}
+
+/* SMARTDATE FIELD ADJUSTMENTS
+------------------------ */
+fieldset.smartdate--widget .smartdate--time-inline {
+
+  @media screen and (min-width: 56em) {
+    align-items: center;
+  }
+
+}
+
+fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:last-of-type) {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:first-of-type) {
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+fieldset.smartdate--widget .smartdate--time-inline .smartdate--separator {
+  margin: 0 .5rem;
+}
+
+fieldset.smartdate--widget .allday-label {
+  margin-top: .5em;
+}
+
+/* ADJUST FOCAL POINT PREVIEW ON IMAGE FIELDS SO VERTICAL IMAGES DON'T LOOK LIKE PARTIALS
+--------------------------- */
+.image-preview .focal-point-wrapper .image-style-thumbnail {
+  min-width: 100%;
+}

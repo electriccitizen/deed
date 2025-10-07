@@ -1,0 +1,5 @@
+services:
+  citizen_custom.twig_extension:
+    class: Drupal\citizen_custom\TwigExtension
+    tags:
+      - { name: twig.extension }

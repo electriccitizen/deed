@@ -1,0 +1,11 @@
+edit layout paragraphs plugin config:
+  title: 'Edit layout paragraphs plugin config'
+  description: 'Edit layout paragraphs plugin config'
+
+assign editor role:
+  title: 'Assign the editor role to a user'
+  description: 'Assing the editor role to a user'
+
+assign site_manager role:
+  title: 'Assign the site_manager role to a user'
+  description: 'Assign the site_manager role to a user'

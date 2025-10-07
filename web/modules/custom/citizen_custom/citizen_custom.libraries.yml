@@ -1,0 +1,12 @@
+admin-global:
+  version: 1.0
+  css:
+    theme:
+      css/admin.css: {}
+  js:
+    js/admin.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupal
+    - core/drupalSettings
