@@ -123,28 +123,8 @@ button.disabled:hover {
   background-image: url('../icons/accordions.svg');
 }
 
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-block_placer>a:before {
-  background-image: url('../icons/block-placer.svg');
-}
-
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_list>a:before {
-  background-image: url('../icons/content-list.svg');
-}
-
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_placer>a:before {
-  background-image: url('../icons/content-placer.svg');
-}
-
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-custom_embed>a:before {
   background-image: url('../icons/custom-embed.svg');
-}
-
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-form_placer>a:before {
-  background-image: url('../icons/form-placer.svg');
-}
-
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-gallery>a:before {
-  background-image: url('../icons/gallery.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-horizontal_rule>a:before {
@@ -155,16 +135,8 @@ button.disabled:hover {
   background-image: url('../icons/image.svg');
 }
 
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-links_files>a:before {
-  background-image: url('../icons/links-files.svg');
-}
-
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-portals>a:before {
   background-image: url('../icons/portals.svg');
-}
-
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-quote>a:before {
-  background-image: url('../icons/quote.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-text>a:before {
@@ -220,34 +192,6 @@ button.disabled:hover {
 .field--name-field-geolocation fieldset.geolocation-widget-input,
 .field--name-field-address #edit-field-address-0-address-country-code {
   display: none;
-}
-
-/* SMARTDATE FIELD ADJUSTMENTS
------------------------- */
-fieldset.smartdate--widget .smartdate--time-inline {
-
-  @media screen and (min-width: 56em) {
-    align-items: center;
-  }
-
-}
-
-fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:last-of-type) {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-}
-
-fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:first-of-type) {
-  margin-left: .25rem;
-  margin-right: .25rem;
-}
-
-fieldset.smartdate--widget .smartdate--time-inline .smartdate--separator {
-  margin: 0 .5rem;
-}
-
-fieldset.smartdate--widget .allday-label {
-  margin-top: .5em;
 }
 
 /* ADJUST FOCAL POINT PREVIEW ON IMAGE FIELDS SO VERTICAL IMAGES DON'T LOOK LIKE PARTIALS
