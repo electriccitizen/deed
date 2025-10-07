@@ -1,0 +1,34 @@
+uuid: d21ce4a0-58e2-4a69-b66b-0b41a3932c2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.custom_embed.field_embed_content
+    - field.field.paragraph.custom_embed.field_widget_title
+    - paragraphs.paragraphs_type.custom_embed
+_core:
+  default_config_hash: kbao1bVyp8E2g9K5CCtxXgHLHKZhoPyk68IUQgC9I5c
+id: paragraph.custom_embed.default
+targetEntityType: paragraph
+bundle: custom_embed
+mode: default
+content:
+  field_embed_content:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_widget_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

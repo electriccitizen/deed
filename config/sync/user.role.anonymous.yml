@@ -1,0 +1,22 @@
+uuid: b17c9b9b-02e7-4297-a38e-aa45988ce563
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.limited_html
+    - filter.format.restricted_html
+  module:
+    - filter
+    - media
+    - system
+_core:
+  default_config_hash: 5QqXm46ktpziOsRs6P56FB-c74-my0zZ-A8NG-9Vjmc
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'use text format limited_html'
+  - 'use text format restricted_html'
+  - 'view media'

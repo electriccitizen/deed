@@ -1,0 +1,19 @@
+uuid: 6aefdf0f-2402-456b-935b-50651b1954dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_widget_title
+    - paragraphs.paragraphs_type.view_placer
+id: paragraph.view_placer.field_widget_title
+field_name: field_widget_title
+entity_type: paragraph
+bundle: view_placer
+label: 'View Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

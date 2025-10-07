@@ -1,0 +1,22 @@
+uuid: 12f989c8-c147-4b58-a7b2-304fa04bdfb0
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - citizen_dart
+_core:
+  default_config_hash: gev70gb-Z6mJzOmMuRSImQ4Z2X7P1sxiO0BoNGwGziw
+id: citizen_dart_help
+theme: citizen_dart
+region: content
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

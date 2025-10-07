@@ -1,0 +1,20 @@
+uuid: 02a6078b-aeb4-4b50-9470-1b1d9897d648
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_file
+_core:
+  default_config_hash: ACiM5MBCpu1cSlMOBHCg3d5RSAE1G9k9trb3lF3r_Ko
+id: document
+label: Document
+description: 'Add documents as media entities.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

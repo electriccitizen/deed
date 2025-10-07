@@ -1,0 +1,26 @@
+uuid: 20602645-1891-471e-b75e-d300c5eb7710
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - responsive_image
+_core:
+  default_config_hash: ne7VfwYhA9qKRwckB3syEzAT9cehKseEBi14pvrLvLA
+name: max_2600x2600
+label: 'Max 2600x2600'
+effects:
+  9b311dd1-0351-45a1-9500-cd069e4670cb:
+    uuid: 9b311dd1-0351-45a1-9500-cd069e4670cb
+    id: image_scale
+    weight: -10
+    data:
+      width: 2600
+      height: 2600
+      upscale: false
+  a580dfdf-bf28-40c2-8162-275504efdd79:
+    uuid: a580dfdf-bf28-40c2-8162-275504efdd79
+    id: image_convert
+    weight: -9
+    data:
+      extension: webp

@@ -1,0 +1,14 @@
+uuid: ce0be7f6-c908-4b79-8e0a-fd2d6ed53a5d
+langcode: en
+status: 0
+dependencies: {  }
+_core:
+  default_config_hash: tCy5kFu4qPenetsjahPF0zbVJd2AtvvzLk3blVF1ynk
+id: large
+label: 'Typical desktop'
+weight: 0
+orientation: landscape
+dimensions:
+  width: 1366
+  height: 768
+  dppx: 1.0

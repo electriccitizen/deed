@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: 3WgSI9j4v70WG7eRjfEYFND6BRmJnNt5t0PWUawC4No
+allow_insecure_uploads: false
+default_scheme: public
+temporary_maximum_age: 21600

@@ -1,0 +1,23 @@
+uuid: 55aeb2b0-5934-4c55-9661-2debcb13e377
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exclude_search
+    - node.type.landing_page
+id: node.landing_page.field_exclude_search
+field_name: field_exclude_search
+entity_type: node
+bundle: landing_page
+label: 'Exclude from Site Search'
+description: 'Prevent this page from being displayed in the internal site search.  It will still be indexed by search engines unless you edit the metatags (vertical tab on the right) and check the box to for No Index.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

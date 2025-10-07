@@ -1,0 +1,8 @@
+uuid: b7e2115a-2b44-4706-a452-a12932216d92
+langcode: en
+status: true
+dependencies: {  }
+id: ancillary
+label: Ancillary
+description: 'Add ancillary legalese links to the footer'
+locked: false

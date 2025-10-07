@@ -1,0 +1,23 @@
+uuid: 0fbf210d-0c34-415b-b65b-d68a86f06856
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_size
+    - paragraphs.paragraphs_type.image
+  module:
+    - options
+id: paragraph.image.field_size
+field_name: field_size
+entity_type: paragraph
+bundle: image
+label: Size
+description: 'Column width size will automatically size the image to width of the section column.  Original size will not alter the size unless the image is larger than the column. If the image is larger than the column it will be scaled down to fit.'
+required: true
+translatable: false
+default_value:
+  -
+    value: column
+default_value_callback: ''
+settings: {  }
+field_type: list_string

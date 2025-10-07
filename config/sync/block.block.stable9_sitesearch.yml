@@ -1,0 +1,28 @@
+uuid: 5d668ad4-5016-4f3b-97eb-d67e48b0747f
+langcode: en
+status: true
+dependencies:
+  module:
+    - citizen_custom
+    - system
+  theme:
+    - stable9
+_core:
+  default_config_hash: ZArko7DF6X5guRcgeKeyS0W1gr3mpdzfeJej0WXjJK0
+id: stable9_sitesearch
+theme: stable9
+region: header
+weight: -6
+provider: null
+plugin: site_search
+settings:
+  id: site_search
+  label: 'Site Search'
+  label_display: '0'
+  provider: citizen
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: /site-search

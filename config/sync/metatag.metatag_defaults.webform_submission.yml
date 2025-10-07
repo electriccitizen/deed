@@ -1,0 +1,8 @@
+uuid: be56a9f3-eca5-4cbe-8bb9-03a1a858e2a7
+langcode: en
+status: true
+dependencies: {  }
+id: webform_submission
+label: 'Webform submission'
+tags:
+  robots: 'noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate'

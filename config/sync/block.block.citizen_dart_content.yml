@@ -1,0 +1,22 @@
+uuid: 107536f2-79f5-4096-b264-a24bd8c53206
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen_dart
+_core:
+  default_config_hash: LaETGw2K3Niq-67hPI0n8SEhFM1-XxUB5BcC08k-f0Q
+id: citizen_dart_content
+theme: citizen_dart
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 0357dd85-8551-4c13-8239-05e7898cdfb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.field_platforms
+  module:
+    - link
+_core:
+  default_config_hash: MzSQNt9-6v5ChtAnBdPOy0vfcgZ4Z0fc599JF2KedB8
+id: block_content.social_media_links.field_platforms
+field_name: field_platforms
+entity_type: block_content
+bundle: social_media_links
+label: Platforms
+description: 'Paste in the links to your platform pages. <strong>WARNING:</strong> Only Facebook, Twitter, X, LinkedIn, and YouTube are supported. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

@@ -1,0 +1,34 @@
+uuid: 6aee2f13-d589-491f-b941-76b36da9c27b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: OGbleuOgYZQiCASrbT-9bJDKb7L4TH281LhY0p5CeBM
+label: WYSIWYG
+id: wysiwyg
+description: 'Used in WYSIWYG profile to link nodes and media documents.'
+matchers:
+  50988d03-448b-43e9-926e-fe6f6a804bd6:
+    id: 'entity:node'
+    uuid: 50988d03-448b-43e9-926e-fe6f6a804bd6
+    settings:
+      metadata: ''
+      bundles: {  }
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: false
+    weight: 0
+  56b9a418-1155-4dd3-b2c8-92be26f068d3:
+    id: 'entity:media'
+    uuid: 56b9a418-1155-4dd3-b2c8-92be26f068d3
+    settings:
+      metadata: ''
+      bundles:
+        document: document
+      group_by_bundle: false
+      substitution_type: media
+      limit: 100
+    weight: 0

@@ -1,0 +1,15 @@
+uuid: 0cc1ca20-7a02-4515-8e93-3ea42e96dca0
+langcode: en
+status: true
+dependencies: {  }
+name: small_non_crop_non_webp
+label: 'Small Non-crop Non-WebP'
+effects:
+  d6a18988-0448-44e1-965c-760645a24a51:
+    uuid: d6a18988-0448-44e1-965c-760645a24a51
+    id: image_scale
+    weight: 1
+    data:
+      width: 280
+      height: null
+      upscale: false

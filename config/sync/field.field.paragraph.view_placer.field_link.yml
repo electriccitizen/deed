@@ -1,0 +1,23 @@
+uuid: 5afd8f3f-edb7-4861-806d-96793a74e5b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - link
+id: paragraph.view_placer.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: view_placer
+label: 'More Link'
+description: 'Link to a main listing page. This should be used with views like home page news and events.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 1
+field_type: link

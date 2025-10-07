@@ -1,0 +1,13 @@
+uuid: 290f6e05-ccf2-4d32-b837-0f8b151487e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: PY0tmx7KQnc-eQlZ1vG_uVao-yipu9o2ecOP-3fvJxg
+id: media.thumbnail_cropped
+label: 'Thumbnail Cropped'
+description: ''
+targetEntityType: media
+cache: true

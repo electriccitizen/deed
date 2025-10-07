@@ -1,0 +1,19 @@
+uuid: eb43150c-61fb-439f-b38d-3ea396c17d62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_search_keywords
+    - node.type.landing_page
+id: node.landing_page.field_search_keywords
+field_name: field_search_keywords
+entity_type: node
+bundle: landing_page
+label: 'Search Keywords'
+description: 'Add keywords or phrases to promote this page in search results when a user enters matching word(s) phrases. <strong>NOTE:</strong> Use keywords sparingly and only when they really apply to the content. Keywords will be more helpful to the user the more unique they are. Repeating the same keywords on a lot of pages will reduce their effectiveness. Search will also read the title and text content of the page so there is no need to repeat words or phrases in the content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

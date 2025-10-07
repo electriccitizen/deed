@@ -1,0 +1,22 @@
+uuid: 5c9f0dbb-7413-4680-80a9-109155327e99
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: yDGlO0VWHjlgxmqcN9vNViAAHA1S-vl28TM8uawZIwo
+id: ethnicity
+label: Ethnicity
+category: Demographic
+likert: false
+options: |
+  Caucasian: Caucasian
+  'Latino/Hispanic': 'Latino/Hispanic'
+  'Middle Eastern': 'Middle Eastern'
+  African: African
+  Caribbean: Caribbean
+  'South Asian': 'South Asian'
+  'East Asian': 'East Asian'
+  Mixed: Mixed

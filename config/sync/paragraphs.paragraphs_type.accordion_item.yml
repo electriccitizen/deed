@@ -1,0 +1,12 @@
+uuid: 28c81c52-89f0-406b-a0c9-a7f71f284c0c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: aqdY_nb7NIY3QFEDUrC1JskoRQ_Oy6VEF_22qZG0BDE
+id: accordion_item
+label: 'Accordion Item'
+icon_uuid: null
+icon_default: null
+description: 'Adds WYSIWYG content inside accordions.'
+behavior_plugins: {  }

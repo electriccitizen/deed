@@ -1,0 +1,12 @@
+uuid: a3b17df5-4bd7-43b0-80d1-cf144c8399e6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: wTN9VuCXxomA8He0wOwjjc3QP7Fyy2vKbq-7sDlwJKg
+id: taxonomy_term
+label: 'Taxonomy term'
+tags:
+  title: '[term:name] | [site:name]'
+  robots: 'noindex, nofollow, noarchive, nosnippet, noodp, noydir, noimageindex, notranslate'
+  description: '[term:description]'

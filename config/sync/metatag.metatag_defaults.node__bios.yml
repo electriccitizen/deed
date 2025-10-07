@@ -1,0 +1,13 @@
+uuid: 459c0f8d-e370-45e1-9a77-334738687a56
+langcode: en
+status: true
+dependencies: {  }
+id: node__bios
+label: 'Content: Bios'
+tags:
+  image_src: '[node:field_headshot]'
+  og_image: '[node:field_headshot]'
+  og_type: Biography
+  robots: 'max-image-preview:standard'
+  twitter_cards_image: '[node:field_headshot]'
+  twitter_cards_image_alt: '[node:field_headshot:alt]'

@@ -1,0 +1,25 @@
+uuid: 758cd2aa-9f8b-4075-b7a8-0a553c000aae
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+_core:
+  default_config_hash: hcBx2-dswsKISClfH6snFhB9ttu6yTJhq1hBiFqwoMw
+name: 360x360
+label: 360x360
+effects:
+  4eacf54c-5ef7-4582-8299-4f19f39fc395:
+    uuid: 4eacf54c-5ef7-4582-8299-4f19f39fc395
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 360
+      crop_type: focal_point
+  3a288162-6516-42c7-a095-88855ec78360:
+    uuid: 3a288162-6516-42c7-a095-88855ec78360
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

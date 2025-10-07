@@ -1,0 +1,13 @@
+license_key: ''
+auth_type: none
+env: ''
+access_key: ''
+web_socket_url: 'wss://ORGANIZATION_ID.cke-cs.com/ws'
+dev_token_url: ''
+dev_token_accept: 0
+dll_location: 'https://cdn.ckeditor.com/ckeditor5/VERSION_TOKEN/dll/'
+organization_id: ''
+alter_node_form_css: false
+add_key_to_all_instances: 1
+api_key: ''
+api_url: 'https://ORGANIZATION_ID.cke-cs.com/api/v5/ENVIRONMENT_ID/'

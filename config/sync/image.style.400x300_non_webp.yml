@@ -1,0 +1,17 @@
+uuid: 163fbd8b-2a99-4c42-8f7e-e27414b42cf8
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 400x300_non_webp
+label: '400x300 Non-Webp'
+effects:
+  9daba915-be1f-4400-9751-2032c2d19fb4:
+    uuid: 9daba915-be1f-4400-9751-2032c2d19fb4
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300
+      crop_type: focal_point

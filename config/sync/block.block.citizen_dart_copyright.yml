@@ -1,0 +1,25 @@
+uuid: 71790bd7-ef76-4421-8430-54d8676049af
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+  module:
+    - block_content
+  theme:
+    - citizen_dart
+id: citizen_dart_copyright
+theme: citizen_dart
+region: footer
+weight: -4
+provider: null
+plugin: 'block_content:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+settings:
+  id: 'block_content:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

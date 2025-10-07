@@ -1,0 +1,17 @@
+uuid: b43fdef2-b38d-46eb-b8df-15e4556bb63d
+langcode: en
+status: false
+dependencies: {  }
+id: live
+label: Live
+description: 'Config split for Live.'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/live
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list:
+  - system.performance

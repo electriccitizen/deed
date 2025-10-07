@@ -1,0 +1,17 @@
+uuid: b511df5a-7d5f-4d6d-bdaf-26784332bf86
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: thumbnail_cropped_non_webp
+label: 'Thumbnail Cropped Non-WebP'
+effects:
+  74995dd0-08e1-46cb-b315-036ec587989e:
+    uuid: 74995dd0-08e1-46cb-b315-036ec587989e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 96
+      height: 96
+      crop_type: focal_point

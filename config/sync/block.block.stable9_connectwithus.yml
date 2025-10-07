@@ -1,0 +1,25 @@
+uuid: 98913d32-5145-460a-9eca-ff0304e5a528
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social_media_links:9c4fce3f-caea-493f-a187-40935606dbc8'
+  module:
+    - block_content
+  theme:
+    - stable9
+id: stable9_connectwithus
+theme: stable9
+region: footer
+weight: -6
+provider: null
+plugin: 'block_content:9c4fce3f-caea-493f-a187-40935606dbc8'
+settings:
+  id: 'block_content:9c4fce3f-caea-493f-a187-40935606dbc8'
+  label: 'Connect with Us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

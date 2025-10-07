@@ -1,0 +1,10 @@
+uuid: 2ac5cc56-b1fc-47bb-8b26-91df998515ab
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: GDnCQe-qQMEtvklrQx5_1EKyCcdu5xN-fJFmvprh65g
+id: social_media_links
+label: 'Social Media Links'
+revision: false
+description: 'Add links to social media platforms.'

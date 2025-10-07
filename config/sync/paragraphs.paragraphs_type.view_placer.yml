@@ -1,0 +1,10 @@
+uuid: af3ebe51-1607-432e-b859-5881bda404c2
+langcode: en
+status: true
+dependencies: {  }
+id: view_placer
+label: 'View Placer'
+icon_uuid: null
+icon_default: null
+description: 'Place defined views in sections.'
+behavior_plugins: {  }

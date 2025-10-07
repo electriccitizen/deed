@@ -1,0 +1,25 @@
+uuid: befed71d-777c-4211-9e4d-ea056d9422ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+_core:
+  default_config_hash: 75FsY599hcPp2LPAJ-bVZbiRID-m8-4szW_8CKVUFho
+name: thumbnail_cropped
+label: 'Thumbnail Cropped'
+effects:
+  b4d48054-d533-42fd-9c38-b3470d6b306f:
+    uuid: b4d48054-d533-42fd-9c38-b3470d6b306f
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 96
+      height: 96
+      crop_type: focal_point
+  9a8065aa-bd93-4f98-9868-7c389ee49317:
+    uuid: 9a8065aa-bd93-4f98-9868-7c389ee49317
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

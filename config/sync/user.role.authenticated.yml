@@ -1,0 +1,33 @@
+uuid: e3ad2f4f-6da5-4ad3-bfb8-7835422751fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.limited_html
+    - filter.format.webform_default
+  module:
+    - ckeditor5_premium_features_wproofreader
+    - file
+    - filter
+    - media
+    - shortcut
+    - system
+    - toolbar
+_core:
+  default_config_hash: 1QO-cXBoen5t04KRWnIBkUgugdosUX4EknB7_pB_Cxc
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access shortcuts'
+  - 'access toolbar'
+  - 'ckeditor5 wproofreader add word'
+  - 'ckeditor5 wproofreader ignore all'
+  - 'delete own files'
+  - 'use text format basic_html'
+  - 'use text format limited_html'
+  - 'use text format webform_default'
+  - 'view media'

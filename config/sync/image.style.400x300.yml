@@ -1,0 +1,23 @@
+uuid: 2d0b967b-154c-4231-be23-c9cefe522fb3
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 400x300
+label: 400x300
+effects:
+  ab61beb5-f0c6-4e8c-9dc4-3cbd99e2e1d5:
+    uuid: ab61beb5-f0c6-4e8c-9dc4-3cbd99e2e1d5
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300
+      crop_type: focal_point
+  b4a78d60-ae52-4fbc-8938-95f44b875077:
+    uuid: b4a78d60-ae52-4fbc-8938-95f44b875077
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

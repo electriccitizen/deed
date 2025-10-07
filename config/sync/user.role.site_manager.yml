@@ -1,0 +1,156 @@
+uuid: 86303883-12ab-4970-9864-5eca338bd46f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - block_content.type.social_media_links
+    - filter.format.limited_html
+    - filter.format.support_html
+    - filter.format.webform_default
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - node.type.landing_page
+    - node.type.news
+    - node.type.page
+  module:
+    - addanother
+    - block_content
+    - citizen_custom
+    - entity_usage
+    - file
+    - filter
+    - help
+    - media
+    - menu_admin_per_menu
+    - node
+    - path
+    - redirect
+    - responsive_preview
+    - shortcut
+    - smart_date_recur
+    - system
+    - taxonomy
+    - trash
+    - webform
+_core:
+  default_config_hash: JotecaDH6FqenwPpGTB370LYSGcRJAdLfXPZkjhsM64
+id: site_manager
+label: 'Site Manager'
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access entity usage statistics'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access responsive preview'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access trash'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'administer ancillary menu items'
+  - 'administer footer menu items'
+  - 'administer main menu items'
+  - 'administer redirects'
+  - 'administer secondary menu items'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer webform element access'
+  - 'administer webform submission'
+  - 'assign editor role'
+  - 'assign site_manager role'
+  - 'cancel account'
+  - 'cancel smart date recur instances'
+  - 'change own username'
+  - 'create basic block content'
+  - 'create document media'
+  - 'create image media'
+  - 'create landing_page content'
+  - 'create media'
+  - 'create news content'
+  - 'create page content'
+  - 'create remote_video media'
+  - 'create social_media_links block content'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete all revisions'
+  - 'delete any basic block content'
+  - 'delete any basic block content revisions'
+  - 'delete any document media'
+  - 'delete any image media'
+  - 'delete any landing_page content'
+  - 'delete any media'
+  - 'delete any news content'
+  - 'delete any page content'
+  - 'delete any remote_video media'
+  - 'delete any social_media_links block content'
+  - 'delete any social_media_links block content revisions'
+  - 'delete any webform'
+  - 'delete any webform submission'
+  - 'delete landing_page revisions'
+  - 'delete media'
+  - 'delete news revisions'
+  - 'delete own document media'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own landing_page content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own remote_video media'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete page revisions'
+  - 'edit any basic block content'
+  - 'edit any document media'
+  - 'edit any image media'
+  - 'edit any landing_page content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit any remote_video media'
+  - 'edit any social_media_links block content'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'edit layout paragraphs plugin config'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own landing_page content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own remote_video media'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'make smart dates recur'
+  - 'perform batch updates entity usage'
+  - 'purge node entities'
+  - 'reschedule smart date recur instances'
+  - 'restore node entities'
+  - 'revert all revisions'
+  - 'revert any basic block content revisions'
+  - 'revert any social_media_links block content revisions'
+  - 'revert landing_page revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'switch shortcut sets'
+  - 'update any media'
+  - 'update media'
+  - 'use add another'
+  - 'use text format limited_html'
+  - 'use text format support_html'
+  - 'use text format webform_default'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any basic block content history'
+  - 'view any social_media_links block content history'
+  - 'view any webform submission'
+  - 'view deleted entities'
+  - 'view landing_page revisions'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own webform submission'
+  - 'view page revisions'
+  - 'view the administration theme'

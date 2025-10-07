@@ -1,0 +1,32 @@
+uuid: b006a1cf-9613-4773-a587-c6716c9a009e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+_core:
+  default_config_hash: T-JBNFx3zF-doQAKGWTpcuVwzdxR4rZU6w4Mb925tbM
+name: large_thumbnail_2x
+label: 'Large Thumbnail 2x'
+effects:
+  71e93449-3caa-45ad-8ce0-76d6d2bcb267:
+    uuid: 71e93449-3caa-45ad-8ce0-76d6d2bcb267
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 400
+      crop_type: focal_point
+  05a5bfd3-7542-4895-ab1f-9e27aa008f04:
+    uuid: 05a5bfd3-7542-4895-ab1f-9e27aa008f04
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 35
+  65c85737-db8e-4064-b8e5-e3bfe953a83f:
+    uuid: 65c85737-db8e-4064-b8e5-e3bfe953a83f
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

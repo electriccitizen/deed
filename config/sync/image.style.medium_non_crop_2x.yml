@@ -1,0 +1,31 @@
+uuid: 882701f4-57c8-4aaa-bc4d-16fbe7ea5eb0
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+_core:
+  default_config_hash: xVdlTlZfaXIvv2Pje4yTBGsOmo9jymFOR3rqtBLHXLk
+name: medium_non_crop_2x
+label: 'Medium non-crop 2x'
+effects:
+  fe8e1ac5-9781-4b23-b741-b0168805595d:
+    uuid: fe8e1ac5-9781-4b23-b741-b0168805595d
+    id: image_scale
+    weight: 1
+    data:
+      width: 960
+      height: null
+      upscale: true
+  8f825a30-9d28-40e2-886c-f0d243f89c5e:
+    uuid: 8f825a30-9d28-40e2-886c-f0d243f89c5e
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 30
+  e5766505-027f-41f4-ae68-307065d6e862:
+    uuid: e5766505-027f-41f4-ae68-307065d6e862
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

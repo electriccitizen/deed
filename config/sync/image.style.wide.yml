@@ -1,0 +1,23 @@
+uuid: 9eaf0863-3a7b-4534-8d3c-cf10bfca2bde
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RWNTIhZlyQdMOunn1LdW5paB9DTUWXmjF9B67hiM_EU
+name: wide
+label: 'Wide (1090)'
+effects:
+  09959c15-59ce-4f6d-90df-e2d7cf32bce5:
+    uuid: 09959c15-59ce-4f6d-90df-e2d7cf32bce5
+    id: image_scale
+    weight: 1
+    data:
+      width: 1090
+      height: null
+      upscale: false
+  0293ce47-c993-40ed-b760-304ccee40e21:
+    uuid: 0293ce47-c993-40ed-b760-304ccee40e21
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

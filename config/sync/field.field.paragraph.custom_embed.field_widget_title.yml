@@ -1,0 +1,21 @@
+uuid: 80ffe2b1-e450-402a-a54a-879956d82995
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_widget_title
+    - paragraphs.paragraphs_type.custom_embed
+_core:
+  default_config_hash: 6RxfG8diTFja5GdOzve2u8jp198CD_wqE_FLoRUSu1o
+id: paragraph.custom_embed.field_widget_title
+field_name: field_widget_title
+entity_type: paragraph
+bundle: custom_embed
+label: 'Embed Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

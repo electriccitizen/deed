@@ -1,0 +1,27 @@
+uuid: 0915bbe0-1b3b-4ff4-84d8-61df8f2de1e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_width
+field_name: field_width
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: full
+      label: 'Full width'
+    -
+      value: text
+      label: 'Text width'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,17 @@
+uuid: f735864f-bd45-4704-b3ca-09813466f485
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_desk_non_webp
+label: 'Banner Desk Non-WebP'
+effects:
+  81e70c9c-e4bc-4eb2-9422-7d499c23879b:
+    uuid: 81e70c9c-e4bc-4eb2-9422-7d499c23879b
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 400
+      crop_type: focal_point

@@ -1,0 +1,19 @@
+uuid: 46b0af09-84b0-4a8a-a268-f1f5107416c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_description
+    - node.type.news
+id: node.news.field_meta_description
+field_name: field_meta_description
+entity_type: node
+bundle: news
+label: 'Meta Description'
+description: 'The text displayed when this article appears in search engine results or internal lists. The description should be one to two short sentences summarizing the article and should be less than 240 characters (less than 60ish words).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,58 @@
+uuid: 73b42e6d-7515-4730-bc61-739dfcbe342d
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_image
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_password_expiration
+    - field.field.user.user.field_pending_expire_sent
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          1f312f7b-3dd1-4bba-94e6-a8ae9db5f9ac:
+            uuid: 1f312f7b-3dd1-4bba-94e6-a8ae9db5f9ac
+            region: content
+            configuration:
+              id: 'extra_field_block:user:user:masquerade'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: JojBvjsTwE63e9rOPXnRHpXnsi6d975hfOFT9ZFqKHI
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  masquerade:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+hidden:
+  field_authored_placeholder: true
+  field_first_name: true
+  field_image: true
+  field_last_name: true
+  field_last_password_reset: true
+  field_password_expiration: true
+  field_pending_expire_sent: true
+  member_for: true
+  search_api_excerpt: true
