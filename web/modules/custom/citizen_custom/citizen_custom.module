@@ -125,12 +125,6 @@ function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_st
       $form['promote']['widget']['value']['#description'] = t('Should have a news image.');
 
       break;
-
-    case 'event':
-      $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
-      $form['promote']['widget']['value']['#description'] = t('Should have an event image.');
-
-      break;
   }
 }
 
@@ -178,93 +172,3 @@ function citizen_custom_field_widget_single_element_form_alter(&$element, FormSt
     }
   }
 }
-
-/**
- * Implements views_pre_view().
- */
-function citizen_custom_views_pre_view($view, $display_id, &$args) {
-
-  // List of valid views for the Content Placer paragraph, by name => displays.
-  $content_list_views = [
-    "content_list" => ["events_list", "news_list"],
-  ];
-  $is_valid_view = FALSE;
-  $view_name = '';
-  $view_display = '';
-
-  // Alters views to accept fields from related paragraphs to be used for
-  // filters.
-  if (isset($view->element['#name'])) {
-    foreach ($content_list_views as $view_name => $view_displays) {
-      foreach ($view_displays as $view_display) {
-        if ($view->element['#name'] === $view_name && $view->current_display === $view_display) {
-          $is_valid_view = TRUE;
-          break;
-        }
-      }
-      if ($is_valid_view) {
-        break;
-      }
-    }
-    // If a valid view was found, $view_name and $view_display should contain
-    // the name and display, respectively.
-    if ($is_valid_view && $view->args[0]) {
-      $filters = $view->display_handler->getOption('filters');
-      $paragraph = Paragraph::load($view->args[0]);
-      switch ($view_display) {
-        case "events_list":
-          // Unset or alter categories filter.
-          if ($paragraph->field_events_category[0]) {
-            // Make an array out of the category set in the paragraph.
-            $categories = [];
-            foreach ($paragraph->field_events_category as $category) {
-              $categories[] = $category->target_id;
-            }
-            // Replace the category_tid filter with the paragraph category.
-            $filters['field_category_target_id']['value'] = $categories;
-          }
-          elseif ($filters['field_category_target_id']) {
-            // If the category field is not used, then unset the category
-            // filter.
-            unset($filters['field_category_target_id']);
-          }
-
-          break;
-
-        case "news_list":
-          // Unset or alter categories filter.
-          if ($paragraph->field_news_category[0]) {
-            // Make an array out of the category set in the paragraph.
-            $categories = [];
-            foreach ($paragraph->field_news_category as $category) {
-              $categories[] = $category->target_id;
-            }
-            // Replace the category_tid filter with the paragraph category.
-            $filters['field_category_target_id']['value'] = $categories;
-          }
-          elseif ($filters['field_category_target_id']) {
-            // If the category field is not used, then unset the category
-            // filter.
-            unset($filters['field_category_target_id']);
-          }
-          break;
-      }
-
-      $view->display_handler->setOption('filters', $filters);
-
-      $pager = $view->display_handler->getOption('pager');
-      if (isset($paragraph->field_limit_list[0])) {
-        $per_page = $paragraph->field_limit_list[0]->value;
-        $pager['type'] = 'some';
-        $view->setItemsPerPage($per_page);
-      }
-      else {
-        $pager['type'] = 'none';
-      }
-      $view->display_handler->setOption('pager', $pager);
-
-    }
-
-  }
-}
-

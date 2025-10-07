@@ -22,11 +22,7 @@
  */
 #}
 <div class="webform-wrapper">
-	{% if webform_placer and show_placer_title %}
-		<div class="widget-title">{{ title }}</div>
-	{% elseif not webform_placer %}
-		<h1 class="webform-title">{{ title }}</h1>
-	{% endif %}
+	<h1 class="webform-title">{{ title }}</h1>
 	<form{{ attributes }}>
 	  {{ title_prefix }}
 	  {{ children }}

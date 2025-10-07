@@ -22,8 +22,7 @@
 
 /*  FAMILIES
 -------------------- */
-$header : "Open Sans", Helvetica, Arial, sans-serif;
-$displayHeader: "Open Sans", Helvetica, Arial, sans-serif;
+$navFont : "Public Sans", Helvetica, Arial, sans-serif;
 $bodyFont : "Open Sans", Helvetica, Arial, sans-serif;
 $serif : Georgia, "Times New Roman", Times, serif;
 
@@ -31,21 +30,22 @@ $serif : Georgia, "Times New Roman", Times, serif;
 -------------------- */
 $light: 300;
 $regular: 400;
+$semi: 600;
 $heavy: 700;
 $x-heavy: 900;
 
 /*  SIZES
 -------------------- */
-$baseSize: 2.25rem;
+$baseSize: 2.5rem;
 $formLabelSize: 2.5rem;
 $formLabelWeight: 700;
 $button: 2rem;
 $socialIcons: 4rem;
 
 //h1 sizes
-$h1Sm: 4rem;
-$h1Mid: 5.5rem;
-$h1Lg: 7rem;
+$h1Sm: 5rem;
+$h1Mid: 7rem;
+$h1Lg: 8rem;
 
 //h2 sizes
 $h2Sm: 3rem;
@@ -53,8 +53,8 @@ $h2Md: 3.5rem;
 $h2Lg: 4rem;
 
 //h3 sizes
-$h3Sm: 3rem;
-$h3Mid: 3.5rem;
+$h3Sm: 2.5rem;
+$h3Mid: 3rem;
 
 //h4 sizes
 $h4Sm: 2.75rem;
@@ -70,14 +70,12 @@ $h6Sm: 2rem;
 @mixin headerGlobals {
   line-height: 1.15;
   font-weight: $heavy;
-  font-family: $header;
   margin: 0;
   font-feature-settings: "liga", "dlig";
 }
 
 @mixin heading1 {
   @include headerGlobals;
-  font-family: $displayHeader;
   font-size: $h1Sm;
 
   @include tab {

@@ -16,6 +16,8 @@
       a {
         display: block;
         color: $prefooterLink;
+        font-family: $navFont;
+        font-weight: $heavy;
 
         .footer-v1 & {
           text-decoration: underline;
