@@ -1,0 +1,20 @@
+/* ===============
+  VIEW PLACER WIDGET
+================= */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--view-placer {
+  .field-widget-title {
+    text-align: left;
+  }
+
+  .field-link {
+    margin-top: $spaceLg;
+
+    a {
+      @include button;
+      margin-bottom: 0;
+    }
+  }
+}

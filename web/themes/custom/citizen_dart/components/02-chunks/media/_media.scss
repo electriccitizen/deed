@@ -1,0 +1,132 @@
+/* ================
+	 MEDIA
+============== */
+@use '../../00-base' as *;
+
+img {
+  @include imageBase;
+}
+
+figure[role=group] {
+  margin: 0;
+}
+
+figcaption {
+  @include caption;
+}
+
+article+figcaption {
+  margin-top: $spaceXs;
+}
+
+
+/* EMBEDDED VIDEO
+------------------ */
+.field-media-oembed-video {
+  @include responsiveVideo;
+}
+
+/* EMBEDDED MEDIA
+------------------- */
+.text-with-summary article.media-item,
+.text-with-summary figure {
+  margin: 0 0 $spaceMd 0;
+
+  @include desk {
+    margin: 0;
+  }
+}
+
+.text-with-summary article.media-item,
+.text-with-summary figure,
+.text-long article {
+  margin-bottom: $spaceMd;
+
+  &.align-left {
+    float: none;
+
+    @include desk {
+
+      &:not(.document) {
+        max-width: 50% !important;
+        margin: 0 $spaceMd $spaceMd 0;
+        float: left;
+      }
+
+      &.document {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+
+  &.align-right {
+    float: none;
+
+    @include desk {
+
+      &:not(.document) {
+        max-width: 50%;
+        margin: 0 0 $spaceMd $spaceMd;
+        float: right;
+      }
+
+      &.document {
+        width: 100%;
+        text-align: right;
+      }
+    }
+  }
+
+  &.align-center {
+    float: none;
+
+    @include desk {
+
+      &:not(.document) {
+        margin: 0 auto $spaceMd auto;
+        float: none;
+      }
+
+      &.document {
+        text-align: center;
+      }
+    }
+  }
+
+  // Control sizes for images and video.
+  @include desk {
+
+    &.small {
+      @include smallEmbed;
+    }
+
+    &.medium {
+      @include mediumEmbed;
+    }
+
+    &.large {
+      @include largeEmbed;
+    }
+  }
+
+  &.full {
+    @include fullEmbed;
+  }
+
+  &.default {
+    @include defaultEmbed;
+  }
+}
+
+.text-with-summary ul article.media-item,
+.text-with-summary ul figure,
+.text-long ul article {
+  margin-bottom: 0;
+}
+
+span.file {
+  a {
+    @include docIcon;
+  }
+}

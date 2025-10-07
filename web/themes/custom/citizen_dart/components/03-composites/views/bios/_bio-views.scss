@@ -1,0 +1,38 @@
+/* ==================
+    BIOS VIEWS
+==================== */
+
+@use '../../../00-base' as *;
+
+/* ALL BIOS
+------------- */
+.bios.all-bios {
+  .view {
+    padding-bottom: $elementSpace;
+  }
+
+  .view-content {
+    margin-bottom: -$spaceMd;
+    @include bleed(padding, 40px);
+  }
+
+  .views-row {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: $spaceMd;
+    }
+
+    @include smallTab {
+      width: 50%;
+    }
+
+    @include tab {
+      width: 33.33%;
+    }
+
+    @include desk {
+      width: 25%;
+    }
+  }
+}

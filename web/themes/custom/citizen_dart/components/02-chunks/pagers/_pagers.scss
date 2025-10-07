@@ -1,0 +1,199 @@
+/* ============
+PAGERS
+================= */
+@use '../../00-base' as *;
+
+$pagerLine: 3rem;
+
+%pagerItemStyle {
+  display: block;
+  min-width: 28px;
+  height: 28px;
+  padding: 0px 4px;
+  line-height: $pagerLine;
+  text-align: center;
+  border-radius: 4px;
+  color: $pagerNumber;
+  background: $pagerNumberBack;
+
+  &:hover,
+  &:focus {
+    color: $pagerNumberHover;
+    background: $pagerNumberBackHover;
+    text-decoration: none;
+    @include transAll(.3s);
+  }
+}
+
+/* RESULTS (PAGE X OF & RESULTS X-X OF)
+------------------------- */
+.results-count,
+.count-shim {
+  display: none;
+}
+
+.results-count-wrapper {
+  font-weight: $heavy;
+  margin-bottom: $spaceSm;
+  width: 100%;
+  text-align: center;
+
+  @include tab {
+    width: 50%;
+    text-align: left;
+  }
+}
+
+/* GLOBAL PAGER STYLING
+-------------------- */
+.js-pager__items {
+  @include listReset;
+  text-align: center;
+  margin-bottom: $spaceSm;
+  @include safeFlex(row, wrap, start, start);
+
+  li {
+    font-weight: $heavy;
+
+    * {
+      line-height: $pagerLine;
+      display: block;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      margin: 0 .5rem;
+    }
+  }
+}
+
+/* FULL PAGER
+---------------- */
+.pager {
+  border-top: 1px solid $borderRule;
+  padding-top: $spaceSm;
+  @include safeFlex(row, wrap, center, center);
+
+  .view-content+& {
+    margin-top: $spaceXl;
+  }
+
+  .pager__item {
+    a {
+      @extend %pagerItemStyle;
+    }
+
+    &.is-active {
+      a {
+        color: $pagerNumberActive;
+        background: $pagerNumberActiveBack;
+
+        &:hover,
+        &:focus {
+          color: $pagerNumberActiveHover;
+          background: $pagerNumberActiveBackHover;
+        }
+      }
+    }
+
+    @include onlySmall {
+      &.pager__item--first {
+        display: none;
+      }
+
+      &.pager__item--last {
+        display: none;
+      }
+
+      &.pager__item--ellipsis {
+        display: none;
+      }
+    }
+
+    @include tab {
+      &.pager__item--previous {
+        padding-right: 2.5rem;
+      }
+
+      &.pager__item--next {
+        padding-left: 2.5rem;
+      }
+    }
+  }
+
+  .disabled {
+    a {
+      color: $midGrey;
+      pointer-events: none;
+    }
+  }
+
+  // Hide all numbers by default for smart pager.
+  .pager-smart {
+
+    .pager__number,
+    .pager__current {
+      display: none;
+    }
+
+    .results-pager {
+      @include tab {
+        @include safeFlex(row, nowrap, justify, center);
+      }
+    }
+
+    .pager__current {
+      span {
+        display: inline;
+      }
+    }
+
+    .pager__item {
+      &.pager__item--previous {
+        padding-right: 2.5rem;
+      }
+
+      &.pager__item--next {
+        padding-left: 2.5rem;
+      }
+    }
+  }
+
+  // Smart pager with more than 7 pages.
+  &.results-pager {
+    @include onlyPhone {
+      .pager__number {
+        margin: 0 .5rem !important;
+      }
+
+      .pager__item {
+        &.pager__item--previous {
+          padding-right: 0;
+        }
+
+        &.pager__item--next {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+/* MINI PAGER
+---------------- */
+nav:not(.pager) {
+  .js-pager__items {
+    li {
+      color: $baseText;
+      margin: 0 1rem;
+    }
+
+    li a {
+      @extend %pagerItemStyle;
+
+      span {
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+}

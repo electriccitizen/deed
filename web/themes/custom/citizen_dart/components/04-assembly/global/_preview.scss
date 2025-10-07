@@ -1,0 +1,64 @@
+/* ==================
+ GLOBAL SITE STYLES
+====================*/
+
+@use '../../00-base' as *;
+
+/* RESPONSIVE PREVIEW
+------------------------- */
+#responsive-preview-toolbar-tab .responsive-preview-trigger.active {
+  background: $adminGreen;
+}
+
+#responsive-preview-toolbar-tab .responsive-preview-trigger.active:hover {
+  background: $midGrey;
+}
+
+#responsive-preview-modal-background {
+  background: $adminTransGrey;
+}
+
+#responsive-preview-frame-container {
+  border-radius: 5px;
+}
+
+.responsive-preview-device-label-text {
+  position: relative;
+  top: -2px;
+  color: $offWhite;
+}
+
+.responsive-preview-device-label-text:after {
+  content: none !important;
+}
+
+.responsive-preview-device-label-text span {
+  display: none;
+}
+
+.responsive-preview-control.responsive-preview-close {
+  right: -5px;
+}
+
+#responsive-preview-orientation:before {
+  height: 20px;
+  width: 20px;
+  background-image: none;
+  @include materialIconOutline(\ebee);
+  top: 6px;
+}
+
+#responsive-preview-close:before {
+  height: 20px;
+  width: 20px;
+  background-image: none;
+  @include materialIconOutline(\e5cd);
+  color: $white;
+  top: 6px;
+}
+
+.responsive-preview-frame {
+  #block-citizen-dart-local-tasks {
+    display: none !important;
+  }
+}

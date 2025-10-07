@@ -1,0 +1,190 @@
+/* FORM MIXINS
+=========== */
+
+@use '../variables' as *;
+@use 'general-mixins' as *;
+@use 'button-mixins' as *;
+
+@mixin placeholder {
+  $placeTint: 1;
+
+  &::-webkit-placeholder {
+    opacity: $placeTint;
+    color: $placeColor;
+  }
+
+  &::-moz-placeholder {
+    opacity: $placeTint;
+    color: $placeColor;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: $placeTint;
+    color: $placeColor;
+  }
+
+  &::-webkit-input-placeholder {
+    opacity: $placeTint;
+    color: $placeColor;
+  }
+}
+
+@mixin placeholderFocus {
+  $placeFocusTint: .2;
+
+  &::-webkit-placeholder {
+    opacity: $placeFocusTint;
+    color: $placeFocusColor;
+  }
+
+  &::-moz-placeholder {
+    opacity: $placeFocusTint;
+    color: $placeFocusColor;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: $placeFocusTint;
+    color: $placeFocusColor;
+  }
+
+  &::-webkit-input-placeholder {
+    opacity: $placeFocusTint;
+    color: $placeFocusColor;
+  }
+}
+
+@mixin textInput {
+  border: $inputBorderWidth solid $inputBorderColor;
+  font-size: 2rem;
+  font-family: $bodyFont;
+  padding: 1rem 1.75rem 1.1rem;
+  width: 100%;
+  line-height: 1.4;
+  min-height: 44px;
+  @include placeholder;
+
+  &:hover {
+    border-color: $inputBorderHover;
+    box-shadow: inset 0 0 0 1px $inputBorderHover;
+  }
+
+  &:focus {
+    @include placeholderFocus;
+    outline: none;
+    box-shadow: inset 0 0 0 1px $inputBorderFocus;
+    border-color: $inputBorderFocus;
+  }
+}
+
+@mixin formLabel {
+  font-family: $header;
+  font-size: $formLabelSize;
+  font-weight: $formLabelWeight;
+  color: $black;
+  display: block;
+  margin-bottom: $spaceXs;
+  padding-bottom: 0;
+}
+
+@mixin required {
+  &:after {
+    content: '*';
+    color: $validation;
+    position: relative;
+    top: -1px;
+    right: -.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+@mixin inputSelect {
+  width: 100%;
+  font-size: 2rem;
+  border: $inputBorderWidth solid $inputBorderColor;
+  border-radius: 0;
+  height: auto;
+  background: $siteBack;
+
+  &.select2--container--focus {
+    box-shadow: 0 2px 2px rgba(35, 35, 35, 0.3);
+  }
+}
+
+@mixin customOptions {
+  input {
+    @include browserWipe;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    border: $inputBorderWidth solid $checkbox;
+    width: 18px;
+    height: 18px;
+    background-color: $siteBack;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $checkboxHover;
+      background-color: $checkboxBackHover;
+      box-shadow: 0 0 0 1px $checkboxHover;
+    }
+
+    &:focus {
+      border-color: $checkboxHover;
+      background-color: $checkboxBackHover;
+    }
+
+    &:checked {
+      border-color: $checkboxChecked;
+      background-color: $checkboxCheckedBack;
+
+      &:hover {
+        border-color: $checkboxCheckedHover;
+        background-color: $checkboxCheckedBackHover;
+        box-shadow: 0 0 0 1px $checkboxCheckedHover;
+      }
+
+      &:focus {
+        border-color: $checkboxCheckedHover;
+        background-color: $checkboxCheckedBackHover;
+      }
+    }
+
+    &[type="radio"] {
+      border-radius: 50%;
+
+      &:checked {
+        background-color: $red;
+
+        &:hover,
+        &:focus {
+          background-color: $midGrey;
+        }
+      }
+    }
+  }
+}
+
+@mixin fileUpload {
+
+  .js-form-managed-file,
+  .form-managed-file {
+
+    input.js-form-submit,
+    input.form-submit {
+      @include submitButton;
+      font-size: 1.5rem;
+      padding: 1rem 4rem;
+    }
+
+    // "Allowed upload file types" description.
+    .description {
+      font-size: 2rem;
+      line-height: 1.25;
+      opacity: .7;
+      margin-bottom: $spaceXs;
+    }
+  }
+
+}

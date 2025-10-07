@@ -1,0 +1,258 @@
+/* ==================
+ 3RD PARTY GALLERY STYLES
+====================*/
+
+@use '../../00-base' as *;
+
+@mixin outsideSliderArrows($arrowSpace, $arrowColor, $arrowHover) {
+  padding-left: $arrowSpace;
+  padding-right: $arrowSpace;
+
+  // Override arrow padding when there are not enough slick items to have a
+  // slider or buttons.
+  .slick-list:only-child {
+    @include edgeToEdge;
+  }
+
+  .slick-arrow {
+
+    &.slick-prev {
+      left: 0;
+
+      &:before {
+        border-right-color: $arrowColor;
+      }
+
+      &:hover:before {
+        border-right-color: $arrowHover;
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+
+      &:before {
+        border-left-color: $arrowColor;
+      }
+
+      &:hover:before {
+        border-left-color: $arrowHover;
+      }
+    }
+  }
+}
+
+/* FEATHERLIGHT
+------------------- */
+.featherlight {
+  background: $modalBack;
+
+  .featherlight-content {
+    background: $siteBack;
+    padding: 0px !important;
+    border-bottom: 0px !important;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    // Controls.
+    .featherlight-close-icon {
+      background: $sliderArrowBack;
+      font-size: 24px;
+      color: $modalGalButton;
+      height: 32px;
+      width: 32px;
+      font-family: $bodyFont;
+
+      &:hover,
+      &:focus {
+        color: $modalGalButtonHover;
+        background: $modalGalButtonBackHover;
+      }
+    }
+
+    .featherlight-previous {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: auto;
+      width: 15%;
+      min-width: 60px;
+
+      span {
+        display: block;
+        font-size: 0;
+        width: 0;
+        left: auto;
+        right: 90%;
+
+        &:before {
+          position: absolute;
+          top: 40px;
+          left: 10%;
+          width: 32px;
+          height: 32px;
+          background: $sliderArrowBack;
+          border-radius: 50%;
+          font-size: 20px;
+          @include safeFlex(column,nowrap,center,center);
+          @include materialIcon('arrow_back');
+        }
+      }
+
+      &:hover,
+      &:focus {
+        span {
+          border-right-color: $link;
+          @include transition(border-right-color, 0.3s, ease);
+
+          &:before {
+            background: $modalGalButtonBackHover;
+          }
+        }
+      }
+    }
+
+    .featherlight-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: auto;
+      width: 15%;
+      min-width: 60px;
+
+      span {
+        display: block;
+        font-size: 0;
+        width: 0;
+        left: 70%;
+        right: auto;
+
+        &:before {
+          position: absolute;
+          top: 40px;
+          width: 32px;
+          height: 32px;
+          background: $sliderArrowBack;
+          border-radius: 50%;
+          font-size: 20px;
+          @include safeFlex(column,nowrap,center,center);
+          @include materialIcon('arrow_forward');
+        }
+      }
+
+      &:hover,
+      &:focus {
+        span {
+          border-left-color: $link;
+          @include transition(border-left-color, 0.3s, ease);
+
+          &:before {
+            background: $modalGalButtonBackHover;
+          }
+        }
+      }
+    }
+
+    img {
+      display: block;
+    }
+
+    .field-caption {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: rgba(35, 35, 35, 0.6);
+      color: white;
+      font-size: 2rem;
+      font-style: italic;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 30;
+    }
+
+    .gallery-text {
+      max-width: $textMax;
+      padding: 4rem 6rem;
+    }
+  }
+}
+
+/* SLIDER STYLING
+-------------- */
+.slick-slider {
+
+  .slick-list {
+    @include listReset;
+  }
+
+  .slick-arrow {
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    @include translate(0, 0);
+    width: 15%;
+    min-width: 60px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 10px);
+      width: 32px;
+      height: 32px;
+    }
+
+    &.slick-prev {
+      left: 0;
+
+      &:before {
+        left: 20px;
+        font-size: 20px;
+        @include safeFlex(column,nowrap,center,center);
+        @include materialIcon('arrow_back');
+        background: $sliderArrowBack;
+        border-radius: 50%;
+      }
+
+      &:hover,
+      &:focus {
+
+        &:before {
+          border-right-color: $link;
+          @include transition(border-right-color, 0.3s, ease);
+        }
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+
+      &:before {
+        right: 20px;
+        font-size: 20px;
+        @include safeFlex(column,nowrap,center,center);
+        @include materialIcon('arrow_forward');
+        background: $sliderArrowBack;
+        border-radius: 50%;
+      }
+
+      &:hover,
+      &:focus {
+
+        &:before {
+          border-left-color: $link;
+          @include transition(border-left-color, 0.3s, ease);
+        }
+      }
+    }
+  }
+
+  .field-caption {
+    width: 100%;
+    margin-top: $spaceXs;
+    color: $midGrey;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+  }
+}

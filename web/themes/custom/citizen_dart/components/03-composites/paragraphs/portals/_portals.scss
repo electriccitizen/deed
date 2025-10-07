@@ -1,0 +1,54 @@
+/* ===============
+   PORTALS WIDGET
+================= */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--portals {
+  .field-portals {
+    margin-bottom: -$spaceMd;
+    @include safeFlex(row, wrap, center, start);
+    @include bleed(padding, 32px);
+
+    & > div {
+      margin-bottom: $spaceMd;
+      max-width: 308px;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        .field-image img {
+          border-color: $borderRule;
+          opacity: .7;
+          @include transAll(.3s);
+        }
+
+        .field-headline {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .field-image {
+      margin-bottom: $spaceXxs;
+
+      img {
+        border: 1px solid $offWhite;
+      }
+    }
+
+    .field-headline {
+      @include heading4;
+      text-align: center;
+    }
+
+    .field-long-text {
+      margin-top: $spaceXxs;
+      font-size: 2rem;
+    }
+  }
+}

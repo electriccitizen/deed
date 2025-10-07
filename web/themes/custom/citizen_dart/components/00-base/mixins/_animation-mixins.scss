@@ -1,0 +1,60 @@
+/* ============
+	MIXINS
+======================= */
+
+@use '../variables' as *;
+@use "sass:list";
+
+@mixin animation($animate...) {
+  $max: list.length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + list.nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  @include animation('fadeIn 1.5s 1');
+}

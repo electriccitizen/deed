@@ -1,0 +1,10 @@
+/* =============
+   BLOCK PLACER
+================ */
+@use '../../../00-base' as *;
+
+.paragraph--type--block-placer {
+  .block-basic {
+    @include textConstrain;
+  }
+}

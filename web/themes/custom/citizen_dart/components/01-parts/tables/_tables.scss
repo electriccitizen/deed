@@ -1,0 +1,36 @@
+/* ===============
+	 TABLES
+============== */
+@use '../../00-base' as *;
+
+/* TABLE STYLING
+-------------------- */
+.text-with-summary,
+.text-long,
+.view-content,
+.webform-submission-form {
+  table {
+    @include table;
+    & {
+      margin-bottom: $spaceMd;
+    }
+  }//end table
+}
+
+.text-with-summary,
+.text-long {
+  table{
+    @include tab {
+      margin: 0 -60px;
+      width: calc(100% + 120px);
+    }
+    @include desk {
+      margin: 0 -90px;
+      width: calc(100% + 180px);
+    }
+    @include contentStop {
+      margin: 0 -120px;
+      width: calc(100% + 240px);
+    }
+  }
+}

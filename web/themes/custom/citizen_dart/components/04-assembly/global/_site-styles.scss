@@ -1,0 +1,81 @@
+/* ==================
+ GLOBAL SITE STYLES
+====================*/
+
+@use '../../00-base' as *;
+
+[dir="ltr"] {
+  body {
+    width: 100%;
+    box-sizing: border-box;
+
+    &.responsive-preview-frame {
+      padding-left: 0 !important;
+    }
+  }
+}
+
+.overflow-guard {
+  background: $siteBack;
+  overflow-x: hidden;
+  width: 100%;
+
+  .unpublished & {
+    background: $unpub;
+  }
+
+  div {
+    box-sizing: border-box;
+
+    * {
+      box-sizing: inherit;
+    }
+  }
+
+  .main-page-content {
+    padding: 0;
+  }
+}
+
+.container-inline div {
+  display: inline;
+}
+
+#block-citizen-dart-help {
+  padding: $elementSpace 0;
+  max-width: $contentStop;
+  @include auto;
+
+  h2 {
+    margin-bottom: $spaceSm;
+    font-size: 3rem;
+  }
+
+  p {
+    margin-bottom: $spaceXs;
+    font-size: 2rem;
+
+    small {
+      font-size: 1.75rem;
+      font-style: italic;
+    }
+  }
+}
+
+/* SKIP NAV
+------------- */
+.layout-container > a.visually-hidden.focusable {
+
+  &:focus,&:focus-within {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: block;
+    width: 100%;
+    background: $siteBack;
+    padding: .5rem 3rem;
+    opacity: 1;
+    font-size: 12px;
+  }
+}

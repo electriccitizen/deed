@@ -1,0 +1,88 @@
+/* ===============
+   ACCORDIONS
+================= */
+@use '../../../00-base' as *;
+
+.paragraph--type--accordions {
+  @include textConstrain;
+}
+
+.accordion-item {
+
+  .accordion-header {
+    a {
+      padding: 1rem 3rem 1rem 2.5rem;
+      display: block;
+      color: $accordHeader;
+      font-weight: $heavy;
+      position: relative;
+      font-size: 2.5rem;
+      border: 2px solid $accordHeaderBorder;
+      margin-top: -2px;
+      background: $accordHeaderBack;
+
+      @include tab {
+        padding: 1rem 4rem 1rem 3.5rem;
+        font-size: 2.75rem;
+      }
+
+      &:after {
+        position: absolute;
+        right: 2.5rem;
+        top: 1rem;
+        content: "+";
+
+        @include tab {
+          right: 3.5rem;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        color: $accordHeaderHover;
+        background: $accordHeaderBackHover;
+        border-color: $accordHeaderBorderHover;
+        @include transAll(.3s);
+      }
+    }
+  }
+
+  // Accordion content.
+  .accordion-content {
+    transition: max-height .6s ease-out;
+    max-height: 0;
+    overflow: hidden;
+
+    &.show-content {
+      transition: max-height .6s ease-in;
+    }
+
+    .inner-text {
+      padding: 6px 0 $spaceSm;
+      background: $accordContentBack;
+    }
+  }
+
+  // Active accordion.
+  &.expanded {
+    .accordion-header {
+      a {
+        color: $accordActive;
+        background: $accordActiveBack;
+        border-color: $accordActiveBorder;
+        border-bottom: 0;
+
+        &:after {
+          content: "–";
+        }
+
+        &:hover,
+        &:focus {
+          color: $accordActiveHover;
+          background: $accordActiveBackHover;
+          border-color: $accordActiveBorderHover;
+        }
+      }
+    }
+  }
+}

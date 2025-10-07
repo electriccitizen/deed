@@ -1,0 +1,16 @@
+/* ==================
+    global views settings
+==================== */
+
+@use '../variables' as *;
+@use 'layout-mixins' as *;
+
+@mixin viewsTitle {
+  @include heading4;
+  margin-bottom: $spaceXxs;
+}
+
+@mixin viewsMeta {
+  @include metaText;
+  margin-bottom: $spaceSm;
+}

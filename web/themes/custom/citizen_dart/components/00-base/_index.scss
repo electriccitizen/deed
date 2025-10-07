@@ -1,0 +1,21 @@
+/* ==================
+	BASE INDEX
+=================== */
+
+//no code should be added to index files
+
+@forward 'variables/colors';
+@forward 'variables/component-colors';
+@forward 'variables/fonts';
+@forward 'variables/units';
+
+@forward 'mixins/animation-mixins';
+@forward 'mixins/button-mixins';
+@forward 'mixins/form-mixins';
+@forward 'mixins/general-mixins';
+@forward 'mixins/layout-mixins';
+@forward 'mixins/media-mixins';
+@forward 'mixins/node-mixins';
+@forward 'mixins/style-mixins';
+@forward 'mixins/table-mixins';
+@forward 'mixins/views-mixins';

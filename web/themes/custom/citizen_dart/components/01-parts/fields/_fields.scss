@@ -1,0 +1,48 @@
+/* ================
+	 FIELDS
+============== */
+@use '../../00-base' as *;
+
+.field {
+  span.inline-label {
+    font-weight: $heavy;
+    margin-right: 1rem;
+
+    &+div {
+      display: inline;
+
+      &.field-multi-item {
+        &>div {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &.long-text,
+  &.text-with-summary {
+    @include clearFix;
+  }
+}
+
+/* SOCIAL MEDIA LINKS FIELD
+-------------------- */
+.field-platforms {
+  margin-bottom: -$spaceXxs;
+
+  .platform-links {
+    @include listReset;
+    @include safeFlex(row, wrap, start, start);
+    @include bleed(padding, 12px);
+
+    li {
+      margin-bottom: $spaceXxs;
+    }
+
+    svg {
+      width: $socialIcons;
+      height: $socialIcons;
+    }
+  }
+
+}

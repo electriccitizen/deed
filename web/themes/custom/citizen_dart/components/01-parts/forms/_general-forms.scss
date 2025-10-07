@@ -1,0 +1,448 @@
+/* ===============
+   FORMS
+================= */
+
+@use '../../00-base' as *;
+
+/* FORM ITEM STYLING
+-------------------- */
+// Wipe browser appearance of form inputs.
+input[type=text],
+input[type=search],
+input[type=url],
+input[type=number],
+textarea,
+input[type="search"] {
+  @include browserWipe;
+}
+
+.webform-submission-form input[type="submit"].button {
+  @include submitButton;
+}
+
+.has-error {
+  border-color: $validation;
+}
+
+.form-item {
+  width: 100%;
+  margin-bottom: $formElementSpace;
+
+  label {
+    @include formLabel;
+  }
+}
+
+.form-required,
+.js-form-required {
+  position: relative;
+  @include required;
+}
+
+.description {
+  font-size: 2rem;
+}
+
+.webform-element-description {
+  font-size: 2rem;
+  padding-bottom: $spaceXs;
+}
+
+input+.description {
+  padding-top: $spaceXs;
+
+  .webform-element-description {
+    padding-bottom: 0;
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  legend {
+    font-weight: $heavy;
+    font-size: 2.5rem;
+    margin-bottom: $spaceXs;
+  }
+
+  &.webform-composite-hidden-title {
+    margin-top: 0;
+    margin-bottom: $spaceMd;
+  }
+}
+
+/* AUTOCOMPLETE DROPDOWN
+-------------------------- */
+.ui-autocomplete {
+  .ui-dialog-off-canvas & {
+    background: $siteBack;
+  }
+
+  .ui-menu-item-wrapper {
+    display: block;
+    font-size: 2rem !important;
+
+    &.ui-state-active {
+      background: $link;
+      border-color: $link;
+      color: $white;
+      text-decoration: none;
+      margin: 0;
+    }
+  }
+}
+
+/* WEBFORMS
+----------- */
+.webform-wrapper {
+  max-width: $textMax;
+  @include auto;
+}
+
+.webform-submission-form {
+  max-width: $textMax;
+  @include auto;
+  padding-top: $spaceMd;
+
+  .webform-element-help {
+    margin: 0;
+    height: 2rem;
+    width: 2rem;
+    line-height: 2rem;
+    top: -5px;
+    border: 0;
+    background: $link;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background: $hoverLink;
+    }
+  }
+
+  .form-actions {
+    padding-top: $spaceMd;
+    @include safeFlex(row, wrap, justify, start);
+
+    input[type=submit].button {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* WEBFORM HEADINGS
+-------------------------- */
+h1.webform-title {
+  max-width: $textMax;
+  text-align: center;
+  @include auto;
+}
+
+/* CONFIRMATION
+------------------ */
+.webform-confirmation {
+  max-width: $textMax;
+  @include auto;
+  border: $inputBorderWidth solid $inputBorderColor;
+  padding: 2.5rem;
+  text-align: center;
+
+  .webform-confirmation__back {
+    a {
+      @include button;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* OBSCURE WEBFORM ELEMENTS
+------------------------- */
+.webform-progress {
+  &~.form-actions {
+    border-top: $inputBorderWidth solid $inputBorderColor;
+    margin-top: $spaceMd;
+  }
+
+  .webform-progress-tracker {
+    padding-bottom: $spaceMd;
+
+    .progress-step {
+      &:after {
+        background-color: $progressBar;
+      }
+
+      &:not(.is-active) {
+        .progress-marker {
+          background-color: $progressMarker;
+          color: $progressMarkerText;
+        }
+      }
+
+      &.is-active {
+        .progress-marker {
+          background-color: $progressMarkerActive;
+          color: $progressMarkerActiveText;
+        }
+
+        &:hover {
+          .progress-marker {
+            background-color: $progressMarkerActive;
+            color: $progressMarkerActiveText;
+          }
+        }
+      }
+
+      .progress-marker {
+        line-height: 1;
+        padding-bottom: 0;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+    }
+
+  }
+
+}
+
+.js-form-type-range {
+  $knobSize: 2.25rem;
+
+  .form-range {
+    margin-bottom: $spaceSm;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    max-width: 400px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: $knobSize;
+      width: $knobSize;
+      border-radius: 50%;
+      background: $sliderKnob;
+      margin-top: -5px;
+      box-shadow: 1px 1px 2px rgba(35, 35, 35, .6);
+      cursor: pointer;
+    }
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 9px;
+      background: $sliderTrack;
+      border-radius: 3rem;
+      transition: all 0.5s;
+      cursor: pointer;
+    }
+
+    &:hover::-webkit-slider-runnable-track {
+      background: $sliderTrackHover;
+    }
+
+    &::-ms-track {
+      // Hides the slider so custom styles can be added.
+      width: 100%;
+      cursor: pointer;
+      height: 9px;
+      transition: all 0.5s;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    &::-ms-thumb {
+      height: $knobSize;
+      width: $knobSize;
+      border-radius: 50%;
+      background: $sliderKnob;
+      margin-top: -5px;
+      box-shadow: 1px 1px 2px rgba(35, 35, 35, .4);
+      cursor: pointer;
+    }
+
+    &::-ms-fill-lower {
+      background: $sliderTrack;
+      border-radius: 3rem;
+    }
+
+    &:focus::-ms-fill-lower {
+      background: $sliderTrackHover;
+    }
+
+    &::-ms-fill-upper {
+      background: $sliderTrack;
+      border-radius: 3rem;
+    }
+
+    &:focus::-ms-fill-upper {
+      background: $sliderTrackHover;
+    }
+
+    &::-moz-range-thumb {
+      height: $knobSize;
+      width: $knobSize;
+      border-radius: 50%;
+      background: $sliderKnob;
+      margin-top: -5px;
+      box-shadow: 1px 1px 2px rgba(35, 35, 35, 0.4);
+      cursor: pointer;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: 9px;
+      background: $sliderTrack;
+      border-radius: 3rem;
+      transition: all 0.5s;
+      cursor: pointer;
+    }
+
+    &:hover::-moz-range-track {
+      background: $sliderTrackHover;
+    }
+  }
+
+}
+
+.js-form-type-webform-signature {
+  .webform-signature-pad {
+    border: $inputBorderWidth solid $inputBorderColor;
+
+    &:hover {
+      border-color: $inputBorderHover;
+      box-shadow: inset 0 0 0 1px $inputBorderHover;
+    }
+
+    &:focus {
+      @include placeholderFocus;
+      outline: none;
+      box-shadow: inset 0 0 0 1px $inputBorderFocus;
+      border-color: $inputBorderFocus;
+    }
+
+    input[type="submit"].button {
+      top: 5px;
+      right: 5px;
+      font-size: 1.4rem;
+      min-width: 0;
+      height: 30px;
+      padding: 0 1rem;
+    }
+  }
+}
+
+.webform-tableselect {
+  th {
+    @include customOptions;
+  }
+
+  .form-item {
+    margin-bottom: 0;
+
+    &.js-form-type-checkbox {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+/* USER LOGIN
+--------------- */
+.user-access-form {
+  h1{
+    margin-bottom: $elementSpace;
+  }
+  max-width: $desk;
+  @include auto;
+
+  .form-item:not([type="submit"]) {
+    max-width: 400px;
+  }
+
+  .js-form-type-password {
+    position: relative;
+
+    .password-reset {
+      position: absolute;
+      top: 12px;
+      right: 0;
+      font-size: 2rem;
+    }
+
+    .show-password {
+      position: absolute;
+      top: 54px;
+      right: 12px;
+      font-size: 1.4rem;
+      color: $midGrey;
+
+      &:hover,
+      &:focus {
+        color: $hoverLink;
+      }
+    }
+
+    input#edit-pass {
+      padding-right: 56px;
+    }
+
+    .description {
+      padding-top: 1rem;
+    }
+  }
+
+  .description,
+  p {
+    font-size: 1.4rem;
+  }
+
+  #edit-submit.button {
+    @include button;
+    margin: 0;
+  }
+}
+
+details.form-wrapper {
+  background: $detailsWrapperBack;
+  margin-bottom: $spaceMd;
+
+  &[open] {
+    padding-bottom: 1px;
+
+    summary {
+      border-color: $inputBorderFocus;
+      box-shadow: inset 0 0 0 1px $inputBorderFocus;
+      margin-bottom: $spaceMd;
+    }
+
+    &>*:not(summary) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  summary {
+    border: $inputBorderWidth solid $inputBorderColor;
+    padding: 1.25rem 2.5rem;
+    font-weight: $heavy;
+    position: relative;
+    font-size: 2.5rem;
+    background: $siteBack;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      border-color: $inputBorderHover;
+      box-shadow: inset 0 0 0 1px $inputBorderHover;
+    }
+  }
+}

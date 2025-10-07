@@ -1,0 +1,46 @@
+/* ===============
+   TAXONOMY TERM PAGES
+================= */
+
+@use '../../00-base' as *;
+
+.path-taxonomy {
+  .term-title {
+    margin-bottom: $elementSpace;
+  }
+
+  .taxonomy-term {
+    @include auto;
+    max-width: $textMax;
+
+    .view-header {
+      .block-title {
+        padding-top: $spaceMd;
+      }
+    }
+
+    .view-content {
+      @include tab {
+        width: 100%;
+      }
+
+      .views-row {
+        margin-bottom: $spaceSm;
+
+        h3 {
+          font-size: 2rem;
+          margin-bottom: $spaceXxs;
+        }
+
+        .views-field-body,
+        .views-field-field-meta-description {
+          font-size: 1.75rem;
+        }
+      }
+    }
+  }
+
+  .feed-icon {
+    display: none;
+  }
+}

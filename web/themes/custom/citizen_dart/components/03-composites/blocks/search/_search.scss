@@ -1,0 +1,360 @@
+/* ================
+	 SEARCH
+=================== */
+@use '../../../00-base' as *;
+
+%searchBlockPlaceholder {
+  $placeTint: 1;
+
+  &::-webkit-placeholder {
+    opacity: $placeTint;
+    color: $searchDropPlace;
+  }
+
+  &::-moz-placeholder {
+    opacity: $placeTint;
+    color: $searchDropPlace;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: $placeTint;
+    color: $searchDropPlace;
+  }
+
+  &::-webkit-input-placeholder {
+    opacity: $placeTint;
+    color: $searchDropPlace;
+  }
+}
+
+%searchBlockPlaceholderFocus {
+  $placeFocusTint: .2;
+
+  &::-webkit-placeholder {
+    opacity: $placeFocusTint;
+    color: $searchDropPlaceFocus;
+  }
+
+  &::-moz-placeholder {
+    opacity: $placeFocusTint;
+    color: $searchDropPlaceFocus;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: $placeFocusTint;
+    color: $searchDropPlaceFocus;
+  }
+
+  &::-webkit-input-placeholder {
+    opacity: $placeFocusTint;
+    color: $searchDropPlaceFocus;
+  }
+}
+
+.t-search-wrapper {
+
+  .t-search {
+    border: $inputBorderWidth solid transparent;
+    color: $searchIcon;
+
+    &:hover,
+    &:focus {
+      color: $searchIconHover;
+      outline: none;
+      text-decoration: none;
+    }
+
+    .material-icons {
+      font-size: 24px;
+    }
+  }
+}
+
+.t-search-close {
+  height: 48px;
+  width: 48px;
+  display: none;
+  position: absolute;
+  top: -20px;
+  right: 0;
+  z-index: 502;
+
+  .close-search {
+    height: 100%;
+    width: 100%;
+    background: $searchCloseBack;
+    color: $searchClose;
+    font-family: $header;
+    font-size: 24px;
+    display: block;
+    cursor: pointer;
+    @include safeFlex(column, null, center, center);
+    transition: all 0.15s ease-out;
+
+    &:hover,
+    &:focus {
+      background: $searchCloseBackHover;
+      color: $searchCloseHover;
+      text-decoration: none;
+    }
+  }
+}
+
+// Put search form wrapper at top of screen and full width, hide for slide
+// effect.
+#search-form-wrapper {
+  width: calc(100% + $siteMarginMobile*2);
+  position: absolute;
+  top: -20px;
+  left: -$siteMarginMobile;
+  z-index: 500;
+  @include showContent(.5s);
+
+  @include contentStop {
+    width: 100vw;
+    left: calc(-50vw + 600px);
+  }
+}
+
+#site-search-form {
+  position: relative;
+  width: 100%;
+  padding: 80px $siteMarginMobile;
+  text-align: center;
+  background: $searchDropBack;
+
+  @include desk {
+    padding: 160px $siteMarginMobile;
+  }
+
+  .js-form-type-textfield {
+    padding: 1.5 0;
+    width: 100%;
+    margin-bottom: 0;
+    max-width: 800px;
+    @include auto;
+
+    label {
+      @include visuallyHidden;
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      padding: 8px 4px;
+      border: none;
+      color: $searchDropText;
+      border: $inputBorderWidth solid transparent;
+      border-bottom-color: $searchDropInputBorder;
+      border-radius: 0;
+      @extend %searchBlockPlaceholder;
+
+      // Prevent yellow chrome autofill inset.
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px $searchDropInputFocus inset;
+      }
+
+      @include tab {
+        font-size: 2.5rem;
+      }
+
+      &:hover {
+        border-color: $searchDropInputFocus;
+        box-shadow: inset 0 0 0 1px $searchDropInputFocus;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $inputBorderFocus;
+        box-shadow: inset 0 0 0 1px $inputBorderFocus;
+        @extend %searchBlockPlaceholderFocus;
+      }
+    }
+  }
+
+  .form-actions {
+    max-width: 800px;
+    @include auto;
+    position: relative;
+
+    .form-submit.button {
+      position: absolute;
+      top: -46px;
+      right: 5px;
+      height: 32px;
+      width: 32px;
+      background: transparent;
+      z-index: 2;
+      text-indent: -9000px;
+      cursor: pointer;
+      padding: 0;
+      min-width: 0;
+      border: 0;
+
+      @include tab {
+        top: -48px;
+        right: 12px;
+      }
+
+      &:focus,
+      &:hover {
+        border: 0;
+        box-shadow: none;
+        outline: none;
+
+        & + .material-icons {
+          color: $searchDropSearchIconHover;
+        }
+      }
+    }
+
+    .material-icons {
+      color: $searchDropSearchIcon;
+      font-size: 3rem;
+      position: absolute;
+      top: -45px;
+      right: 8px;
+      cursor: pointer;
+
+      @include tab {
+        font-size: 3.5rem;
+        top: -48px;
+        right: 12px;
+      }
+    }
+  }
+}
+
+/* Decoupled Search-specific Styles */
+.search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-first,
+.search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-first {
+  @include safeFlex(row, wrap, center, start);
+  @include auto;
+  background-color: $lightGrey;
+  gap: 20px;
+  margin: 0 -3rem ;
+  max-width: none;
+  padding: 6rem 3rem 2rem;
+  .search-input {
+    @include safeFlex(row, wrap, center, start);
+    gap: 20px;
+    @include auto;
+    > span {
+      @include safeFlex(row, no-wrap, center, start);
+      gap: 20px;
+    }
+  }
+  @include onlyMobile {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    .block {
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+}
+.block-swc-search-input {
+  flex: 1 1 100%;
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-first &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-second &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-third &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-first &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-second &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-third & {
+    margin-bottom: 0;
+    min-width: 280px;
+  }
+}
+.block-swc-search-results {
+  ul.list,
+  li.result-default {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul.list {
+    margin: 2rem auto;
+    max-width: $textMax;
+  }
+  li.result-default {
+    margin-bottom: 30px;
+  }
+}
+
+.block-swc-search-input,
+.block-swc-facet-dropdown,
+.block-swc-facet-button,
+.block-swc-facet-checkbox {
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+  input[type=text] {
+    @include textInput;
+    .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--first &,
+    .search-web-components--layout--twocol.search-web-components--layout--twocol--75-25 .layout__region--second & {
+      max-width: 200px;
+    }
+  }
+  select {
+    background: $siteBack;
+    @include textInput;
+  }
+  button[type=submit] {
+    @include submitButton;
+    min-width: auto;
+  }
+  button {
+    @include button;
+    cursor: pointer;
+  }
+  button[type=submit],
+  button {
+    margin-bottom: 8px;
+    padding: 1rem 1.5rem;
+  }
+
+  form.search-input {
+    button {
+      @include submitButton;
+      display: inline-block;
+      margin-bottom: 8px;
+      min-width: auto;
+      padding: 1rem 1.5rem;
+    }
+  }
+}
+
+.block-swc-search-simple-pager {
+  .pager {
+    gap: 10px;
+  }
+  button {
+    background: none;
+    border: 0;
+    color: $baseText;
+    font-size: $baseSize;
+    font-weight: $heavy;
+    &.current:before {
+      content: "Page";
+    }
+    &.next,
+    &.prev {
+      @include transAll(.3s);
+      background-color: $pagerNumberBack;
+      color: $pagerNumber;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: $pagerNumberHover;
+        background: $pagerNumberBackHover;
+        text-decoration: none;
+      }
+      &:disabled {
+        color: $midGrey;
+        cursor: default;
+      }
+    }
+  }
+}

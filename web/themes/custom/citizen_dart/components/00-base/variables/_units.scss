@@ -1,0 +1,129 @@
+/* ============
+	UNIT VARIABLES
+======================= */
+
+$em-base: 8px;
+
+/* BREAKPOINT VARIABLES
+------------------------ */
+$smallTab: 520px;
+$tab: 800px;
+$desk: 984px;
+$contentStop: 1200px;
+$largeScreen: 1600px;
+$textMax: 800px;
+$onlyTab: $tab $desk - 1px;
+$onlySmall: $tab - 1px;
+$onlyPhone: $smallTab - 1px;
+$onlyMobile: $desk - 1px;
+
+// Used by JS to make sure the SCSS vars can be used.
+:root {
+  --tab-size: #{$tab};
+  --desk-size: #{$desk};
+  --large-size: #{$largeScreen};
+}
+
+/* SPACING & LAYOUT VARIABLES
+----------------------------- */
+$spaceXxs: 1rem;
+$spaceXs : 2rem;
+$spaceSm : 3rem;
+$spaceMd : 4rem;
+$spaceLg : 6rem;
+$spaceXl : 9rem;
+
+$siteMarginMobile: 3rem;
+$siteMarginDesk: 6rem;
+
+$formElementSpace: $spaceMd;
+$inputBorderWidth: 1px;
+$elementSpace: $spaceLg;
+$siteBottomSpace: 12rem;
+
+$buttonPadding: 2rem 3.5rem;
+$submitPadding: 0 2rem;
+
+$sideBar: 300px;
+$sectionGutter: 40px;
+
+/* BREAKPOINT SHORTHANDS & EDGE MIXINS
+-------------------------- */
+@mixin smallTab {
+  @media screen and (min-width: $smallTab) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (min-width: $tab) {
+    @content;
+  }
+}
+
+@mixin desk {
+  @media screen and (min-width: $desk) {
+    @content;
+  }
+}
+
+@mixin contentStop {
+  @media screen and (min-width: $contentStop) {
+    @content;
+  }
+}
+
+@mixin largeScreen {
+  @media screen and (min-width: $largeScreen) {
+    @content;
+  }
+}
+
+@mixin onlyMobile {
+  @media screen and (max-width: $onlyMobile) {
+    @content;
+  }
+}
+
+@mixin onlyTab {
+  @media screen and (min-width: $tab) and (max-width: $desk) {
+    @content;
+  }
+}
+
+@mixin onlySmall {
+  @media screen and (max-width: $onlySmall) {
+    @content;
+  }
+}
+
+@mixin onlyPhone {
+  @media screen and (max-width: $onlyPhone) {
+    @content;
+  }
+}
+
+@mixin edgeToEdge {
+  margin-left: $siteMarginMobile * -1;
+  margin-right: $siteMarginMobile * -1;
+}
+
+@mixin auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@mixin edgeReset {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@mixin textConstrain {
+
+  .node-section >.layout--onecol &,
+  .widget-section >.layout--onecol & {
+    max-width: $textMax;
+    @include auto;
+  }
+}

@@ -1,0 +1,19 @@
+/* ============
+   BASIC PAGE
+================ */
+
+@use '../../../00-base' as *;
+
+.node-page {
+  .breadcrumb {
+    padding: 0;
+  }
+
+  .block-field-image {
+    @include edgeToEdge;
+  }
+
+  .block-field.block-body {
+    max-width: 100%;
+  }
+}

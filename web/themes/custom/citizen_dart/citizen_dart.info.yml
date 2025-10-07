@@ -1,0 +1,17 @@
+name: Citizen Dart
+type: theme
+description: Custom theme by Electric Citizen for use with modern Drupal websites
+package: Citizen Dart
+core_version_requirement: ^10 || ^11
+# Defines libraries group in which we can add css/js.
+libraries:
+  - citizen_dart/global
+  - citizen_dart/fonts
+ckeditor5-stylesheets:
+  - dist/cke.css
+base theme: stable9
+regions:
+  header: Header
+  content: Content
+  prefooter: Pre-Footer
+  footer: Footer

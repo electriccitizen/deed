@@ -1,0 +1,31 @@
+/* ===============
+   NODES
+=================== */
+
+@use '../variables' as *;
+@use 'layout-mixins' as *;
+
+@mixin sectionLimit {
+  max-width: $contentStop;
+  @include auto;
+}
+
+@mixin textContent {
+  max-width: $textMax;
+  @include auto;
+}
+
+@mixin warning {
+  min-height: 400px;
+  @include safeFlex(column, nowrap, center, center);
+
+  & > div {
+    max-width: $textMax + 40px;
+    border: 1px solid $borderRule;
+    padding: 40px 30px;
+  }
+
+  #block-citizen-dart-content {
+    padding-top: 0 !important;
+  }
+}

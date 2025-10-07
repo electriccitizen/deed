@@ -1,0 +1,67 @@
+/* =================
+	SITE HEADER
+=================== */
+
+@use '../../../00-base' as *;
+
+.site-header {
+  padding: 20px $siteMarginMobile;
+  background: $headerBack;
+
+  & > div {
+    max-width: $contentStop;
+    @include auto;
+    @include safeFlex(row, wrap, null, center);
+    position: relative;
+  }
+}
+
+/* BRANDING BLOCK PLACEMENT
+------------------- */
+.block-system-branding-block {
+  // Leave room for search toogle and menu hamburger on mobile.
+  width: calc(100% - 70px);
+  position: relative;
+  z-index: 10;
+
+  @include desk {
+    width: 240px;
+  }
+
+  a {
+    img {
+      max-width: 160px;
+      margin-right: 4px;
+
+      @include desk {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+/* SEARCH BLOCK PLACEMENT
+------------------- */
+.block-site-search:not(.views-block) {
+  position: static !important;
+  display: inline-block;
+  text-align: right;
+
+  @include desk {
+    width: calc(100% - 240px);
+  }
+
+  .contextual {
+    display: none !important;
+  }
+
+  .t-search {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+
+    @include desk {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+/* =================
+   BRANDING BLOCK
+=================== */
+@use '../../../00-base' as *;
+
+.block-system-branding-block {
+  a {
+    display: block;
+
+    img {
+      border: 1px solid transparent;
+      display: block;
+      width: 100%;
+    }
+
+    .site-name {
+      font-size: 3rem;
+      color: $white;
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      img {
+        border-color: $borderRule;
+      }
+
+      .site-name {
+        color: $black;
+      }
+    }
+
+    @include tab {
+      .site-name {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .tagline {
+    display: none;
+  }
+}

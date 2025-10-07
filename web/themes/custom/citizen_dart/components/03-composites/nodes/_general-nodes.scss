@@ -1,0 +1,105 @@
+/* ===============
+   GENERIC NODE THEMING
+=================== */
+
+@use '../../00-base' as *;
+
+/* REVISIONS
+-------------------- */
+.revisions-actions {
+  max-width: $contentStop;
+  @include auto;
+  margin-top: $spaceMd;
+  border-bottom: 1px solid $borderRule;
+
+  .action-wrapper {
+    @include safeFlex(row, wrap, start, start);
+    @include bleed(margin, 10px);
+  }
+}
+
+.node-revision {
+  .breadcrumb {
+    li {
+      &:nth-last-child(2) {
+        &:after {
+          content: none;
+        }
+      }
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+/* RESTRICTED NODE TYPES
+---------------------- */
+.path-node {
+  .restricted-node {
+    @include warning;
+  }
+}
+
+
+// Regular 403 and 404 messages.
+body .layout-content {
+  & > .error-content {
+    @include warning;
+  }
+}
+
+/* GLOBAL SECTIONS
+-------------------- */
+.node-section {
+  position: relative;
+}
+
+/* GLOBAL VIEW MODES
+-------------------- */
+.node-teaser {
+  width: 100%;
+
+  .node-field-image {
+    margin-bottom: $spaceSm;
+  }
+
+  .node-field-title {
+    @include heading4;
+    margin-bottom: $spaceXxs;
+  }
+
+  .metatext {
+    @include metaText;
+    margin-bottom: $spaceSm;
+  }
+
+  @include smallTab {
+    @include safeFlex(row, wrap, start, start);
+
+    .node-field-image {
+      @include safeFlexSize(0, 0, 340px);
+      padding-right: 40px;
+      margin-bottom: 0;
+    }
+
+    .node-teaser-content {
+      width: calc(100% - 380px);
+    }
+  }
+}
+
+.node-listing {
+  width: 100%;
+
+  .node-field-title {
+    @include heading4;
+    margin-bottom: $spaceXxs;
+  }
+
+  .metatext {
+    @include metaText;
+    margin-bottom: $spaceSm;
+  }
+}

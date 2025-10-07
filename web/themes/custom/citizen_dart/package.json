@@ -1,0 +1,8 @@
+{
+  "name": "citizen",
+  "description": "Project template for basic Electric Citizen website themes",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "sass --watch components:dist  --style compressed"
+  }
+}

@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+
+
+{% extends 'block.html.twig' %}
+
+
+{% block blockContent %}
+  {{ attach_library('citizen_dart/search-block') }}
+  <div class="t-search-wrapper"><a href="#" class="t-search" role="button" aria-label="{{ "Toggle Search"|t }}" aria-controls="search-form-wrapper"><span class="material-icons">&#xE8B6;</span></a></div>
+	<div class="t-search-close"><a href="#" class="close-search" role="button" aria-label="{{ "Close Search"|t }}" aria-controls="search-form-wrapper"><span class="material-icons">&#xE5CD;</span></a></div>
+	<div id="search-form-wrapper" aria-hidden="true">
+  	{% block searchForm %}
+		  {{ content }}
+		{% endblock %}
+	</div>
+{% endblock %}

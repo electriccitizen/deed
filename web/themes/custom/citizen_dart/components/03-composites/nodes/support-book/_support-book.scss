@@ -1,0 +1,14 @@
+/* ==============
+   SUPPORT BOOK NODE
+===================== */
+
+@use '../../../00-base' as *;
+
+.node-support-book {
+  .block-field.block-field-last-reviewed {
+    @include metaText;
+  }
+  .block-field.block-body {
+    max-width: 100%;
+  }
+}

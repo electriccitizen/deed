@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+
+{% extends 'views-view-unformatted.html.twig' %}
+
+{% block unformattedRows %}
+  {{ attach_library('citizen_dart/drawers') }}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+  {% set rando = random(10) %}
+  {% if 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
+    {% for row in rows|filter(row => row.content['#row'].index < 6) %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{ row.content }}
+      </div>
+    {% endfor %}
+    <div id="drawer-{{ rando }}" class="drawer-content not-fade" aria-hidden="true">
+    {% for row in rows|filter(row => row.content['#row'].index >= 6) %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{ row.content }}
+      </div>
+    {% endfor %}
+    </div>
+  {% else %}
+    {% for row in rows|filter(row => row.attributes.class != 'site-management' and row.content['#row'].index < 6) %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{ row.content }}
+      </div>
+    {% endfor %}
+    <div id="drawer-{{ rando }}" class="drawer-content not-fade" aria-hidden="true">
+    {% for row in rows|filter(row => row.attributes.class != 'site-management' and row.content['#row'].index >= 6) %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{ row.content }}
+      </div>
+    {% endfor %}
+    </div>
+  {% endif %}
+  <a href="#" class="drawer-toggle drawer-above pre-hide-toggle" aria-controls="drawer-{{ rando }}" aria-expanded="false">See all results</a>
+{% endblock %}

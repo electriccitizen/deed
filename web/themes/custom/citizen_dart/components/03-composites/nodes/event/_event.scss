@@ -1,0 +1,34 @@
+/* =============
+   EVENT NODE
+================ */
+
+@use '../../../00-base' as *;
+
+.node-event {
+  max-width: $contentStop;
+  @include auto;
+
+  .block-field.block-title {
+    max-width: 100%;
+
+    h1 {
+      text-align: left;
+    }
+  }
+
+  .block-field-dates {
+    @include metaText;
+  }
+
+}
+
+.node-teaser-event {
+  .field-dates {
+    @include metaText;
+    margin-bottom: $spaceSm;
+  }
+}
+
+.node-listing-event{
+  @extend .node-teaser-event;
+}

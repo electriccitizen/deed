@@ -1,0 +1,100 @@
+/* ==================
+  GENERAL VIEWS THEMING
+==================== */
+
+@use '../../00-base' as *;
+
+#views-form-wrapper {
+  @include safeFlex(row, wrap, start, center);
+  @include bleed(padding, 20px);
+  & {
+    margin-bottom: 5rem;
+  }
+
+  .form-item {
+    width: 100%;
+
+    &:not(#edit-field-dates-value-wrapper):not(#edit-field-dates-value-wrapper--2) {
+      @include smallTab {
+        width: 50%;
+        max-width: 300px;
+      }
+    }
+
+    &#edit-field-dates-value-wrapper,&#edit-field-dates-value-wrapper--2 {
+      padding: 0;
+      legend {
+        padding: 0 10px;
+      }
+
+      .fieldset-wrapper {
+        @include safeFlex(row, wrap, start, start);
+
+        .form-item {
+          padding: 0 10px;
+
+          &.form-item-field-dates-value-op {
+            @include smallTab {
+              margin-bottom: 8.5rem;
+            }
+          }
+
+          &.form-item-field-dates-value-min,
+          &.form-item-field-dates-value-max {
+            @include smallTab {
+              margin-top: -36px;
+            }
+          }
+        }
+      }
+    }
+    
+
+    label {
+      @include formLabel;
+      margin-bottom: $spaceXxs;
+    }
+
+    .select2-container--default {
+      max-width: 100%;
+
+      .select2-selection__choice {
+        margin-top: .5rem;
+      }
+    }
+  }
+
+  .form-actions {
+    @include auto;
+    @include safeFlex(row, wrap, start, start);
+
+    @include smallTab {
+      @include edgeReset;
+    }
+
+    input.form-submit.button {
+      @include submitButton;
+      margin: 0 10px;
+
+      &[data-drupal-selector='edit-reset'] {
+        @include warningButton;
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.view-content {
+  @include safeFlex(row, wrap, start, start);
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.view-empty {
+  margin-bottom: $spaceLg;
+  max-width: $textMax;
+  @include auto;
+  text-align: center;
+}

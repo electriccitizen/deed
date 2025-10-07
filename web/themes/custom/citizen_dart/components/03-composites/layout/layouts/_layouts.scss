@@ -1,0 +1,322 @@
+/* ===============
+   Section Layouts
+=================== */
+
+@use '../../../00-base' as *;
+
+.layout-content{
+	padding-left: $siteMarginMobile;
+	padding-right: $siteMarginMobile;
+}
+.layout__region{
+	& > *{
+		margin-bottom: $elementSpace;
+	}
+}
+
+.node-section:last-child{
+	& > .layout > .layout__region:last-child{
+		margin-bottom: $siteBottomSpace;
+	}
+}
+
+/* TWO COLUMN SIDEBAR LEFT */
+.layout--twocol-sideleft{
+	width: 100%;
+	max-width: $contentStop;
+	@include auto;
+	@include safeFlex(row,wrap,start,start);
+	.layout__region--first{
+		width: 100%;
+		@include desk{
+			width: $sideBar;
+		}
+	}//end layout region second
+	.layout__region--content{
+		width: 100%;
+		@include desk{
+			&:not(:only-child){
+				width: calc(100% - #{$sideBar});
+				&:not(.layout-builder__region){
+					padding-left: $sectionGutter;
+				}
+			}
+		}
+	}
+}//end layout-twocol-sideleft
+
+/* TWO COLUMN QUAD SPLIT */
+.layout--twocol-quad-split{
+	width: 100%;
+	max-width: $contentStop;
+	@include auto;
+	@include clearFix;
+	@include onlyMobile{
+		@include safeFlex(column,nowrap,start,start);
+	}
+	.field-long-text,.text-long,.text-with-summary{
+		&:after{
+			content: none;
+			clear: none !important;
+		}
+	}
+	.layout__region--first{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(2);
+		}
+		@include desk{
+			float: left;
+			width: $sideBar;
+		}
+	}//end layout region first
+	.layout__region--second{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(4);
+			& + .layout__region--third {
+				margin-bottom: 0 !important;
+			}
+		}
+		@include desk{
+			float: left;
+			clear: left;
+			width: $sideBar;
+		}
+	}//end layout region second
+	.layout__region--third{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(1);
+			&:only-child {
+				margin-bottom: $siteBottomSpace !important;
+			}
+		}
+		@include desk{
+			width: calc(100% - #{$sideBar});
+			margin-left: $sideBar;
+			padding-left: $sectionGutter;
+			&:first-child{
+				width: 100%;
+				max-width: $textMax;
+				@include auto;
+				padding-left: 0;
+			}
+		}
+	}//end layout region third
+	.layout__region--content{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(3);
+		}
+		@include desk{
+			width: calc(100% - #{$sideBar});
+			margin-left: $sideBar;
+			padding-left: $sectionGutter;
+			&:first-child{
+				width: 100%;
+				max-width: $textMax;
+				@include auto;
+				padding-left: 0;
+			}
+		}
+	}//end layout region content
+}//end layout-twocol-quad-split
+
+/* TWO COLUMN SIDEBAR RIGHT */
+.layout--twocol-sideright{
+	width: 100%;
+	max-width: $contentStop;
+	@include auto;
+	@include safeFlex(row,wrap,start,start);
+	.layout__region--content{
+		width: 100%;
+		@include desk{
+			&:not(:only-child){
+				width: calc(100% - #{$sideBar});
+				&:not(.layout-builder__region){
+					padding-right: $sectionGutter;
+				}
+			}
+		}
+	}
+	.layout__region--second{
+		width: 100%;
+		@include desk{
+			width: $sideBar;
+		}
+	}//end layout region second
+}//end layout-twocol-sideright
+
+/* DEFAULT LAYOUTS USED FOR LAYOUT PARAGRAPHS
+------------------------------------ */
+
+/* TWO COLUMNS */
+.layout.layout--twocol-section{
+	@include bleed(padding,40px);
+	//50/50 layout
+	&.layout--twocol-section--50-50{
+		& > .layout__region{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,50%);
+				width: 50%;
+			}
+		}
+	}
+	//33/67 layout
+	&.layout--twocol-section--33-67{
+		& > .layout__region--first{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,33.3%);
+				width: 33.3%;
+			}
+		}
+		& > .layout__region--second{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,66.7%);
+				width: 66.7%;
+			}
+		}
+	}
+	//67/33 layout
+	&.layout--twocol-section--67-33{
+		& > .layout__region--first{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,66.7%);
+				width: 66.7%;
+			}
+		}
+		& > .layout__region--second{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,33.3%);
+				width: 33.3%;
+			}
+		}
+	}
+	//75/25 layout
+	&.layout--twocol-section--75-25{
+		& > .layout__region--first{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,75%);
+				width: 75%;
+			}
+		}
+		& > .layout__region--second{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+	}
+	//25/75 layout
+	&.layout--twocol-section--25-75{
+		& > .layout__region--first{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+		& > .layout__region--second{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,75%);
+				width: 75%;
+			}
+		}
+	}
+}//end layout two col section
+
+/* THREE COLUMNS */
+.layout.layout--threecol-section{
+	@include bleed(padding,40px);
+	//33/33/33 layout
+	&.layout--three-section--33-33-33{
+		& > .layout__region{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,33.33%);
+				width: 33.3%;
+			}
+		}
+	}
+	//25/50/25 layout
+	&.layout--threecol-section--25-50-25{
+		& > .layout__region--first{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+		& > .layout__region--second{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,50%);
+				width: 50%;
+			}
+		}
+		& > .layout__region--third{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+	}
+	//25/25/50 layout
+	&.layout--threecol-section--25-25-50{
+		& > .layout__region--first{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+		& > .layout__region--second{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+		& > .layout__region--third{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,50%);
+				width: 50%;
+			}
+		}
+	}
+	//50/25/25 layout
+	&.layout--threecol-section--50-25-25{
+		& > .layout__region--first{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,50%);
+				width: 50%;
+			}
+		}
+		& > .layout__region--second{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+		& > .layout__region--third{
+			@include safeFlexSize(0,0,100%);
+			@include tab{
+				@include safeFlexSize(0,0,25%);
+				width: 25%;
+			}
+		}
+	}
+}//end layout two col section

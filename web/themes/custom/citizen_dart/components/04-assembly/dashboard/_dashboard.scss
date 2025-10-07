@@ -1,0 +1,49 @@
+/* ========================
+  USER DASHBOARD
+========================== */
+
+@use '../../00-base' as *;
+
+.user-dashboard {
+  .field-image {
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include onlyMobile {
+      max-width: 225px;
+      @include auto;
+    }
+  }
+
+  .block-name {
+    margin-bottom: $spaceXxs;
+
+    h1 {
+      margin-bottom: $spaceXs;
+    }
+  }
+
+  .user-actions {
+    margin-bottom: $elementSpace;
+    @include safeFlex(row, wrap, start, start);
+    @include bleed(padding, 16px);
+
+    div {
+      display: inline-block;
+
+      &:not(:last-child) {
+        position: relative;
+
+        &:after {
+          @include vertRule(right, 80%, $borderRule);
+        }
+      }
+    }
+  }
+
+  .action-buttons {
+    a {
+      @include button;
+    }
+  }
+}

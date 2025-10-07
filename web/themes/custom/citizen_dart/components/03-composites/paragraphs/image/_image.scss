@@ -1,0 +1,28 @@
+/* =================
+   IMAGE WIDGET
+==================== */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--image{
+
+  .image-wrapper{
+    @include auto;
+    &.image-size-original{
+      img{
+        width: auto;
+        max-width: 100%;
+        @include auto;
+      }
+    }
+    figcaption{
+      margin-top: $spaceXxs;
+    }
+    a{
+    
+      img{
+        @include imageHover;
+      }
+    }
+  }
+}

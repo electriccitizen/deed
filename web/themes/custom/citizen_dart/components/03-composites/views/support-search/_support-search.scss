@@ -1,0 +1,89 @@
+/* ===============
+   SUPPORT BOOK SEARCH
+================= */
+
+@use '../../../00-base' as *;
+
+.block-support-search.block-search-results {
+  .layout--twocol-sideleft .layout__region--content & {
+    max-width: 400px;
+    @include auto;
+  }
+
+  &:not(.js-layout-builder-block) {
+    div.contextual {
+      display: none;
+    }
+  }
+
+  h2.block-title {
+    letter-spacing: 0;
+    text-transform: unset;
+    margin-bottom: 2rem;
+
+    .layout--twocol-sideleft .layout__region--first & {
+      text-align: left;
+    }
+  }
+}
+
+#views-exposed-form-support-search-search-results #views-form-wrapper {
+  position: relative;
+
+  .js-form-type-textfield {
+    width: 100%;
+    max-width: 100%;
+
+    label {
+      @include visuallyHidden;
+    }
+
+    input {
+      padding-right: 80px;
+    }
+  }
+
+  .form-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $white;
+
+    input[type="submit"] {
+      text-indent: -9000px;
+      width: 30px;
+      min-width: 30px;
+      height: 44px;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 24px;
+
+      &.views-submit {
+        right: 16px;
+        mask-image: url(../images/elements/search.svg);
+
+        &:not(:last-child) {
+          right: 46px;
+        }
+      }
+
+      &.views-reset {
+        right: 16px;
+        background-color: $buttonBack;
+        mask-image: url(../images/elements/close.svg);
+
+        &:hover,&:focus{
+          background-color: $buttonBackHover;
+        }
+
+        &:active{
+          background-color: $buttonBackActive;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/* ============
+   LISTS
+============== */
+@use '../../00-base' as *;
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+
+  &[type="A"] {
+    list-style-type: lower-alpha;
+  }
+
+  &[type="I"] {
+    list-style-type: upper-roman;
+  }
+}
+
+.text-with-summary,
+.text-long {
+
+  ul,
+  ol {
+    // Overflow hidden is needed for lists next to floated elements.
+    overflow: hidden;
+    margin: $spaceXs 0 $spaceMd;
+    padding: 0 0 0 3.5rem;
+
+    ul,
+    ol {
+      margin: $spaceXs 0;
+      padding: 0 0 0 2.5rem;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+/* ============
+	MIXINS
+======================= */
+
+@use '../variables' as *;
+@use 'sass:math';
+
+/* TRANSFORM & TRANSITION MIXINS
+------------------------------ */
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin translateX ($x) {
+  @include transform(translateX($x));
+}
+
+@mixin translateY ($y) {
+  @include transform(translateY($y));
+}
+
+@mixin translate3d ($x, $y, $z) {
+  @include transform(translate3d($x, $y, $z));
+}
+
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin scale($scalex, $scaley) {
+  @include transform(scale($scalex, $scaley));
+}
+
+@mixin scale3d($scalex, $scaley, $scalez) {
+  @include transform(scale($scalex, $scaley, $scalez));
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin rotate3d ($rotx, $roty, $rotz, $deg) {
+  @include transform(rotate3d($rotx, $roty, $rotz, #{$deg}deg));
+}
+
+@mixin backfaceVisibility($backface) {
+  -webkit-backface-visiblity: $backface;
+  -moz-backface-visiblity: $backface;
+  backface-visiblity: $backface;
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+  backface-visibility: hidden;
+}
+
+@mixin transAll($time) {
+  transition: all $time ease;
+  -moz-transition: all $time ease;
+  -webkit-transition: all $time ease;
+  -webkit-transform: translateZ(0);
+}
+
+@mixin transClear {
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+@mixin transFormAnimate {
+  -webkit-transition: -webkit-transform 0.15s ease-in 0s;
+  transition: -webkit-transform 0.15s ease-in 0s;
+  transition: transform 0.15s ease-in 0s;
+  transition: transform 0.15s ease-in 0s, -webkit-transform 0.15s ease-in 0s;
+}
+
+@mixin showContent($time) {
+  max-height: 0;
+  transition: max-height #{$time} ease-out;
+  overflow: hidden;
+}
+
+@mixin browserWipe {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin buttonWipe {
+  @include browserWipe;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+@mixin visuallyHidden {
+  position: absolute;
+  left: -900vw;
+  top: 0;
+  font-size: 1px;
+  opacity: .1;
+}

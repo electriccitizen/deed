@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Custom theming hooks and preprocesses for Citizen Dart.
+ */
+
+include 'includes/citizen_dart.html.inc';
+include 'includes/citizen_dart.block.inc';
+include 'includes/citizen_dart.breadcrumb.inc';
+include 'includes/citizen_dart.field.inc';
+include 'includes/citizen_dart.form.inc';
+include 'includes/citizen_dart.media.inc';
+include 'includes/citizen_dart.menu.inc';
+include 'includes/citizen_dart.node.inc';
+include 'includes/citizen_dart.paragraph.inc';
+include 'includes/citizen_dart.views.inc';

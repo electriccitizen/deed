@@ -1,0 +1,31 @@
+/* ==================
+ GLOBAL SITE STYLES
+====================*/
+
+@use '../../00-base' as *;
+
+/* MAP PINS
+-------------- */
+.gm-style .gm-style-iw {
+  font-size: 2rem;
+
+  strong {
+    font-weight: $heavy;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

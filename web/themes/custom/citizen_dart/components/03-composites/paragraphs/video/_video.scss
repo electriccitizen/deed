@@ -1,0 +1,13 @@
+/* ===============
+   VIDEO WIDGET
+================= */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--video {
+  @include textConstrain;
+
+  article {
+    @include animation('fadeIn 1.5s 1');
+  }
+}

@@ -1,0 +1,43 @@
+/* ===================
+	PARAGRAPHS
+===================== */
+
+@use '../../00-base' as *;
+
+.block-field-paragraphs {
+  @include edgeToEdge;
+}
+
+/* WIDGETS
+--------------------- */
+.widget {
+  width: 100%;
+  padding: 0 $siteMarginMobile;
+  position: relative;
+
+  &:not(.layout-section) {
+    margin-bottom: $elementSpace;
+  }
+
+  &.layout-section {
+    &.background {
+      padding-top: $elementSpace;
+
+      &.light-grey {
+        background: $offWhite;
+      }
+
+      &.light-blue {
+        background: $iceBlue;
+      }
+
+      & + .backless {
+        margin-top: $elementSpace;
+      }
+
+      &:last-child {
+        margin-bottom: -$siteBottomSpace;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/* ==================
+		NEWS VIEWS
+==================== */
+
+@use '../../../00-base' as *;
+
+/* ALL NEWS
+------------- */
+.news.all-news {
+  .view {
+    padding-bottom: $elementSpace;
+  }
+
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}

@@ -1,0 +1,15 @@
+/* =================
+   HORIZONTAL RULE WIDGET
+==================== */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--horizontal-rule {
+  .text {
+    @include textConstrain;
+  }
+
+  hr {
+    border-top: 1px solid $borderRule;
+  }
+}

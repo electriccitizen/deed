@@ -1,0 +1,263 @@
+/* ==================
+ FRONT-END ADMIN ELEMENTS STYLES
+====================*/
+
+@use '../../00-base' as *;
+
+/* GIN TOOLBAR
+--------------------- */
+
+// Fix rem usage of flyout menu sub items from Gin toolbar.
+#gin-toolbar-bar {
+  body.gin--vertical-toolbar & {
+    .toolbar-menu-administration {
+      & > .toolbar-menu {
+        & > .menu-item {
+
+          &.menu-item--active-trail > .toolbar-icon::after,
+          &:hover > .toolbar-icon::after {
+            left: calc(50% - 26px);
+          }
+
+          .toolbar-menu {
+            .menu-item {
+              .toolbar-icon {
+                font-size: 16px;
+              }
+
+              &.menu-item--expanded {
+                &:before {
+                  top: .75rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Fix responsive preview in Gin secondary.
+.gin-secondary-toolbar {
+  #responsive-preview-toolbar-tab {
+    button {
+      margin-bottom: 0;
+
+      &.responsive-preview-icon {
+        font-size: 14px;
+      }
+    }
+
+    ul.responsive-preview-options {
+      button.responsive-preview-device {
+        font-size: 12px;
+      }
+    }
+
+    a.responsive-preview-configure {
+      font-size: 10px;
+    }
+  }
+}
+
+/* ADMIN NODE EDIT TABS
+----------------- */
+#block-citizen-dart-local-tasks {
+  max-width: $contentStop;
+  padding: $spaceMd 0 $spaceSm;
+  position: relative;
+  @include auto;
+
+  body:not(.logged-in) & {
+    display: none;
+  }
+
+  .tabs {
+    @include listReset;
+    @include safeFlex(row, wrap, null, null);
+    border-bottom: 1px solid $borderRule;
+
+    li {
+      @include onlySmall {
+        width: 100%;
+      }
+
+      @include tab {
+        &:not(:first-child) {
+          margin-left: -1px;
+        }
+      }
+    }
+
+    a {
+      text-transform: none;
+      padding: 4px 12px;
+      display: block;
+      margin-bottom: $spaceXs;
+      border: 1px solid $borderRule;
+      font-weight: $heavy;
+      color: $black;
+
+      &:hover,
+      &:focus {
+        background: $buttonBackHover;
+        color: $buttonTextHover;
+        text-decoration: none;
+      }
+
+      &:active {
+        background: $buttonBackActive;
+        color: $buttonTextActive;
+      }
+
+      &.is-active {
+        background-color: $adminGold;
+
+        &:hover,
+        &:focus {
+          background: $buttonBackHover;
+          color: $buttonTextHover;
+        }
+
+        &:active {
+          background: $buttonBackActive;
+          color: $buttonTextActive;
+        }
+      }
+
+      @include tab {
+        margin-bottom: -1px;
+      }
+    }
+  }
+}
+
+/* MODERATION SIDEBAR
+----------------- */
+.moderation-sidebar-actions {
+
+  a,
+  input.button {
+
+    &:hover,
+    &:focus {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+/* DIALOGS
+----------------- */
+.ui-dialog .ui-dialog-title {
+  white-space: normal;
+}
+
+.ui-dialog-off-canvas + .select2-container--open {
+  height: 40px;
+
+  .select2-dropdown {
+    font-size: 1.75rem;
+    width: 100% !important;
+
+    &.select2-dropdown--below {
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
+}
+
+/* OFF CANVAS
+----------------- */
+.ui-dialog.ui-dialog-off-canvas.ui-widget.ui-widget-content {
+  .ui-dialog-titlebar {
+    .ui-dialog-title {
+      font-size: 15px !important;
+      line-height: .75em;
+      font-weight: $regular;
+
+      &:before {
+        width: 14px;
+        margin-right: 2px;
+      }
+    }
+
+    .ui-dialog-titlebar-close {
+      width: 22px;
+      height: 22px;
+
+      &:hover {
+        border: 1px solid $white;
+      }
+    }
+  }
+
+  .ui-widget-content.ui-dialog-content {
+    font-size: 16px !important;
+
+    button,
+    .ui-button {
+
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
+
+    summary,
+    input:where(:not([type="checkbox"], [type="radio"], [type="file"])),
+    textarea {
+      font-size: 14px !important;
+    }
+
+    .form-actions {
+      margin-top: 10px;
+    }
+
+    select {
+      background-color: revert;
+      font-size: 14px !important;
+      background-size: .75em;
+    }
+
+    #formatter-settings-wrapper {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.block-system-main-block {
+  .layout-builder-form,
+  .layout-builder-discard-changes,
+  .layout-builder-revert-overrides {
+    .form-actions {
+      @include safeFlex(row, wrap, start, start);
+
+      & > input {
+        margin-right: 1.5rem;
+        margin-top: 1rem;
+        min-width: 204px !important;
+      }
+
+      .button--primary {
+        @include submitButton;
+      }
+
+      #edit-discard-changes {
+        @include cautionButton;
+      }
+
+      #edit-revert,
+      a#edit-cancel {
+        @include warningButton;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+// Hide the builder label and only show it when in Layout Builder.
+.builder-label {
+  display: none;
+}

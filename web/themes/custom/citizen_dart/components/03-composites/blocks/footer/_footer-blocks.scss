@@ -1,0 +1,85 @@
+/* =================
+   FOOTER BLOCK
+=================== */
+@use '../../../00-base' as *;
+
+/* Footer Menu
+-------------- */
+.block-footer-menu {
+
+  ul:not(.contextual-links) {
+    @include listReset;
+
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        color: $prefooterLink;
+
+        .footer-v1 & {
+          text-decoration: underline;
+        }
+
+        &:hover,
+        &:focus {
+          color: $prefooterLinkHover;
+          @include transAll(.3s);
+
+          .footer-v1 & {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Copyright
+-------------- */
+.block-4 {
+  .copyright {
+    text-align: center;
+    font-size: 2rem;
+
+    @include tab {
+      text-align: left;
+    }
+
+    & > span:first-child {
+      padding-right: .25em;
+
+      & + * {
+        display: inline;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* Ancillary Menu
+-------------- */
+.block-ancillary-menu {
+  ul:not(.contextual-links) {
+    @include listReset;
+
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        color: $prefooterLink;
+
+        &:hover,
+        &:focus {
+          color: $prefooterLinkHover;
+          @include transAll(.3s);
+
+        }
+      }
+    }
+  }
+}

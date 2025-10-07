@@ -1,0 +1,122 @@
+/* ============
+	LAYOUT MIXINS
+======================= */
+
+@use '../variables' as *;
+
+@mixin cssColumns($columns, $gap, $break) {
+  -webkit-column-count: #{$columns};
+  -moz-column-count: #{$columns};
+  column-count: #{$columns};
+  -webkit-column-gap: #{$gap};
+  -moz-column-gap: #{$gap};
+  column-gap: #{$gap};
+
+  @if $break =='nobreak' {
+    &>* {
+      display: block;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      overflow: hidden;
+    }
+  }
+}
+
+@mixin clearFix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin safeFlex($direction, $wrap, $justify, $align) {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: $direction;
+  -ms-flex-direction: $direction;
+
+  @if $wrap =='wrap' {
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+  }
+
+  @else {
+    flex-wrap: nowrap;
+    -ms-flex-wrap: none;
+  }
+
+  @if $justify =='start' {
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+  }
+
+  @else if $justify =='end' {
+    justify-content: flex-end;
+    -ms-flex-pack: end;
+  }
+
+  @else if $justify =='center' {
+    justify-content: center;
+    -ms-flex-pack: center;
+  }
+
+  @else if $justify =='justify' {
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+  }
+
+  @if $align =='start' {
+    align-items: flex-start;
+    -ms-flex-align: start;
+  }
+
+  @else if $align =='end' {
+    align-items: flex-end;
+    -ms-flex-align: end;
+  }
+
+  @else if $align =='center' {
+    align-items: center;
+    -ms-flex-align: center;
+  }
+
+  @else if $align =='stretch' {
+    align-items: stretch;
+    -ms-flex-align: stretch;
+  }
+
+  @else if $align =='baseline' {
+    align-items: baseline;
+    -ms-flex-align: baseline;
+  }
+}
+
+@mixin safeFlexSize($grow, $shrink, $size) {
+  flex: $grow $shrink $size;
+  -ms-flex: $grow $shrink $size;
+}
+
+@mixin safeFlexOrder($order) {
+  order: $order;
+  -ms-flex-order: $order;
+}
+
+@mixin bleed($bleedType, $bleedWidth) {
+  margin-left: $bleedWidth * -0.5;
+  margin-right: $bleedWidth * -0.5;
+  width: calc(100% + #{$bleedWidth});
+
+  &>* {
+    @if $bleedType =='margin' {
+      margin-left: $bleedWidth * 0.5;
+      margin-right: $bleedWidth * 0.5;
+    }
+
+    @else if $bleedType =='padding' {
+      padding-left: $bleedWidth * 0.5;
+      padding-right: $bleedWidth * 0.5;
+    }
+  }
+}

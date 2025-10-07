@@ -1,0 +1,44 @@
+/* =============
+	PRINT CSS
+================ */
+
+@use '../../00-base' as *;
+
+@media print {
+
+  // Hide extraneous settings.
+  #block-citizen-dart-mainnavigation,
+  .block-system-breadcrumb-block,
+  #block-secondary-menu,
+  #block-page-menu,
+  #block-search-form,
+  .paragraph--type--video,
+  .body ul.social-links,
+  .views-exposed-form,
+  .block-addtoany-block,
+  .block-local-tasks-block {
+    display: none;
+  }
+
+  /* HEADER STYLES
+  -----------*/
+  .site-header {
+    border-bottom: 1px solid $borderRule;
+
+    .block-system-branding-block {
+      max-width: 200px;
+    }
+  }
+
+  /* ACCORDIONS
+  -----------*/
+  .accordion-item .field-long-text {
+    display: block !important;
+  }
+
+  /* FOOTER
+  -----------*/
+  footer .footer-inner .block:not(:last-child) {
+    margin-bottom: 0;
+  }
+}

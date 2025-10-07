@@ -1,0 +1,23 @@
+/* ===================
+	LAYOUT SECTION
+===================== */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--layout-section {
+  .field-section-title {
+    @include textConstrain;
+    @include heading3;
+    & {
+      text-align: center;
+      margin-bottom: $spaceSm;  
+    }
+  }
+
+  .widget-section {
+    position: relative;
+    z-index: 4;
+    max-width: $contentStop;
+    @include auto;
+  }
+}

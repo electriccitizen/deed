@@ -1,0 +1,43 @@
+/* =================
+   SOCIAL MEDIA LINKS
+=================== */
+@use '../../../00-base' as *;
+
+.social-share {
+  @include safeFlex(row, wrap, start, start);
+
+  a {
+    display: block;
+    padding-right: 8px;
+
+    &.facebook-share {
+      color: #4267B2;
+    }
+
+    &.twitter-share {
+      color: $black;
+    }
+
+    &.linkedin-share {
+      color: #2867B2;
+    }
+
+    &.email-share {
+      color: $link;
+    }
+
+    &:hover,
+    &:focus {
+      color: $hoverLink;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
