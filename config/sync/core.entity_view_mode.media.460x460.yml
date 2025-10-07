@@ -1,0 +1,11 @@
+uuid: 0b248e87-f983-4dc6-88f5-41b03dcc298f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.460x460
+label: 460x460
+description: null
+targetEntityType: media
+cache: true
