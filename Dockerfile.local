@@ -1,0 +1,17 @@
+# Dockerfile.local: Simple, quick-to-build image for local development (with host volumes)
+FROM php:8.3-fpm-alpine3.20
+
+# Install minimal extensions needed for Drupal (GD, MySQL, PostgreSQL support)
+RUN apk update && apk add --no-cache \
+    icu-dev libzip-dev libpng-dev libjpeg-turbo-dev freetype-dev libxml2-dev oniguruma-dev \
+    postgresql-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) \
+        pdo_mysql pdo_pgsql gd intl zip xml mbstring \
+    && rm -rf /var/cache/apk/*
+
+# Set working directory
+WORKDIR /var/www/html/
+
+# CRITICAL: Ensure PHP-FPM runs in the foreground
+CMD ["php-fpm", "-F"]

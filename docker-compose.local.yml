@@ -2,7 +2,10 @@
 
 services:
   app:
-    image: drupal/fpm-app:local
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    image: drupal-local-dev-fpm:latest # Assign a name to the locally built image
     container_name: drupal_app
     restart: unless-stopped
     working_dir: /var/www/html
