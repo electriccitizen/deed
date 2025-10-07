@@ -2,11 +2,6 @@ uuid: ec78d3db-1c0f-41d0-8714-f011a0c8c942
 langcode: en
 status: true
 dependencies:
-  config:
-    - core.entity_view_mode.media.full
-    - core.entity_view_mode.media.large
-    - core.entity_view_mode.media.medium
-    - core.entity_view_mode.media.small
   module:
     - editor
     - lazy
@@ -49,7 +44,7 @@ filters:
     status: true
     weight: -47
     settings:
-      allowed_html: '<br> <p class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <a class="ec-button" hreflang target id title href data-entity-type data-entity-uuid data-entity-substitution> <cite> <dl> <dt> <dd> <figcaption> <picture> <small> <blockquote cite> <span class> <img srcset typeof src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption loading data-src class> <source srcset media type width height data-srcset> <div id data-* class> <iframe src title frameborder aria-describedby tabindex allowtransparency width height class> <drupal-entity data-* alt title> <article data-* class> <ul type> <ol type start> <drupal-media title data-entity-type data-entity-uuid alt data-view-mode data-caption data-align> <strong> <em> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <mark class>'
+      allowed_html: '<br> <p class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <a class="ec-button" hreflang target id title href data-entity-type data-entity-uuid data-entity-substitution> <cite> <dl> <dt> <dd> <figcaption> <picture> <small> <blockquote cite> <span class> <img srcset typeof src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption loading data-src class> <source srcset media type width height data-srcset> <div id data-* class> <iframe src title frameborder aria-describedby tabindex allowtransparency width height class> <drupal-entity data-* alt title> <article data-* class> <ul type> <ol type start> <drupal-media title data-entity-type data-entity-uuid alt data-caption data-align> <strong> <em> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <mark class>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_html_escape:
@@ -108,6 +103,7 @@ filters:
     weight: -48
     settings:
       title: true
+      media_substitution: metadata
   media_embed:
     id: media_embed
     provider: media
@@ -117,10 +113,5 @@ filters:
       default_view_mode: default
       allowed_view_modes:
         default: default
-        full: full
-        large: large
-        medium: medium
-        small: small
       allowed_media_types:
-        image: image
-        remote_video: remote_video
+        document: document

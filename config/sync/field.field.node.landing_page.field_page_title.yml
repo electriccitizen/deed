@@ -1,0 +1,24 @@
+uuid: 4f0aaa1d-ee38-4de3-9943-5af909dd831a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_title
+    - filter.format.title_text
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.field_page_title
+field_name: field_page_title
+entity_type: node
+bundle: landing_page
+label: 'Page Title'
+description: 'Highlight words and use the marker to change them to purple. <strong>This is best done to emphasize single words in the title</strong>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - title_text
+field_type: text_long

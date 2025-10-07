@@ -136,19 +136,6 @@ strong {
   font-weight: $heavy;
 }
 
-small {
-  font-size: 80%;
-}
-
-p.warning {
-  background: none;
-  padding: 1rem 2rem;
-  margin-bottom: $spaceMd;
-  color: $validation;
-  border: 1px solid $validation;
-  text-align: center;
-}
-
 mark {
   background-color: unset;
 
@@ -174,6 +161,10 @@ mark {
 
   &.marker-blue {
     background-color: $blueMarker;
+  }
+
+  &.custom-highlight-pen-Purple-title_text {
+    color: $purple;
   }
 }
 

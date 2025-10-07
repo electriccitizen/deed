@@ -21,3 +21,14 @@ matchers:
       limit: 100
       include_unpublished: false
     weight: 0
+  5726b2c2-614b-44d0-8859-b2e2dfdf269e:
+    id: 'entity:media'
+    uuid: 5726b2c2-614b-44d0-8859-b2e2dfdf269e
+    settings:
+      metadata: ''
+      bundles:
+        document: document
+      group_by_bundle: false
+      substitution_type: media
+      limit: 100
+    weight: 0

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_meta_description
+    - field.field.node.landing_page.field_page_title
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_search_keywords
     - field.field.node.landing_page.layout_builder__layout
@@ -46,23 +47,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
-          11fc59af-3b1c-416d-b540-331daaab65da:
-            uuid: 11fc59af-3b1c-416d-b540-331daaab65da
+          bc5db295-f5b3-4c2d-ab3c-de10adcc8dc5:
+            uuid: bc5db295-f5b3-4c2d-ab3c-de10adcc8dc5
             region: content
             configuration:
-              id: 'field_block:node:landing_page:title'
-              label: Title
+              id: 'field_block:node:landing_page:field_page_title'
+              label: 'Page Title'
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                type: string
+                type: text_default
                 label: hidden
-                settings:
-                  link_to_entity: false
+                settings: {  }
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional: {  }
         third_party_settings: {  }
       -
@@ -152,6 +153,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 107
+    region: content
+  field_page_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
