@@ -1,0 +1,24 @@
+uuid: 6fbb9256-34dd-4d66-ad19-9f7730febbe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.news_category.field_icon
+    - taxonomy.vocabulary.news_category
+id: taxonomy_term.news_category.default
+targetEntityType: taxonomy_term
+bundle: news_category
+mode: default
+content:
+  field_icon:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 200w
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  search_api_excerpt: true

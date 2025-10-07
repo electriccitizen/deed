@@ -1,0 +1,9 @@
+uuid: 53db916c-964c-4f51-badb-c6f0393c2ae4
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Category'
+vid: news_category
+description: 'News categories to be used as a filter and for icon assignment.'
+weight: 0
+new_revision: false

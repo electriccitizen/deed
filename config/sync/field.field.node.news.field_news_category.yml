@@ -1,0 +1,29 @@
+uuid: f7e6ae26-4f44-4fb1-be3f-ec499831d5a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_category
+    - node.type.news
+    - taxonomy.vocabulary.news_category
+id: node.news.field_news_category
+field_name: field_news_category
+entity_type: node
+bundle: news
+label: 'News Category'
+description: 'Select a category for this article. The category can be used as a filter on the news list and will supply the icon in teasers.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_category: news_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

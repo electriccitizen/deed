@@ -1,0 +1,33 @@
+uuid: 9b4411ea-9fad-43e5-87a0-999f828abf70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.news_category.field_icon
+    - taxonomy.vocabulary.news_category
+  module:
+    - media_library
+id: taxonomy_term.news_category.default
+targetEntityType: taxonomy_term
+bundle: news_category
+mode: default
+content:
+  field_icon:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true

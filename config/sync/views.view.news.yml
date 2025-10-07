@@ -7,8 +7,10 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_meta_description
     - node.type.news
+    - taxonomy.vocabulary.news_category
   module:
     - node
+    - taxonomy
     - text
     - user
 _core:
@@ -734,6 +736,51 @@ display:
             title: title
             body: body
             field_meta_description: field_meta_description
+        field_news_category_target_id:
+          id: field_news_category_target_id
+          table: node__field_news_category
+          field: field_news_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_news_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: field_news_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_news_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: news_category
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
