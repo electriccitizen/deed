@@ -713,9 +713,56 @@ $settings['update_free_access'] = FALSE;
 # $config['user.settings']['anonymous'] = 'Visitor';
 
 /**
- * Load services definition file.
+ * Load services definition file and apply environment-specific configuration splits.
  */
-$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
+// 0. Conditional Services Override Loading
+$app_env = getenv('APP_ENV');
+$service_override_path = FALSE;
+
+// CRITICAL FIX: If APP_ENV is not explicitly set, but DDEV is detected, default to 'local'.
+if (!$app_env && getenv('DDEV_PROJECT')) {
+  // Correctly identify local DDEV environment.
+  $app_env = 'local';
+}
+
+// 1. Determine which services file to load based on the resolved environment.
+// FIX: Load development.services.yml for both 'dev' (remote staging) and 'local' (DDEV) environments.
+if (($app_env === 'dev' || $app_env === 'local') && file_exists(__DIR__ . '/development.services.yml')) {
+  $service_override_path = __DIR__ . '/development.services.yml';
+}
+elseif ($app_env && file_exists(__DIR__ . '/services.' . $app_env . '.yml')) {
+  $service_override_path = __DIR__ . '/services.' . $app_env . '.yml';
+}
+
+if ($service_override_path) {
+  $settings['container_yamls'][] = $service_override_path;
+}
+
+// 2. Config splits activation.
+$config = $config ?? [];
+
+switch ($app_env) {
+  case 'prod':
+    // Production environment on Fargate.
+    $config['config_split.config_split.prod']['status'] = TRUE;
+    // Explicitly tell Drupal it's production mode (improves caching).
+    $config['system.performance']['environment'] = 'production';
+    break;
+
+  case 'dev':
+    // Remote Dev environment (e.g., CI/CD staging environment).
+    $config['config_split.config_split.dev']['status'] = TRUE;
+    break;
+
+  case 'local':
+    // Local DDEV environment.
+    $config['config_split.config_split.local']['status'] = TRUE;
+    break;
+
+  default:
+    // Fallback if environment is unknown or not set.
+    break;
+}
 
 /**
  * Override the default service container class.
