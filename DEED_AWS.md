@@ -21,12 +21,12 @@ The Dockerfile incorporates several best practices to ensure performance, securi
 
 The Drupal database connection must be defined dynamically using environment variables provided by Fargate.
 
-| Env Variable           | Drupal Config Role | Rationale |
-|:-----------------------| :--- | :--- |
-| `RDS_HOSTNAME`         | Database Host | Connects to the RDS endpoint. |
-| `RDS_USERNAME`         | Database Username | Access credential. |
-| `RDS_PASSWORD`         | Database Password | Access credential (Best sourced from AWS Secrets Manager). |
-| `RDS_DB_NAME`          | Database Name | Specifies the target database instance. |
-| `DRUPAL_HASH_SALT`     | Unique Site Hash Salt | **CRITICAL:** Required for security and session management. Must be long and unique. |
-| `APP_ENV`              | Application Environment Indicator | **NEW:** Used for activating specific configuration splits (e.g., `dev`, `prod`, `uat`). |
-| `TRUSTED_HOST_PATTERN` | Trusted Host Security | **CRITICAL MISSING SECURITY SETTING:** Must match the domain name(s) used by the AWS Load Balancer (e.g., `^example\.com$`). |
+| Env Variable           | Drupal Config Role | Rationale                                                                                                            |
+|:-----------------------| :--- |:---------------------------------------------------------------------------------------------------------------------|
+| `RDS_HOSTNAME`         | Database Host | Connects to the RDS endpoint.                                                                                        |
+| `RDS_USERNAME`         | Database Username | Access credential.                                                                                                   |
+| `RDS_PASSWORD`         | Database Password | Access credential (Best sourced from AWS Secrets Manager).                                                           |
+| `RDS_DB_NAME`          | Database Name | Specifies the target database instance.                                                                              |
+| `DRUPAL_HASH_SALT`     | Unique Site Hash Salt | Required for security and session management. Must be long and unique.                                 |
+| `APP_ENV`              | Application Environment Indicator | Used for activating specific configuration splits (e.g., `dev`, `prod`, `uat`).                             |
+| `TRUSTED_HOST_PATTERN` | Trusted Host Security |  Must match the domain name(s) used by the AWS Load Balancer (e.g., `^example\.com$`). |
