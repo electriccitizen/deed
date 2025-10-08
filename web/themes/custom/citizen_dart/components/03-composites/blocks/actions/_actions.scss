@@ -1,0 +1,16 @@
+/* =================
+   SOCIAL MEDIA LINKS
+=================== */
+@use '../../../00-base' as *;
+
+.block-social-media-links {
+  .field.body {
+    margin-bottom: $spaceSm;
+  }
+
+  .platform-links {
+    @include onlySmall {
+      @include safeFlex(row, wrap, center, start);
+    }
+  }
+}

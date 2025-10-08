@@ -29,12 +29,10 @@
 {% extends 'block.html.twig' %}
 
 {% block blockContent %}
-  {% set copyright = content.body.0 ? {
-		'#type': 'processed_text',
-		'#text': content.body.0['#text'],
-		'#format': content.body.0['#format']
-  } : "" %}
-	<div class="field body copyright text-long">
-		<span class="copyright-year">©{{ "now"|date('Y') -}}</span> {{- copyright -}}
-	</div>
+  <div class="register-logo">
+    <img src="../themes/custom/citizen_dart/images/elements/register-mn.png" width="67px" height="30px" alt="White Minnesota 'mm' logo" />
+  </div>
+  <div class="register-message">
+    <img src="../themes/custom/citizen_dart/images/elements/register-vote.png" width="177px" height="21px" alt="Register to vote" />
+  </div>
 {% endblock %}

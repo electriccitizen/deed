@@ -55,7 +55,7 @@ $cautionTextHover : $white;
 $siteBack : $white;
 $unpub : $adminPink;
 $headerBack : $blue;
-$prefooterBack : $offWhite;
+$prefooterBack : $grey;
 $prefooterText : $black;
 $prefooterLink : $link;
 $prefooterLinkHover : $hoverLink;
@@ -134,27 +134,27 @@ $oddRowText : $baseText;
 /* NAVIGATION
 ---------------------- */
 //desktop
-$sfTopLink : $white;
-$sfTopLinkHover : $teal;
-$sfTopBackHover : transparent;
-$sfTopActive : $teal;
-$sfTopActiveHover : $white;
-$sfChildLink : $white;
-$sfChildLinkHover : $teal;
-$sfChildActive : $teal;
-$sfChildActiveHover : $white;
-$sfDropdown : color.adjust($blue, $lightness: -5%);
+$mmTopLink : $white;
+$mmTopLinkHover : $teal;
+$mmTopBackHover : transparent;
+$mmTopActive : $teal;
+$mmTopActiveHover : $white;
+$mmChildLink : $white;
+$mmChildLinkHover : $teal;
+$mmChildActive : $teal;
+$mmChildActiveHover : $white;
+$mmDropdown : color.adjust($blue, $lightness: -5%);
 
 //mobile
-$sfMobileDrop : color.adjust($blue, $lightness: -5%);
-$sfMobileDropBorder : $blue;
-$sfMobileItemBorder : $borderRule;
-$sfMobileTop : $white;
-$sfMobileTopBack : color.adjust($blue, $lightness: -5%);
-$sfMobileTopExpanded : $white;
-$sfMobileTopBackExpanded : $blue;
-$sfMobileChild : $white;
-$sfMobileChildActive : $teal;
+$mmMobileDrop : color.adjust($blue, $lightness: -5%);
+$mmMobileDropBorder : $blue;
+$mmMobileItemBorder : $borderRule;
+$mmMobileTop : $white;
+$mmMobileTopBack : color.adjust($blue, $lightness: -5%);
+$mmMobileTopExpanded : $white;
+$mmMobileTopBackExpanded : $blue;
+$mmMobileChild : $white;
+$mmMobileChildActive : $teal;
 
 /* MENU BLOCK (Sidebar)
 --------------------- */

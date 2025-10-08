@@ -9,7 +9,7 @@ id: paragraph.action_item.field_long_text_plain
 field_name: field_long_text_plain
 entity_type: paragraph
 bundle: action_item
-label: text
+label: Text
 description: ''
 required: false
 translatable: false

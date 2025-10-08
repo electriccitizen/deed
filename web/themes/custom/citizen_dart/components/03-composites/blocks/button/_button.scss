@@ -1,0 +1,12 @@
+/* =================
+  BUTTON BLOCK
+=================== */
+@use '../../../00-base' as *;
+
+.block-button {
+  .field-button {
+    a {
+      @include outlineButton;
+    }
+  }
+}

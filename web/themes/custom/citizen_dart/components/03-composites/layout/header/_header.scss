@@ -26,6 +26,11 @@
     @include auto;
     @include safeFlex(row, wrap, null, center);
     position: relative;
+
+    @include desk {
+      padding-top: 29px;
+      padding-bottom: 29px;
+    }
   }
 }
 
@@ -38,7 +43,7 @@
   z-index: 10;
 
   @include desk {
-    width: 240px;
+    width: 204px;
   }
 
   a {
@@ -50,6 +55,45 @@
         max-width: 100%;
       }
     }
+  }
+}
+
+/* MAIN MENU
+--------------------- */
+#block-main-menu {
+  @include desk {
+    bottom: 20px;
+    padding-left: 236px;
+    position: absolute;
+    right: 154px;
+  }
+}
+
+/* APPLY NOW
+------------- */
+.block-2 {
+  display: none;
+  
+  @include desk {
+    display: block;
+    position: absolute;
+    bottom: 21px;
+    right: 0;
+    width: 134px;
+  }
+}
+//mobile-apply
+.mobile-apply {
+  @include outlineButton;
+  width: 136px;
+  margin: 3rem 4rem;
+
+  @include desk {
+    display: none;
+  }
+
+  &:hover,&:focus {
+    color: $white;
   }
 }
 
