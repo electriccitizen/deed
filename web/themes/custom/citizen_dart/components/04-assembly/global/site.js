@@ -5,14 +5,6 @@
   Drupal.behaviors.backToTop = {
     attach: function (context, settings) {
       once('backTop', 'html.js', context).forEach(backTop => {
-        window.addEventListener('scroll', function () {
-          var back = window.innerHeight * 0.8;
-          if (window.scrollY > back) {
-            document.querySelector('.back-anchor').style.display = 'block';
-          } else {
-            document.querySelector('.back-anchor').style.display = 'none';
-          }
-        });
         document.querySelector('.back-anchor a').addEventListener('click', function (e) {
           e.preventDefault();
           window.scrollTo({
@@ -23,6 +15,7 @@
       });
     }
   }
+
   Drupal.behaviors.widthCheck = {
     attach: function (context, settings) {
       once('desktopSizing', 'body', context).forEach(() => {
@@ -54,5 +47,26 @@
       });
     }
   }
+
+  Drupal.behaviors.positionApplyNow = {
+    attach: function (context, settings) {
+      once('positionApplyNow', '.block-2', context).forEach(() => {
+        const applyNow = document.querySelector('.block-2');
+        if (!applyNow) return;
+
+        const originalButton = applyNow.querySelector('.block-2 a');
+        if (!originalButton) return;
+
+        const clonedButton = originalButton.cloneNode(true);
+        const destinationUL = document.querySelector('#block-main-menu ul.menu-main-navigation');
+        if (!destinationUL) return;
+
+        //add cloned button to mobile menu
+        clonedButton.className = 'mobile-apply';
+        destinationUL.appendChild(clonedButton);
+        
+      });
+    }
+  };
 
 })(jQuery, Drupal, once);

@@ -1,0 +1,25 @@
+uuid: a5ff51a3-bbfb-4b94-9bb6-8e18b3734f19
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c86b9749-2baa-436d-8a70-def07c356241'
+  module:
+    - block_content
+  theme:
+    - citizen_dart
+id: citizen_dart_registertovote
+theme: citizen_dart
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:c86b9749-2baa-436d-8a70-def07c356241'
+settings:
+  id: 'block_content:c86b9749-2baa-436d-8a70-def07c356241'
+  label: 'Register to Vote'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

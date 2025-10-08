@@ -1,0 +1,25 @@
+uuid: 84fab5b6-bae1-424f-9918-5d0d0d582a08
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f5595b7b-88ae-4b46-bee4-80f0a4638e00'
+  module:
+    - block_content
+  theme:
+    - citizen_dart
+id: citizen_dart_returntotop
+theme: citizen_dart
+region: prefooter
+weight: 0
+provider: null
+plugin: 'block_content:f5595b7b-88ae-4b46-bee4-80f0a4638e00'
+settings:
+  id: 'block_content:f5595b7b-88ae-4b46-bee4-80f0a4638e00'
+  label: 'Return To Top'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

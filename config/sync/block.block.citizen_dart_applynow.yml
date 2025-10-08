@@ -1,0 +1,25 @@
+uuid: 70788090-e085-4f1a-8582-55a59a9f6dab
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:button:04cff087-cab1-4efb-aba6-811cae902996'
+  module:
+    - block_content
+  theme:
+    - citizen_dart
+id: citizen_dart_applynow
+theme: citizen_dart
+region: header
+weight: -3
+provider: null
+plugin: 'block_content:04cff087-cab1-4efb-aba6-811cae902996'
+settings:
+  id: 'block_content:04cff087-cab1-4efb-aba6-811cae902996'
+  label: 'Apply now'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

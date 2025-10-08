@@ -9,79 +9,46 @@
 
   ul:not(.contextual-links) {
     @include listReset;
-
+    @include safeFlex(row,wrap,end,start);
+    column-gap: 4rem;
     li {
       position: relative;
 
       a {
         display: block;
-        color: $prefooterLink;
+        color: $footerLink;
         font-family: $navFont;
         font-weight: $heavy;
-
-        .footer-v1 & {
-          text-decoration: underline;
-        }
+        text-decoration: underline;
 
         &:hover,
         &:focus {
-          color: $prefooterLinkHover;
+          color: $footerLinkHover;
+          text-decoration: none;
           @include transAll(.3s);
-
-          .footer-v1 & {
-            text-decoration: none;
-          }
         }
       }
     }
   }
 }
 
-/* Copyright
+/* REGISTER TO VOTE
 -------------- */
-.block-4 {
-  .copyright {
-    text-align: center;
-    font-size: 2rem;
+.block-6 {
+  width: 100%;
+  @include safeFlex(row,nowrap,center,center);
 
-    @include tab {
-      text-align: left;
+  .register-logo {
+    margin-right: 7px;
+    img {
+      width: 67px;
     }
+  }
 
-    & > span:first-child {
-      padding-right: .25em;
-
-      & + * {
-        display: inline;
-      }
-    }
-
-    p {
-      margin: 0;
+  .register-message {
+    img {
+      width: 177px;
     }
   }
 }
 
-/* Ancillary Menu
--------------- */
-.block-ancillary-menu {
-  ul:not(.contextual-links) {
-    @include listReset;
-
-    li {
-      position: relative;
-
-      a {
-        display: block;
-        color: $prefooterLink;
-
-        &:hover,
-        &:focus {
-          color: $prefooterLinkHover;
-          @include transAll(.3s);
-
-        }
-      }
-    }
-  }
-}

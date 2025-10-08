@@ -2,9 +2,9 @@
 	BLOCKS INDEX
 =================== */
 
-/* ADD SUB BLOCKS
-------------------- */
+@forward 'actions/actions';
 @forward 'branding/branding';
+@forward 'button/button';
 @forward 'footer/footer-blocks';
 @forward 'search/search';
 @forward 'social-links/social-links';

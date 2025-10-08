@@ -1,0 +1,27 @@
+uuid: bc894270-f278-4c40-a253-df9842221547
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.action_item.field_headline
+    - field.field.paragraph.action_item.field_link
+    - field.field.paragraph.action_item.field_long_text_plain
+    - paragraphs.paragraphs_type.action_item
+id: paragraph.action_item.preview
+targetEntityType: paragraph
+bundle: action_item
+mode: preview
+content:
+  field_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_link: true
+  field_long_text_plain: true
+  search_api_excerpt: true
