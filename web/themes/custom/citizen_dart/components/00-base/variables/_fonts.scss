@@ -57,19 +57,19 @@ $h3Sm: 2.5rem;
 $h3Mid: 3rem;
 
 //h4 sizes
-$h4Sm: 2.75rem;
+$h4Sm: 2.5rem;
 
 //h5 sizes
-$h5Sm: 2.5rem;
+$h5Sm: 2rem;
 
 //h6 sizes
-$h6Sm: 2rem;
+$h6Sm: 1.75rem;
 
 /* FONT AND TYPE MIXINS
 --------------------------- */
 @mixin headerGlobals {
   line-height: 1.15;
-  font-weight: $heavy;
+  font-weight: $semi;
   margin: 0;
   font-feature-settings: "liga", "dlig";
 }
@@ -77,6 +77,7 @@ $h6Sm: 2rem;
 @mixin heading1 {
   @include headerGlobals;
   font-size: $h1Sm;
+  font-weight: $heavy;
 
   @include tab {
     font-size: $h1Mid;

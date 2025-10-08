@@ -1,0 +1,64 @@
+uuid: 8be287bb-620f-4011-8197-38bd1beb333b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.actions
+    - field.storage.block_content.field_actions
+    - paragraphs.paragraphs_type.action_item
+  module:
+    - entity_reference_revisions
+id: block_content.actions.field_actions
+field_name: field_actions
+entity_type: block_content
+bundle: actions
+label: Actions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      action_item: action_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 13
+        enabled: false
+      accordions:
+        weight: 14
+        enabled: false
+      action_item:
+        weight: 15
+        enabled: true
+      custom_embed:
+        weight: 16
+        enabled: false
+      horizontal_rule:
+        weight: 17
+        enabled: false
+      image:
+        weight: 18
+        enabled: false
+      layout_section:
+        weight: 19
+        enabled: false
+      portal:
+        weight: 20
+        enabled: false
+      portals:
+        weight: 21
+        enabled: false
+      text:
+        weight: 22
+        enabled: false
+      video:
+        weight: 23
+        enabled: false
+      view_placer:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

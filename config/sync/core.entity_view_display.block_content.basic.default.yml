@@ -12,7 +12,6 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-    sections: {  }
 _core:
   default_config_hash: Gf6cnFXMWaLfDTqVaGPSjla87vrPxCbOuMA3w3sByV8
 id: block_content.basic.default

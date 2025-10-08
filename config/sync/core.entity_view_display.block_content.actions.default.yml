@@ -1,0 +1,25 @@
+uuid: 96c8ecb6-00fb-4a08-b542-8036204451f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.actions
+    - field.field.block_content.actions.field_actions
+  module:
+    - entity_reference_revisions
+id: block_content.actions.default
+targetEntityType: block_content
+bundle: actions
+mode: default
+content:
+  field_actions:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

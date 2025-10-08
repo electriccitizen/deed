@@ -1,0 +1,8 @@
+uuid: 6c26fcf2-9474-417e-9757-fd0570b6abd6
+langcode: en
+status: true
+dependencies: {  }
+id: actions
+label: Actions
+revision: false
+description: 'Add a reusable block of actions used at the bottom of pages.'

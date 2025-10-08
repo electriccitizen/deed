@@ -1,0 +1,10 @@
+uuid: 5c8faa88-4a5e-400b-b79e-1507f1a42491
+langcode: en
+status: true
+dependencies: {  }
+id: action_item
+label: 'Action Item'
+icon_uuid: null
+icon_default: null
+description: 'Add actions to an actions block.'
+behavior_plugins: {  }
