@@ -23,5 +23,17 @@
 {% extends 'field.html.twig' %}
 
 {% block fieldSingleNo %}
-	<h1 class="page-title">{{- element.0['#text']|striptags('<strong><b><mark>')|raw -}}</h1>
+  <div class="page-title-wrapper">
+	  <h1 class="page-title">{{- element.0['#text']|striptags('<strong><b><mark>')|raw -}}</h1>
+  </div>
+  {% if element['#object'].field_intro.0 %}
+    {% set intro = {
+    '#type': 'processed_text',
+    '#text': element['#object'].field_intro.0.value,
+    '#format': element['#object'].field_intro.0.format
+    } %}
+    <div class="page-intro">
+      {{ intro }}
+    </div>
+  {% endif %}
 {% endblock %}

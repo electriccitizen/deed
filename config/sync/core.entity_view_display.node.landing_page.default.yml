@@ -3,9 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_actions
     - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
+    - field.field.node.landing_page.field_intro
     - field.field.node.landing_page.field_meta_description
     - field.field.node.landing_page.field_page_title
     - field.field.node.landing_page.field_paragraphs
@@ -27,6 +28,7 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings:
           label: ''
+          context_mapping: {  }
         components:
           d966ac11-940d-40b2-a007-a271eea48262:
             uuid: d966ac11-940d-40b2-a007-a271eea48262
@@ -45,7 +47,7 @@ third_party_settings:
                 settings:
                   view_mode: 731x500
                 third_party_settings: {  }
-            weight: 2
+            weight: 0
             additional: {  }
           bc5db295-f5b3-4c2d-ab3c-de10adcc8dc5:
             uuid: bc5db295-f5b3-4c2d-ab3c-de10adcc8dc5
@@ -63,30 +65,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 4
-            additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          ab701efe-a35e-4a00-ab4b-8033dccc4554:
-            uuid: ab701efe-a35e-4a00-ab4b-8033dccc4554
-            region: content
-            configuration:
-              id: 'field_block:node:landing_page:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -111,7 +90,26 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
+            additional: {  }
+          545acc19-a72e-4bef-9bb5-f2017a5986f7:
+            uuid: 545acc19-a72e-4bef-9bb5-f2017a5986f7
+            region: content
+            configuration:
+              id: 'field_block:node:landing_page:field_actions'
+              label: Actions
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
     is_enabled: true
@@ -122,12 +120,13 @@ targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_actions:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 101
+    weight: 110
     region: content
   field_exclude_search:
     type: boolean
@@ -146,6 +145,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_intro:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_meta_description:
     type: basic_string

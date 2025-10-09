@@ -12,8 +12,8 @@ id: node.landing_page.field_image
 field_name: field_image
 entity_type: node
 bundle: landing_page
-label: Banner
-description: '<strong>Optimal image size:</strong> 1600x912px'
+label: 'Featured Image'
+description: '<strong>Optimal image size:</strong> 1462x1000px'
 required: false
 translatable: true
 default_value: {  }

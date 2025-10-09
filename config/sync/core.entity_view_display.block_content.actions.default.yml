@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.actions
     - field.field.block_content.actions.field_actions
+    - field.field.block_content.actions.field_headline
   module:
     - entity_reference_revisions
 id: block_content.actions.default
@@ -20,6 +21,14 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true
