@@ -1,0 +1,24 @@
+uuid: 2546b113-aeb8-47f3-9f4a-c22c9cb36355
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro
+    - filter.format.limited_html
+    - paragraphs.paragraphs_type.otp_section
+  module:
+    - text
+id: paragraph.otp_section.field_intro
+field_name: field_intro
+entity_type: paragraph
+bundle: otp_section
+label: Intro
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - limited_html
+field_type: text_long

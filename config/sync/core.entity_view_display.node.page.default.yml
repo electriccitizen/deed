@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
+    - field.field.node.page.field_actions
+    - field.field.node.page.field_eyebrow
     - field.field.node.page.field_image
+    - field.field.node.page.field_intro
+    - field.field.node.page.field_intro_links
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_search_keywords
@@ -12,6 +15,8 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
+    - link
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -88,12 +93,67 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          1cc1693c-f6a6-4f4f-8691-1cef96b86c81:
+            uuid: 1cc1693c-f6a6-4f4f-8691-1cef96b86c81
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_actions'
+              label: Actions
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
 bundle: page
 mode: default
 content:
+  field_actions:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_eyebrow:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_intro:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_intro_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_meta_description:
     type: basic_string
     label: above
@@ -115,7 +175,6 @@ content:
     weight: 100
     region: content
 hidden:
-  body: true
   field_image: true
   field_paragraphs: true
   search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: f5f005ba-77cd-48b6-9b70-ceadff4fcf19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text_plain
+    - paragraphs.paragraphs_type.otp_action
+id: paragraph.otp_action.field_long_text_plain
+field_name: field_long_text_plain
+entity_type: paragraph
+bundle: otp_action
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,16 @@
+uuid: af4327c1-4492-4cd3-b43a-500b471d8e8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: otp_section
+label: 'On This Page Section'
+icon_uuid: null
+icon_default: null
+description: 'Add section to a page that automatically builds on page navigation.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'

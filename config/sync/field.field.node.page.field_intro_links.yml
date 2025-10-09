@@ -1,0 +1,23 @@
+uuid: 82bb6e86-425b-4a18-accb-7ec73754a324
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_links
+    - node.type.page
+  module:
+    - link
+id: node.page.field_intro_links
+field_name: field_intro_links
+entity_type: node
+bundle: page
+label: 'Intro Links'
+description: 'The first intro link will be displayed as button.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

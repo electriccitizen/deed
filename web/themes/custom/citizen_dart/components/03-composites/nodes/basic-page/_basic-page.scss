@@ -5,15 +5,83 @@
 @use '../../../00-base' as *;
 
 .node-page {
-  .breadcrumb {
-    padding: 0;
+  #node-section-1 {
+    width: calc(100% + 40px);
+    @include edgeToEdge;
+
+    .layout__region--content {
+      @include tab {
+        @include safeFlex(row,nowrap,start,stretch);
+      }
+    }
   }
 
   .block-field-image {
-    @include edgeToEdge;
+    @include tab {
+      order: 2;
+      flex: 0 0 38.26%;
+    }
   }
 
-  .block-field.block-body {
-    max-width: 100%;
+  .block-field.block-title {
+    padding: 0 $siteMarginMobile;
+    text-align: left;
+
+    &:not(:first-child){
+      @include tab {
+        flex: 1 1 auto;
+        padding-right: 62px;
+      }
+
+      @include desk {
+        padding-right: 102px;
+      }
+
+      @include contentStop {
+        padding-right: 152px;
+      }
+    }
+  }
+
+  .intro-links {
+    @include listReset;
+    @include safeFlex(row,wrap,start,center);
+    column-gap: 46px;
+    row-gap: 16px;
+    li {
+      &:first-child {
+        a{
+          @include button;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .field-paragraphs {
+    @include tab {
+      display: flex;
+      column-gap: 64px;
+      align-items: flex-start;
+    }
+    .otp-nav {
+      @include tab {
+        position: sticky;
+        top: 20px;
+        flex: 0 0 260px;
+        align-self: flex-start;  
+      }
+    }
+    .otp-sections-wrapper {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+
+  .block-field-actions {
+    background: $teal20;
+    width: calc(100% + 40px);
+    padding: 80px 20px;
+    @include edgeToEdge;
   }
 }

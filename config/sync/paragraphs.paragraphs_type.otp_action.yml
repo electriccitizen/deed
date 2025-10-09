@@ -1,0 +1,10 @@
+uuid: dac12231-cde6-4f9f-a7e8-165181ce4e65
+langcode: en
+status: true
+dependencies: {  }
+id: otp_action
+label: 'On This Page Action'
+icon_uuid: null
+icon_default: null
+description: 'Add a user action to an on this page section.'
+behavior_plugins: {  }

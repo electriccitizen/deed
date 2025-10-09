@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.media.551x500
     - field.field.media.image.field_media_image
-    - lazy.settings
     - media.type.image
     - responsive_image.styles.551x500
   module:
@@ -24,16 +23,16 @@ bundle: image
 mode: 551x500
 content:
   field_media_image:
-    type: lazy_responsive_image
+    type: responsive_image
     label: hidden
     settings:
       responsive_image_style: 551x500
       image_link: ''
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings:
       lazy:
-        lazy_image: '1'
+        lazy_image: '0'
         placeholder_style: ''
         data_uri: false
     weight: 0
