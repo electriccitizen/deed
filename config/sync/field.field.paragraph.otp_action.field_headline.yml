@@ -1,0 +1,19 @@
+uuid: afaefecc-b7a4-4e59-9c85-4fe2befc0d56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline
+    - paragraphs.paragraphs_type.otp_action
+id: paragraph.otp_action.field_headline
+field_name: field_headline
+entity_type: paragraph
+bundle: otp_action
+label: Headline
+description: 'If you are adding a link to this action in the on this page nav, this headline will be the link text. If so, the headline should be no more than three to five short words.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

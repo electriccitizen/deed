@@ -58,6 +58,10 @@ button.disabled:hover {
 }
 
 /* ADD LAYOUT PARAGRAPH UI IMPROVEMENTS */
+.layout-paragraphs-component-form #layout-paragraphs-element{
+  display: none;
+}
+
 .ui-widget-content.lpb-dialog {
   width: 75% !important;
 }
@@ -135,8 +139,8 @@ button.disabled:hover {
   background-image: url('../icons/image.svg');
 }
 
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-portals>a:before {
-  background-image: url('../icons/portals.svg');
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-otp_action>a:before {
+  background-image: url('../icons/otp-action.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-text>a:before {
@@ -198,9 +202,16 @@ button.disabled:hover {
 .field--name-field-page-title .ck-source-editing-area {
   min-height: 60px;
 }
+
 /* ADJUST FOCAL POINT PREVIEW ON IMAGE FIELDS SO VERTICAL IMAGES DON'T LOOK LIKE PARTIALS
 --------------------------- */
 .image-preview .focal-point-wrapper .image-style-thumbnail {
   min-width: 100%;
+}
+
+/* FIX FORM ITEMS NOT WRAPPING 
+--------------------------------*/
+td .form-item {
+  flex-wrap: wrap;
 }
 

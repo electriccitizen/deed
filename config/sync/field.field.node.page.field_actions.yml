@@ -1,28 +1,26 @@
-uuid: c06c89a3-5ee3-4e1c-a3f0-33ee2242402a
+uuid: f0ada504-eb1e-4775-b9a6-8685272c7713
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - media.type.image
+    - block_content.type.actions
+    - field.storage.node.field_actions
     - node.type.page
-_core:
-  default_config_hash: 25mtf4oaogzRhDrv4Qj57OunVDtRjIL4wcWR2Ddxb0I
-id: node.page.field_image
-field_name: field_image
+id: node.page.field_actions
+field_name: field_actions
 entity_type: node
 bundle: page
-label: 'Featured Image'
-description: '<strong>Optimal image size:</strong> 1102x100px'
+label: Actions
+description: 'Select a reusable block of actions to show at the bottom of the page.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:block_content'
   handler_settings:
     target_bundles:
-      image: image
+      actions: actions
     sort:
       field: _none
       direction: ASC

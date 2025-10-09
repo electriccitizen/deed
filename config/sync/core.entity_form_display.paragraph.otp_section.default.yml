@@ -1,0 +1,48 @@
+uuid: 705d8ffe-2ab2-4a1f-af09-c10a5a735084
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.otp_section.field_intro
+    - field.field.paragraph.otp_section.field_section_title
+    - field.field.paragraph.otp_section.field_subheader
+    - paragraphs.paragraphs_type.otp_section
+  module:
+    - text
+id: paragraph.otp_section.default
+targetEntityType: paragraph
+bundle: otp_section
+mode: default
+content:
+  field_intro:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_section_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_subheader:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  layout_paragraphs_fields:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

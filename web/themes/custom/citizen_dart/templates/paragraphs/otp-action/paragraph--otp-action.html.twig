@@ -36,16 +36,15 @@
  * @ingroup themeable
  */
 #}
+
 {% extends 'paragraph.html.twig' %}
 
 {% block widgetContent %}
-	<div class="portal-item">
-		<a href="{{ content.field_link.0['#plain_text'] }}" class="portal-link">
-			{{ content.field_image }}
-			{{ content.field_headline }}
-		</a>
-		{{ content.field_long_text }}
-	</div>
+  {% set action_id = 'otp-action-' ~ paragraph.id.value %}
+  {% set add_nav_link = paragraph.field_add_link.0.value %}
+  <article id="{{ action_id }}" class="paragraph--otp-action" {% if add_nav_link == '1' %}data-otp-headline="{{ paragraph.field_headline.0.value }}"{% endif %}>
+    {{- parent() -}}
+  </article>
 {% endblock %}
-
+			
 

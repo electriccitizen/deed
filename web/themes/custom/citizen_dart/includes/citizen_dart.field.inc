@@ -9,16 +9,6 @@
  * Implements hook_preprocess_field().
  */
 function citizen_dart_preprocess_field(&$variables) {
-  switch ($variables['element']['#field_name']) {
-    case 'field_dates':
-      if (isset($variables['element']['#date_delta'])) {
-        // Only render the delta stored from the view results.
-        $delta = $variables['element']['#date_delta'];
-        $date = $variables['items'][$delta];
-        $variables['items'] = [$date];
-      }
-      break;
-  }
 
   // Remove HTML tags from summary/trimmed WYSIWYG fields.
   if (isset($variables['element']['#formatter']) && $variables['element']['#formatter'] == 'text_summary_or_trimmed') {

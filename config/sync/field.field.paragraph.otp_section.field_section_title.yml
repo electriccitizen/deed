@@ -1,0 +1,19 @@
+uuid: c5ba4d09-7446-417e-a589-cbc444213345
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_title
+    - paragraphs.paragraphs_type.otp_section
+id: paragraph.otp_section.field_section_title
+field_name: field_section_title
+entity_type: paragraph
+bundle: otp_section
+label: 'Section Title'
+description: 'The section title will also be the text of the sidebar navigation link.  Due to limited space in the sidebar, the title should be no more than three to five short words.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

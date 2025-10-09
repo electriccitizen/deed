@@ -1,0 +1,24 @@
+uuid: 7cd446a6-e0ac-49dc-9b98-064aacd2c643
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro
+    - filter.format.limited_html
+    - node.type.page
+  module:
+    - text
+id: node.page.field_intro
+field_name: field_intro
+entity_type: node
+bundle: page
+label: Intro
+description: 'The intro is displayed on the page and is meant to provide quick context for the content. This can be the same as the meta description or more in depth.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - limited_html
+field_type: text_long

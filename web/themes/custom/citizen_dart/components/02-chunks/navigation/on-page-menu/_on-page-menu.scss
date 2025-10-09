@@ -3,166 +3,25 @@
 ===================== */
 @use '../../../00-base' as *;
 
-#block-section-menu {
+.otp-nav {
+  @include listReset;
 
-  @include onlyMobile {
-    margin-bottom: $spaceLg;
-  }
-
-  h2.block-title {
-    position: relative;
-    display: block;
-    padding: 1.5rem $siteMarginMobile;
-    background: $menuBlockTitleBack;
-    color: $menuBlockTitle;
-    max-width: none;
-    margin-bottom: 0;
-
-    @include onlyMobile {
-      padding: 2rem 2.5rem;
-      @include edgeToEdge;
+  & > li {
+    &.otp-section-active > a {
+      color: $blue;
     }
-
-    a.section-menu-toggle {
-      color: $menuBlockTitle;
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
-
-      span {
-        display: none;
-      }
-
-      &:before {
-        @include materialIcon(\e5d2);
-        display: inline-block;
-        top: 0;
-        right: 0;
-        color: $hamburger;
-        line-height: 28px;
-      }
-
-      &:hover,
-      &:focus {
-        color: $menuBlockTitleHover;
-      }
-
-      @include desk {
-        display: none;
-        pointer-events: none;
-      }
+    .otp-section-active {
+      color: $blue;
+    }
+    & > a {
+      font-size: 24px;
     }
   }
-}
 
-/* TOP LEVEL SECTION MENU
--------------------------- */
-#section-menu-wrapper {
-  display: none;
-  background: $menuBack;
-  padding-top: $spaceSm;
-  padding-bottom: $spaceMd;
-  border-bottom: 2px solid $menuBlockTitleBack;
-
-  @include onlyMobile {
-    padding-left: $siteMarginMobile;
-    padding-right: $siteMarginMobile;
-    @include edgeToEdge;
-  }
-
-  @include desk {
-    display: block !important;
-  }
-
-  .nav-toggle-container {
-    display: none;
-  }
-
-  & > ul:not(.contextual-links) {
+  ul{ 
     @include listReset;
-    @include auto;
-
-    ul:not(.contextual-links) {
-      margin: .5rem 0;
-      display: none;
-      padding-left: 0;
-
-      &.expanded {
-        display: block;
-      }
-    }
-
     li {
-      list-style: none;
-      padding: .5rem 3.5rem;
-      position: relative;
-      //hide support menu items from roles that do not need them
-      .node-type-support-book:not(.role-site_manager):not(.role-administrator):not(.role-super-user) &{
-        &.item-type-site-management{
-          display: none;
-        }
-      }
-      a {
-        color: $menuTop;
-        text-decoration: none;
-        display: block;
-
-        &:hover,
-        &:focus {
-          color: $menuTopHover;
-        }
-
-        &.is-active {
-          color: $menuTopActive;
-          pointer-events: none;
-        }
-
-        // Hide expander that menu--main.html.twig adds for use in the top menu.
-        &.menu-item-expand {
-          display: none;
-        }
-      }
-
-      &.parent {
-        & > .expander {
-          width: 3.75rem;
-          font-size: 3rem;
-          line-height: 1;
-          text-align: center;
-          position: absolute;
-          top: 5px;
-          left: 0;
-
-          &::before {
-            content: "+";
-          }
-        }
-
-        &.expanded > .expander {
-          top: 3px;
-
-          &::before {
-            content: "–";
-          }
-        }
-      }
-
-      li {
-        padding-right: 0;
-
-        a {
-          color: $menuChild;
-
-          &:hover,
-          &:focus {
-            color: $menuChildHover;
-          }
-
-          &.is-active {
-            color: $menuChildActive;
-          }
-        }
-      }
+      padding-left: 20px;
     }
   }
 }

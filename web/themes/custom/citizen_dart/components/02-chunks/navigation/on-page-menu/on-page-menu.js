@@ -1,199 +1,283 @@
 (function (Drupal, once) {
+  'use strict';
 
-  Drupal.behaviors.sectionMenu = {
-    attach: function (context) {
-      once('section-menu', '#block-section-menu', context).forEach(sectionMenu => {
-        const sectionMenuWrapper = sectionMenu.querySelector('#section-menu-wrapper');
-        const menuNavigation = sectionMenu.querySelector(".menu-main-navigation");
+  const cssEscapeFallback = (value) => {
+    if (typeof CSS !== 'undefined' && typeof CSS.escape === 'function') {
+      return CSS.escape(value);
+    }
+    return String(value).replace(/([ !"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g, '\\$1');
+  };
 
-        sectionMenu.querySelector('.section-menu-toggle').addEventListener('click', event => {
-          event.preventDefault();
-          // Only allow the menu to be expanded or collapsed when at mobile
-          // sizes.
-          if (window.outerWidth < 980) {
-            if (event.target.classList.contains('active-nav')) {
-              event.target.setAttribute('aria-expanded', false);
-              event.target.classList.remove('active-nav');
-              event.target.querySelector('.material-icons').innerHTML = '&#xE5D2;';
-              menuNavigation.classList.remove('accordion-open');
-              slideUp(sectionMenuWrapper, 200);
+  /**
+   * Determine fixed header height (if any) to offset scrolling.
+   * Tries common header selectors; only counts it if computed position is fixed.
+   */
+  const getHeaderOffset = () => {
+    const headerSelectors = ['.site-header', 'header', '.header', '.fixed-header', '[data-header-fixed]'];
+    const headerEl = document.querySelector(headerSelectors.join(','));
+    if (!headerEl) return 0;
+    const style = window.getComputedStyle(headerEl);
+    if (style.position === 'fixed' || style.position === 'sticky') {
+      return Math.ceil(headerEl.getBoundingClientRect().height);
+    }
+    return 0;
+  };
+
+  /**
+   * Smooth scroll to an element and update the URL hash without jumping.
+   * @param {Element} targetEl
+   * @param {number} offset
+   */
+  const smoothScrollTo = (targetEl, offset = 0) => {
+    if (!targetEl) return;
+    const top = Math.round(targetEl.getBoundingClientRect().top + window.pageYOffset - offset - 8); // small gap
+    window.scrollTo({ top: top < 0 ? 0 : top, behavior: 'smooth' });
+  };
+
+  Drupal.behaviors.onPageMenu = {
+    attach(context) {
+      once('on-page-menu', '.field-paragraphs', context).forEach((field) => {
+        const navRoot = field.querySelector('.otp-nav') || document.querySelector('.otp-nav');
+        if (!navRoot) {
+          return;
+        }
+
+        // Prevent double-adding the click handler if navRoot already processed.
+        if (navRoot.dataset._otpNavHandlerAttached) {
+          // still run actions for paragraph--otp-action discovery below
+        } else {
+          navRoot.dataset._otpNavHandlerAttached = '1';
+
+          // Click handler for smooth-scrolling nav links (delegated).
+          navRoot.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (!anchor) return;
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+
+            // target id without leading '#'
+            const targetId = href.replace(/^#/, '');
+            const escaped = cssEscapeFallback(targetId);
+            const targetEl = document.getElementById(targetId) || document.querySelector('#' + escaped);
+            if (!targetEl) return;
+
+            e.preventDefault();
+
+            const headerOffset = getHeaderOffset();
+            smoothScrollTo(targetEl, headerOffset);
+
+            // Update URL hash without jump (replaceState avoids creating an extra history entry).
+            try {
+              history.replaceState(null, '', '#' + targetId);
+            } catch (err) {
+              // ignore if history API not available for some reason
             }
-            else {
-              event.target.setAttribute('aria-expanded', true);
-              event.target.classList.add('active-nav');
-              event.target.querySelector('.material-icons').innerHTML = '&#xE5CD;';
-              menuNavigation.classList.add('accordion-open');
-              slideDown(sectionMenuWrapper, 200);
-            }
+          }, { passive: false });
+        }
+
+        // Build a map of parentId => nav <li>
+        const navMap = Object.create(null);
+        navRoot.querySelectorAll('.otp-section-nav-item[id]').forEach((li) => {
+          const idAttr = li.id || '';
+          const m = idAttr.match(/^otp-nav-(\d+)$/);
+          if (m) {
+            navMap[m[1]] = li;
           }
         });
 
-        window.addEventListener('resize', Drupal.debounce(mobileSectionNav, 150, false));
+        // Find all action paragraphs inside this field and add child nav links
+        field.querySelectorAll('.paragraph--otp-action[id]').forEach((actionEl) => {
+          if (actionEl.dataset._otpProcessed) return;
+          actionEl.dataset._otpProcessed = '1';
 
-        // Must wait for document loading to be complete to come after theme.
-        window.onload = () => {
-          context.querySelectorAll('#section-menu-wrapper ul li').forEach(menuList => {
-            // Find nested lists and set their parents and expanders.
-            const childList = menuList.querySelector("ul");
-            if (childList && !menuList.querySelector(".expander")) {
-              menuList.classList.add('parent');
+          // Must explicitly have the data-otp-headline attribute (editor opted in).
+          if (!actionEl.hasAttribute('data-otp-headline')) return;
 
-              // Create the "expander" button that reveals/hides the nested
-              // menu items.
-              const expander = document.createElement("a");
-              expander.classList.add('expander');
-              expander.setAttribute('href', '#');
-              expander.setAttribute('role', 'button');
-              expander.setAttribute('aria-label', Drupal.t('Section Submenu Expander'));
-              expander.addEventListener('click', event => {
-                event.preventDefault();
-                if (menuList.classList.contains('expanded')) {
-                  // Collapse nested list.
-                  menuList.classList.remove('expanded');
-                  event.target.setAttribute('aria-expanded', false);
-                  slideUp(childList, 200);
-                }
-                else {
-                  menuList.classList.add('expanded');
-                  event.target.setAttribute('aria-expanded', true);
-                  slideDown(childList, 200);
-                }
-              });
+          const headline = (actionEl.getAttribute('data-otp-headline') || '').trim();
+          if (!headline) return;
 
-              menuList.prepend(expander);
-              childList.setAttribute('aria-hidden', 'true');
-            }
+          // Find parent section id by searching ancestors for id "section-<id>-..."
+          let parentId = null;
+          const sectionAncestor = actionEl.closest('[id^="section-"], .paragraph--otp-section[id]');
+          if (sectionAncestor && sectionAncestor.id) {
+            const sid = sectionAncestor.id;
+            const m = sid.match(/^section-(\d+)(?:-|$)/);
+            if (m) parentId = m[1];
+          }
 
-            // Find any active links and set their parents to be expanded and
-            // active.
-            menuList.querySelectorAll('.is-active').forEach(activeItem => {
-              activeItem.removeAttribute('href');
-              const activeList = activeItem.parentNode.querySelector("ul");
-              if (activeList) {
-                slideDown(activeList, 200);
-                parentsUntil(activeList, '#section-menu-wrapper > ul', (element) => {
-                  element.classList.add('active-trail', 'expanded');
-                  const parentExpander = element.querySelector(":scope > .expander");
-                  const parentList = element.querySelector(':scope > li > ul');
-                  if (parentExpander) {
-                    parentExpander.setAttribute("aria-expanded", true);
-                  }
-                  if (parentList) {
-                    parentList.setAttribute('aria-hidden', false)
-                  }
-                })
-              }
-            });
-          });
-        };
+          // Fallback: data-paragraph-id attribute on an ancestor
+          if (!parentId) {
+            const ancestorWithPid = actionEl.closest('[data-paragraph-id]');
+            if (ancestorWithPid) parentId = ancestorWithPid.getAttribute('data-paragraph-id');
+          }
+
+          if (!parentId) return;
+
+          const navLi = navMap[parentId] || navRoot.querySelector('#' + cssEscapeFallback('otp-nav-' + parentId));
+          if (!navLi) return;
+
+          let childrenUl = navLi.querySelector('.otp-section-children');
+          if (!childrenUl) {
+            childrenUl = document.createElement('ul');
+            childrenUl.className = 'otp-section-children';
+            navLi.appendChild(childrenUl);
+          }
+
+          const actionId = actionEl.id;
+          if (!actionId) return;
+
+          // Prevent duplicate links
+          if (childrenUl.querySelector('a[href="#' + cssEscapeFallback(actionId) + '"]')) {
+            return;
+          }
+
+          const childLi = document.createElement('li');
+          childLi.className = 'otp-section-child';
+
+          const a = document.createElement('a');
+          a.setAttribute('href', '#' + actionId);
+          a.textContent = headline;
+
+          childLi.appendChild(a);
+          childrenUl.appendChild(childLi);
+        });
       });
     }
-  }
+  };
 
-  /**
-   * Animate an element collapsing a la jQuery's slideUp() method.
-   * @param {HTMLElement} element
-   * @param {number} duration
-   */
-  function slideUp(element, duration) {
-    element.style.overflow = 'hidden';
-    element.setAttribute('aria-hidden', true);
-    window.requestAnimationFrame(timestamp => animateSlide(element, element.scrollHeight, -element.scrollHeight, duration, timestamp));
-  }
+  const inTopWindow = (top, min = -50, max = 200) => (top >= min && top <= max);
 
-  /**
-   * Animate an element opening a la jQuery's slideDown() method.
-   * @param {HTMLElement} element
-   * @param {number} duration
-   */
-  function slideDown(element, duration) {
-    element.style.display = 'block';
-    element.setAttribute('aria-hidden', false);
-    window.requestAnimationFrame(timestamp => animateSlide(element, 0, element.scrollHeight, duration, timestamp));
-  }
+  Drupal.behaviors.otpSimpleHighlight = {
+    attach(context) {
+      once('otp-simple-highlight', '.field-paragraphs', context).forEach((container) => {
+        // Find sections scoped to this container so we only watch relevant ones.
+        let sections = Array.from(container.querySelectorAll('.otp-section[id]'));
+        if (!sections.length) return;
 
-  /**
-   * Over time continue to collapse/open a given element by height.
-   * @param {HTMLElement} element
-   * @param {number} startHeight
-   * @param {number} endHeight
-   * @param {number} duration
-   * @param {number} timestamp
-   * @param {number} startTime
-   */
-  function animateSlide(element, startHeight, endHeight, duration, timestamp, startTime = 0) {
-    if (startTime === 0) {
-      startTime = timestamp;
+        // Helper: activate link matching section id
+        const activateForSectionId = (sectionId) => {
+          const activeClass = 'otp-section-active';
+          // remove class from all .otp-main-link first (container scope first)
+          const allLinks = Array.from(container.querySelectorAll('.otp-main-link.' + activeClass));
+          allLinks.forEach(l => l.classList.remove(activeClass));
+
+          if (!sectionId) return;
+          const selector = '.otp-main-link[href="#' + CSS.escape(sectionId) + '"]';
+          let a = container.querySelector(selector) || document.querySelector(selector);
+          if (a) {
+            a.classList.add(activeClass);
+          }
+        };
+
+        // Evaluate which section (if any) is closest to the top window zone.
+        const evaluate = () => {
+          sections = Array.from(container.querySelectorAll('.otp-section[id]')); // refresh list each run
+          if (!sections.length) {
+            activateForSectionId(null);
+            return;
+          }
+
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          let best = null;
+          let bestScore = Infinity;
+
+          const MIN_TOP = -50;
+          const MAX_TOP = 200;
+
+          for (const sec of sections) {
+            const rect = sec.getBoundingClientRect();
+            const top = Math.round(rect.top);
+            if (top >= MIN_TOP && top <= MAX_TOP) {
+              const score = Math.abs(top); // smaller is closer to top
+              if (score < bestScore) {
+                best = sec;
+                bestScore = score;
+              }
+            }
+          }
+
+          if (best) {
+            activateForSectionId(best.id);
+            return;
+          }
+
+          // last-section fallback: when last section title reaches top third of viewport
+          const last = sections[sections.length - 1];
+          if (last) {
+            // If your section has a specific title element you prefer, select it instead of section.
+            // e.g. last.querySelector('.field-section-title')
+            const lastTop = Math.round(last.getBoundingClientRect().top);
+            if (lastTop <= Math.round(viewportHeight / 3)) {
+              activateForSectionId(last.id);
+              return;
+            }
+          }
+
+          // otherwise clear
+          activateForSectionId(null);
+        };
+
+        // Throttled scroll/resize using requestAnimationFrame
+        let rafPending = false;
+        const onScrollOrResize = () => {
+          if (!rafPending) {
+            rafPending = true;
+            requestAnimationFrame(() => {
+              rafPending = false;
+              evaluate();
+            });
+          }
+        };
+
+        // IntersectionObserver to cheaply schedule checks when sections enter/leave viewport.
+        let io = null;
+        if ('IntersectionObserver' in window) {
+          io = new IntersectionObserver((entries) => {
+            // We don't pick from entries directly; just run evaluate() when something changed.
+            evaluate();
+          }, { root: null, rootMargin: '0px', threshold: 0 });
+          sections.forEach(s => io.observe(s));
+        }
+
+        // Always attach scroll+resize handlers so evaluate runs during user scroll (covers cases IO misses)
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize, { passive: true });
+
+        // Run evaluate immediately and at a few short intervals to catch late layout
+        requestAnimationFrame(evaluate);
+        window.addEventListener('load', evaluate, { passive: true });
+        setTimeout(evaluate, 100);
+        setTimeout(evaluate, 500);
+
+        // If DOM under container changes (e.g., nav or sections inserted), re-run evaluate and re-observe
+        const mo = new MutationObserver(() => {
+          setTimeout(() => {
+            // refresh sections, re-observe
+            sections = Array.from(container.querySelectorAll('.otp-section[id]'));
+            if (io) {
+              try { io.disconnect(); } catch (e) {}
+              io = new IntersectionObserver((entries) => evaluate(), { root: null, rootMargin: '0px', threshold: 0 });
+              sections.forEach(s => io.observe(s));
+            }
+            evaluate();
+          }, 50);
+        });
+        mo.observe(container, { childList: true, subtree: true });
+
+        // Cleanup when container removed
+        const removalChecker = setInterval(() => {
+          if (!document.body.contains(container)) {
+            clearInterval(removalChecker);
+            try { if (io) io.disconnect(); } catch (e) {}
+            mo.disconnect();
+            window.removeEventListener('scroll', onScrollOrResize);
+            window.removeEventListener('resize', onScrollOrResize);
+          }
+        }, 2000);
+      });
     }
-    const currentTime = timestamp - startTime;
-    let animationContinue = currentTime < duration;
-    let newHeight = animateEasing(currentTime, startHeight, endHeight, duration);
+  };
 
-    if (animationContinue) {
-      element.style.height = `${newHeight.toFixed(2)}px`;
-      window.requestAnimationFrame((timestamp) => animateSlide(element, startHeight, endHeight, duration, timestamp, startTime));
-    }
-    else {
-      if (endHeight < 0) {
-        element.style.display = 'none';
-      }
-      element.style.overflow = 'visible';
-      element.style.height = 'auto';
-    }
-  }
 
-  /**
-   * Use a linear quadratic formula to calculate the height for an animated slide.
-   * @param {number} timepassed
-   * @param {number} start
-   * @param {number} end
-   * @param {number} duration
-   * @returns {number}
-   */
-  function animateEasing(timepassed, start, end, duration) {
-    const difference = timepassed / duration;
-    return -end * difference * (difference - 2) + start;
-  }
-
-  /**
-   * Step upwards through a Node list and apply a callback until a selector.
-   * @param {HTMLElement} element
-   * @param {string} untilSelector
-   * @param {function} callback
-   */
-  function parentsUntil(element, untilSelector, callback) {
-    if (!element.matches(untilSelector)) {
-      callback(element);
-      parentsUntil(element.parentNode, untilSelector, callback);
-    }
-  }
-
-  /**
-   * Update ARIA roles for mobile menu depending on if we're at mobile size.
-   */
-  function mobileSectionNav() {
-
-    const sectionMenuToggle = document.querySelector(".section-menu-toggle");
-    const sectionMenuWrapper = document.querySelector("#section-menu-wrapper");
-
-    if (window.outerWidth < 980) {
-      // If ARIA settings not already on the toggle due to the user clicking it,
-      // add them.
-      if (!sectionMenuToggle.hasAttribute('aria-controls')) {
-        sectionMenuToggle.setAttribute('href', '#');
-        sectionMenuToggle.setAttribute('aria-controls', 'section-menu-wrapper');
-        sectionMenuToggle.setAttribute('aria-expanded', false);
-        sectionMenuWrapper.setAttribute('aria-hidden', true);
-      }
-    }
-    else {
-      // Strip all ARIA attributes and prevent clicking it.
-      sectionMenuToggle.removeAttribute('aria-controls');
-      sectionMenuToggle.removeAttribute('aria-expanded');
-      sectionMenuToggle.removeAttribute('role');
-      sectionMenuToggle.removeAttribute('href');
-      sectionMenuWrapper.removeAttribute('aria-hidden');
-    }
-  }
-
+  
 })(Drupal, once);

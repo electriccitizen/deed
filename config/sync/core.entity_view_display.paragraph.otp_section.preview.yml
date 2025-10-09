@@ -1,0 +1,27 @@
+uuid: f28432e0-e4a0-4e09-82b0-cce382cde1fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.otp_section.field_intro
+    - field.field.paragraph.otp_section.field_section_title
+    - field.field.paragraph.otp_section.field_subheader
+    - paragraphs.paragraphs_type.otp_section
+id: paragraph.otp_section.preview
+targetEntityType: paragraph
+bundle: otp_section
+mode: preview
+content:
+  field_section_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_intro: true
+  field_subheader: true
+  search_api_excerpt: true

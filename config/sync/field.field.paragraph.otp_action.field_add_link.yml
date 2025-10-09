@@ -1,0 +1,21 @@
+uuid: 5eb3ac01-c882-4876-99c9-3810a8bee382
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_add_link
+    - paragraphs.paragraphs_type.otp_action
+id: paragraph.otp_action.field_add_link
+field_name: field_add_link
+entity_type: paragraph
+bundle: otp_action
+label: 'Add On This Page Link'
+description: 'Add a link to this action as a child of this sections on this page action link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

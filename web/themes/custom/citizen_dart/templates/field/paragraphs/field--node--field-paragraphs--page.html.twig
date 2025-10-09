@@ -41,12 +41,27 @@
 {% extends 'field.html.twig' %}
 
 {% block fieldMultiNoItems %}
-	{%- for item in items -%}
-		<div class="widget{% if (item.content['#paragraph'].type.0.target_id == 'layout_section') %} layout-section{% endif %}">
-			{% block paragraphItem %}
-				{{- item.content -}}
-			{% endblock %}
-		</div>
-	{%- endfor -%}
+  {{ attach_library('citizen_dart/on-page-menu') }}
+
+  <ul class="otp-nav">
+    {%- for item in items -%}
+      {% if (item.content['#paragraph'].type.0.target_id == 'otp_section') %}
+        <li class="otp-section-nav-item" id="otp-nav-{{ item.content['#paragraph'].id.0.value }}">
+          {% set sectionName =  item.content['#paragraph'].field_section_title.0.value %}
+          <a href="#section-{{ item.content['#paragraph'].id.0.value }}-{{ item.content['#paragraph'].field_section_title.0.value|clean_class }}" class="otp-main-link">{{ sectionName }}</a>
+        </li>
+      {% endif %}
+    {%- endfor -%}
+  </ul>
+
+  <div class="otp-sections-wrapper">
+    {%- for item in items -%}
+      <div class="widget{% if (item.content['#paragraph'].type.0.target_id == 'otp_section') %} otp-section{% endif %}" {% if (item.content['#paragraph'].type.0.target_id == 'otp_section') %}id="section-{{ item.content['#paragraph'].id.0.value }}-{{ item.content['#paragraph'].field_section_title.0.value|clean_class }}"{% endif %}>
+        {% block paragraphItem %}
+          {{- item.content -}}
+        {% endblock %}
+      </div>
+    {%- endfor -%}
+  </div>
 {% endblock %}
 
