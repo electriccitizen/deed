@@ -144,4 +144,140 @@
       });
     }
   };
+
+  const inTopWindow = (top, min = -50, max = 200) => (top >= min && top <= max);
+
+  Drupal.behaviors.otpSimpleHighlight = {
+    attach(context) {
+      once('otp-simple-highlight', '.field-paragraphs', context).forEach((container) => {
+        // Find sections scoped to this container so we only watch relevant ones.
+        let sections = Array.from(container.querySelectorAll('.otp-section[id]'));
+        if (!sections.length) return;
+
+        // Helper: activate link matching section id
+        const activateForSectionId = (sectionId) => {
+          const activeClass = 'otp-section-active';
+          // remove class from all .otp-main-link first (container scope first)
+          const allLinks = Array.from(container.querySelectorAll('.otp-main-link.' + activeClass));
+          allLinks.forEach(l => l.classList.remove(activeClass));
+
+          if (!sectionId) return;
+          const selector = '.otp-main-link[href="#' + CSS.escape(sectionId) + '"]';
+          let a = container.querySelector(selector) || document.querySelector(selector);
+          if (a) {
+            a.classList.add(activeClass);
+          }
+        };
+
+        // Evaluate which section (if any) is closest to the top window zone.
+        const evaluate = () => {
+          sections = Array.from(container.querySelectorAll('.otp-section[id]')); // refresh list each run
+          if (!sections.length) {
+            activateForSectionId(null);
+            return;
+          }
+
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          let best = null;
+          let bestScore = Infinity;
+
+          const MIN_TOP = -50;
+          const MAX_TOP = 200;
+
+          for (const sec of sections) {
+            const rect = sec.getBoundingClientRect();
+            const top = Math.round(rect.top);
+            if (top >= MIN_TOP && top <= MAX_TOP) {
+              const score = Math.abs(top); // smaller is closer to top
+              if (score < bestScore) {
+                best = sec;
+                bestScore = score;
+              }
+            }
+          }
+
+          if (best) {
+            activateForSectionId(best.id);
+            return;
+          }
+
+          // last-section fallback: when last section title reaches top third of viewport
+          const last = sections[sections.length - 1];
+          if (last) {
+            // If your section has a specific title element you prefer, select it instead of section.
+            // e.g. last.querySelector('.field-section-title')
+            const lastTop = Math.round(last.getBoundingClientRect().top);
+            if (lastTop <= Math.round(viewportHeight / 3)) {
+              activateForSectionId(last.id);
+              return;
+            }
+          }
+
+          // otherwise clear
+          activateForSectionId(null);
+        };
+
+        // Throttled scroll/resize using requestAnimationFrame
+        let rafPending = false;
+        const onScrollOrResize = () => {
+          if (!rafPending) {
+            rafPending = true;
+            requestAnimationFrame(() => {
+              rafPending = false;
+              evaluate();
+            });
+          }
+        };
+
+        // IntersectionObserver to cheaply schedule checks when sections enter/leave viewport.
+        let io = null;
+        if ('IntersectionObserver' in window) {
+          io = new IntersectionObserver((entries) => {
+            // We don't pick from entries directly; just run evaluate() when something changed.
+            evaluate();
+          }, { root: null, rootMargin: '0px', threshold: 0 });
+          sections.forEach(s => io.observe(s));
+        }
+
+        // Always attach scroll+resize handlers so evaluate runs during user scroll (covers cases IO misses)
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize, { passive: true });
+
+        // Run evaluate immediately and at a few short intervals to catch late layout
+        requestAnimationFrame(evaluate);
+        window.addEventListener('load', evaluate, { passive: true });
+        setTimeout(evaluate, 100);
+        setTimeout(evaluate, 500);
+
+        // If DOM under container changes (e.g., nav or sections inserted), re-run evaluate and re-observe
+        const mo = new MutationObserver(() => {
+          setTimeout(() => {
+            // refresh sections, re-observe
+            sections = Array.from(container.querySelectorAll('.otp-section[id]'));
+            if (io) {
+              try { io.disconnect(); } catch (e) {}
+              io = new IntersectionObserver((entries) => evaluate(), { root: null, rootMargin: '0px', threshold: 0 });
+              sections.forEach(s => io.observe(s));
+            }
+            evaluate();
+          }, 50);
+        });
+        mo.observe(container, { childList: true, subtree: true });
+
+        // Cleanup when container removed
+        const removalChecker = setInterval(() => {
+          if (!document.body.contains(container)) {
+            clearInterval(removalChecker);
+            try { if (io) io.disconnect(); } catch (e) {}
+            mo.disconnect();
+            window.removeEventListener('scroll', onScrollOrResize);
+            window.removeEventListener('resize', onScrollOrResize);
+          }
+        }, 2000);
+      });
+    }
+  };
+
+
+  
 })(Drupal, once);

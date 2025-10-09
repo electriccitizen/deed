@@ -7,6 +7,12 @@
   @include listReset;
 
   & > li {
+    &.otp-section-active > a {
+      color: $blue;
+    }
+    .otp-section-active {
+      color: $blue;
+    }
     & > a {
       font-size: 24px;
     }

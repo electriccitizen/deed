@@ -48,7 +48,7 @@
       {% if (item.content['#paragraph'].type.0.target_id == 'otp_section') %}
         <li class="otp-section-nav-item" id="otp-nav-{{ item.content['#paragraph'].id.0.value }}">
           {% set sectionName =  item.content['#paragraph'].field_section_title.0.value %}
-          <a href="#section-{{ item.content['#paragraph'].id.0.value }}-{{ item.content['#paragraph'].field_section_title.0.value|clean_class }}">{{ sectionName }}</a>
+          <a href="#section-{{ item.content['#paragraph'].id.0.value }}-{{ item.content['#paragraph'].field_section_title.0.value|clean_class }}" class="otp-main-link">{{ sectionName }}</a>
         </li>
       {% endif %}
     {%- endfor -%}

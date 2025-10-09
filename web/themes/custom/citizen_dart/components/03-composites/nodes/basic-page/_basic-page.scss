@@ -59,6 +59,10 @@
   }
 
   .field-paragraphs {
+    padding: 0 $siteMarginMobile;
+    max-width: $contentStop;
+    @include auto;
+    
     @include tab {
       display: flex;
       column-gap: 64px;
@@ -67,7 +71,7 @@
     .otp-nav {
       @include tab {
         position: sticky;
-        top: 20px;
+        top: 100px;
         flex: 0 0 260px;
         align-self: flex-start;  
       }
