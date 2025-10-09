@@ -1,16 +1,36 @@
 /* =================
-   SOCIAL MEDIA LINKS
+   ACTIONS BLOCK
 =================== */
 @use '../../../00-base' as *;
 
-.block-social-media-links {
-  .field.body {
-    margin-bottom: $spaceSm;
+.block-actions {
+  max-width: $textMax;
+  @include auto;
+  @include safeFlex(row,wrap,start,start);
+
+  .field-headline {
+    width: 100%;
+    @include tab {
+      width: 50%;
+      padding-right: 26px;
+    }
   }
 
-  .platform-links {
-    @include onlySmall {
-      @include safeFlex(row, wrap, center, start);
+  .field-actions {
+    width: 100%;
+
+    @include smallTab {
+      @include safeFlex(row,wrap,start,start);
+      column-gap: 35px;
+      
+      & > *{
+        width: calc(50% - 35px);
+      }
+    }
+
+    @include tab {
+      width: 50%;
+      padding-left: 26px;
     }
   }
 }

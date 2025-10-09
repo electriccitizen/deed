@@ -5,12 +5,37 @@
 @use '../../../00-base' as *;
 
 .node-landing-page {
-  .block-field-image {
+  #node-section-1 {
+    width: calc(100% + 40px);
     @include edgeToEdge;
+
+    .layout__region--content {
+      @include tab {
+        @include safeFlex(row,nowrap,start,stretch);
+      }
+    }
   }
 
-  .block-field.block-body {
-    @include auto;
-    max-width: $textMax;
+  .block-field-image {
+    @include tab {
+      flex: 0 0 51.31%;
+    }
+  }
+
+  .block-field-page-title {
+    padding: 0 $siteMarginMobile;
+    &:not(:first-child){
+      @include tab {
+        flex: 1 1 auto;
+        padding-left: 57px;
+      }
+    }
+  }
+
+  .block-field-actions {
+    background: $teal20;
+    width: calc(100% + 40px);
+    padding: 80px 20px;
+    @include edgeToEdge;
   }
 }

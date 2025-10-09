@@ -1,0 +1,19 @@
+uuid: eeec7af1-caf0-4bf9-9138-babbd1f3bf5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.actions
+    - field.storage.block_content.field_headline
+id: block_content.actions.field_headline
+field_name: field_headline
+entity_type: block_content
+bundle: actions
+label: Headline
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
