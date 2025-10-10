@@ -127,6 +127,10 @@ button.disabled:hover {
   background-image: url('../icons/accordions.svg');
 }
 
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-call_to_action>a:before {
+  background-image: url('../icons/cta.svg');
+}
+
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-custom_embed>a:before {
   background-image: url('../icons/custom-embed.svg');
 }

@@ -1,29 +1,30 @@
-uuid: cec49be4-10ba-4725-bbb1-d3fe9d147490
+uuid: 60c22972-cf15-4346-a5af-8be091c9ae4b
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.layout_section.field_section_title
-    - paragraphs.paragraphs_type.layout_section
+    - field.field.paragraph.call_to_action.field_link
+    - field.field.paragraph.call_to_action.field_long_text_plain
+    - paragraphs.paragraphs_type.call_to_action
   module:
     - layout_builder
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.layout_section.preview
+id: paragraph.call_to_action.preview
 targetEntityType: paragraph
-bundle: layout_section
+bundle: call_to_action
 mode: preview
 content:
-  field_section_title:
-    type: string
+  field_long_text_plain:
+    type: basic_string
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_link: true
   search_api_excerpt: true

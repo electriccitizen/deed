@@ -1,0 +1,35 @@
+/* ===============
+   CALL TO ACTION
+================= */
+@use '../../../00-base' as *;
+
+.paragraph--type--call-to-action {
+  background: $tealText;
+  color: $white;
+  padding: 43px 50px;
+  text-align: center;
+  @include textConstrain;
+
+  @include smallTab {
+    padding: 43px 70px;
+  }
+
+  @include tab {
+    padding: 43px 90px;
+  }
+
+  .field-long-text-plain {
+    @include heading2;
+    & {
+      line-height: 1.5;
+      margin-bottom: $spaceSm;
+    }
+  }
+
+  .field-link {
+    a {
+      @include button;
+      margin-bottom: 0;
+    }
+  }
+}

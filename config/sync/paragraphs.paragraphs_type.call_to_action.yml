@@ -1,0 +1,10 @@
+uuid: 55e1e5d1-440e-4d4b-a965-ad07f4ade5e7
+langcode: en
+status: true
+dependencies: {  }
+id: call_to_action
+label: 'Call To Action'
+icon_uuid: null
+icon_default: null
+description: 'Add a call to action for the user to perform.'
+behavior_plugins: {  }

@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Theme override for the node title field.
+ *
+ * This is an override of field.html.twig for the node title field. See that
+ * template for documentation about its details and overrides.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing span element.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see field.html.twig
+ */
+#}
+
+{% extends 'field.html.twig' %}
+
+{% block fieldSingleNo %}
+  {{ attach_library('citizen_dart/copy-link') }}
+  <div class="eyebrow">{% trans %}News & Updates{% endtrans %}</div>
+	<div class="page-title-wrapper">
+	  <h1 class="page-title">{{ element.0['#context'].value }}</h1>
+  </div>
+  <div class="article-date">
+    {{ element['#object'].created.0.value|date('F j, Y') }}
+  </div>
+  <div class="copy-link-wrapper">
+    <button class="copy-link" type="button">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.91658 10.2917C8.25656 10.7462 8.69032 11.1223 9.18843 11.3944C9.68654 11.6665 10.2374 11.8284 10.8035 11.8689C11.3697 11.9095 11.9379 11.8278 12.4697 11.6294C13.0015 11.431 13.4845 11.1206 13.8857 10.7192L16.2607 8.34416C16.9818 7.59761 17.3808 6.59773 17.3717 5.55986C17.3627 4.522 16.9464 3.5292 16.2125 2.79529C15.4786 2.06139 14.4858 1.64509 13.448 1.63607C12.4101 1.62706 11.4102 2.02603 10.6637 2.74708L9.302 4.10083M11.0832 8.70833C10.7433 8.25381 10.3095 7.87772 9.81139 7.60558C9.31328 7.33344 8.76247 7.17161 8.19632 7.13106C7.63016 7.09051 7.06191 7.1722 6.5301 7.37058C5.99829 7.56896 5.51537 7.8794 5.11408 8.28083L2.73908 10.6558C2.01804 11.4024 1.61906 12.4023 1.62808 13.4401C1.6371 14.478 2.05339 15.4708 2.7873 16.2047C3.52121 16.9386 4.51401 17.3549 5.55187 17.3639C6.58973 17.3729 7.58961 16.974 8.33616 16.2529L9.68991 14.8992" stroke="#003865" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="copy-text">{% trans %}Copy Link{% endtrans %}</span>
+    </button>
+  </div>
+{% endblock %}

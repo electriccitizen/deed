@@ -17,6 +17,9 @@ accordion:
     components/03-composites/paragraphs/accordions/accordions.js: {}
   dependencies:
     - core/drupal.debounce
+copy-link: 
+  js:
+    components/02-chunks/copy-link/copy-link.js: {}
 forms:
   js:
     components/01-parts/forms/forms.js: {}

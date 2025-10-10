@@ -1,0 +1,36 @@
+/* =================
+	 COPY LINK
+===================== */
+@use '../../00-base' as *;
+
+button.copy-link {
+  color: $blue;
+  text-decoration: underline;
+  background: none;
+  padding: 0;
+  border: 0;
+  font-family: $bodyFont;
+  font-size: $baseSize;
+  font-weight: $semi;
+  text-decoration: none;
+  @include browserWipe;
+
+  &:hover,&:focus {
+    color: $purple;
+    svg path{
+      stroke: $purple; 
+    }
+    span {
+      text-decoration: none;
+    }
+  }
+
+  svg {
+    fill: none;
+  }
+
+  span {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+}

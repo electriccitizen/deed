@@ -1,27 +1,23 @@
-uuid: 878cfc4f-c499-400f-8d1b-11f5d1a099f0
+uuid: 30318d23-14ef-4e1b-8695-86f1d33acdb7
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_paragraphs
-    - node.type.page
+    - node.type.news
     - paragraphs.paragraphs_type.accordions
     - paragraphs.paragraphs_type.call_to_action
-    - paragraphs.paragraphs_type.custom_embed
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.otp_action
-    - paragraphs.paragraphs_type.otp_section
+    - paragraphs.paragraphs_type.layout_section
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: xeDdxALUR2t7WiIGJUZAC25uNCan9ItrG7JsZq167uI
-id: node.page.field_paragraphs
+id: node.news.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
-bundle: page
+bundle: news
 label: 'Add Sections'
 description: ''
 required: false
@@ -32,54 +28,52 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      otp_section: otp_section
       accordions: accordions
       call_to_action: call_to_action
-      custom_embed: custom_embed
       horizontal_rule: horizontal_rule
       image: image
-      otp_action: otp_action
+      layout_section: layout_section
       text: text
       video: video
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
-        weight: -25
+        weight: -27
         enabled: false
       accordions:
         weight: -26
         enabled: true
       action_item:
-        weight: -16
-        enabled: false
-      call_to_action:
-        weight: -24
-        enabled: true
-      custom_embed:
-        weight: -23
-        enabled: true
-      horizontal_rule:
-        weight: -22
-        enabled: true
-      image:
-        weight: -21
-        enabled: true
-      layout_section:
         weight: -17
         enabled: false
+      call_to_action:
+        weight: -25
+        enabled: true
+      custom_embed:
+        weight: -24
+        enabled: false
+      horizontal_rule:
+        weight: -23
+        enabled: true
+      image:
+        weight: -22
+        enabled: true
+      layout_section:
+        weight: -21
+        enabled: true
       otp_action:
+        weight: -16
+        enabled: false
+      otp_section:
+        weight: -15
+        enabled: false
+      text:
         weight: -20
         enabled: true
-      otp_section:
-        weight: -27
-        enabled: true
-      text:
+      video:
         weight: -19
         enabled: true
-      video:
-        weight: -18
-        enabled: true
       view_placer:
-        weight: -15
+        weight: -18
         enabled: false
 field_type: entity_reference_revisions

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.layout_section.field_section_title
-    - field.field.paragraph.layout_section.field_style
     - paragraphs.paragraphs_type.layout_section
 id: paragraph.layout_section.default
 targetEntityType: paragraph
@@ -20,5 +19,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_style: true
   search_api_excerpt: true

@@ -60,28 +60,13 @@ h6+ul {
 
 /* BLOCK, SECTION AND WIDGET HEADINGS
 -------------------------- */
-.block-title {
+.widget-title {
   max-width: $textMax;
   text-align: center;
+  @include heading3;
   @include auto;
 }
 
-h2.block-title {
-  @include blockTitle;
-}
-
-h2.section-title {
-  @include blockTitle;
-  font-size: 3rem;
-  max-width: $textMax + 40px;
-}
-
-.widget-title,
-.field-widget-title {
-  @include blockTitle;
-  letter-spacing: 0;
-  text-transform: none;
-}
 
 /* TEXT STYLES
 --------------- */

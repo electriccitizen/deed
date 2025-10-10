@@ -5,18 +5,112 @@
 @use '../../../00-base' as *;
 
 .node-news {
-  @include auto;
-  max-width: $contentStop;
+  #node-section-1 {
+    background: $teal20;
+    padding: 76px $siteMarginMobile;
+    width: calc(100% + 40px);
+    margin: 0 (-$siteMarginMobile) $elementSpace;
 
-  .block-field.block-title {
-    max-width: 100%;
-
-    h1 {
-      text-align: left;
+    .layout__region--content {
+      max-width: $textMax;
+      @include auto;
+      @include tab {
+        @include safeFlex(row,nowrap,start,stretch);
+      }
     }
   }
 
-  .block-created {
-    @include metaText;
+  .block-field-image {
+    @include tab {
+      order: 2;
+      flex: 0 0 360px;
+    }
+    @include contentStop {
+      margin-right: -20px;
+    }
+
+    .field-image {
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .block-field.block-title {
+    text-align: left;
+
+    &:not(:first-child){
+      @include tab {
+        flex: 1 1 auto;
+        padding-right: 26px;
+      }
+    }
+  }
+
+  .eyebrow {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: $elementSpace;
+    @include tab {
+      margin-bottom: 10rem;
+    }
+  }
+
+  .page-title-wrapper {
+    margin-bottom: $spaceSm;
+  }
+
+  .article-date {
+    display: inline-block;
+    margin-right: 32px;
+    color: $blue;
+
+    @include tab {
+      margin-right: 56px;
+    }
+  }
+
+  .copy-link-wrapper {
+    display: inline-block;
+  }
+
+  .block-field-actions {
+    background: $teal20;
+    width: calc(100% + 40px);
+    padding: 80px 20px;
+    margin: 0 (-$siteMarginMobile) (-$siteBottomSpace);
+    &:not(:first-child) {
+      margin-top: (-$elementSpace);
+    }
+  }
+}
+
+/* NEWS TEASER
+------------------- */
+.node-teaser-news {
+  height: 100%;
+  background: $siteBack;
+  padding: 18px 23px 47px;
+
+  .node-teaser-content {
+    @include smallTab {
+      width: 100%;
+    }
+  }
+
+  .field-news-category {
+    .vocab-news-category {
+      h2 {
+        display: none;
+      }
+    }
+    .field-icon svg{
+       max-width: 66px;
+       height: auto;
+    }
+  }
+
+  .node-field-title {
+    font-size: 4rem;
   }
 }

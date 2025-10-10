@@ -8,35 +8,20 @@ dependencies:
     - field.field.paragraph.view_placer.field_widget_title
     - paragraphs.paragraphs_type.view_placer
   module:
-    - link
     - viewsreference
 id: paragraph.view_placer.default
 targetEntityType: paragraph
 bundle: view_placer
 mode: default
 content:
-  field_link:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   field_view:
     type: viewsreference_select
-    weight: 1
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_widget_title:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
 hidden:
   created: true
+  field_link: true
+  field_widget_title: true
   status: true
