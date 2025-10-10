@@ -36,4 +36,8 @@
 ------------------ */
 .recent-news {
   @extend .all-news;
+
+  &:only-child {
+    margin-bottom: (-$siteBottomSpace);
+  }
 }

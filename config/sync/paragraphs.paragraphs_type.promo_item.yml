@@ -1,0 +1,10 @@
+uuid: ce9972f9-8772-459e-9d42-1c660c8b5f49
+langcode: en
+status: true
+dependencies: {  }
+id: promo_item
+label: 'Promo Item'
+icon_uuid: null
+icon_default: null
+description: 'Add a promo to a group of promos'
+behavior_plugins: {  }

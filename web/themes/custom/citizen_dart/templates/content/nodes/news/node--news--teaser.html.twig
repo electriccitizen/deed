@@ -73,14 +73,10 @@
 
 {% extends 'node--teaser.html.twig' %}
 
-
-
-
-{% block nodeTitle %}
-  {{ content.field_news_category }}
-  {{ parent() }}
-{% endblock %}
-
-{% block nodeContent %}
-  {{ content.field_meta_description  }}
+{% block node %}
+  <a href="{{- url -}}" rel="bookmark">
+    {{ drupal_entity('media', content.field_news_category.0['#taxonomy_term'].field_icon.0.target_id, '200w') }}
+    <h2{{ title_attributes.addClass("node-field-title") }}>{{- label.0['#context'].value -}}</h2>
+    {{ content.field_meta_description  }}
+  </a>
 {% endblock %}

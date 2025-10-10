@@ -3,6 +3,7 @@
 ================ */
 
 @use '../../../00-base' as *;
+@use 'sass:color';
 
 .node-news {
   #node-section-1 {
@@ -89,28 +90,28 @@
 ------------------- */
 .node-teaser-news {
   height: 100%;
-  background: $siteBack;
-  padding: 18px 23px 47px;
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: $siteBack;
+    padding: 18px 23px 47px;
+    color: $black;
 
-  .node-teaser-content {
-    @include smallTab {
-      width: 100%;
-    }
-  }
-
-  .field-news-category {
-    .vocab-news-category {
-      h2 {
-        display: none;
+    &:hover,&:focus {
+      background: color.adjust($white,$lightness:-3%);
+      .field-meta-description {
+        text-decoration: none;
       }
     }
-    .field-icon svg{
-       max-width: 66px;
-       height: auto;
-    }
-  }
 
-  .node-field-title {
-    font-size: 4rem;
+    .field-icon svg{
+      max-width: 66px;
+      height: auto;
+    }
+
+    .node-field-title {
+      font-size: 4rem;
+    }
   }
 }
