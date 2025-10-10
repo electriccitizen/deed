@@ -6,12 +6,34 @@
 
 /* ALL NEWS
 ------------- */
-.news.all-news {
-  .view {
-    padding-bottom: $elementSpace;
-  }
+.all-news {
+  background: $lightGrey;
+  width: calc(100% + 40px);
+  padding: 27px $siteMarginMobile 42px;
+  @include edgeToEdge;
 
-  .views-row:not(:last-child) {
-    margin-bottom: $spaceMd;
+  .view-header {
+    max-width: 1260px;
+    margin: 0 auto $spaceSm;
+
+    h2 {
+      font-weight: $heavy;
+      max-width: $textMax;
+    }
   }
+  .view-content {
+    gap: 27px;
+    max-width: 1260px;
+    @include safeFlex(row,wrap,center,stretch);
+    @include auto;
+  }
+  .views-row {
+    max-width: 402px;
+  }
+}
+
+/* RECENT NEWS
+------------------ */
+.recent-news {
+  @extend .all-news;
 }

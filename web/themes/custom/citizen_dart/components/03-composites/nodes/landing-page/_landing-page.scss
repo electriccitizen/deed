@@ -36,6 +36,6 @@
     background: $teal20;
     width: calc(100% + 40px);
     padding: 80px 20px;
-    @include edgeToEdge;
+    margin: 0 (-$siteMarginMobile) (-$siteBottomSpace);
   }
 }

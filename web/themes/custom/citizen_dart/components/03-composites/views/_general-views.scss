@@ -4,8 +4,13 @@
 
 @use '../../00-base' as *;
 
+.views-exposed-form {
+  max-width: 1260px;
+  @include auto;
+}
+
 #views-form-wrapper {
-  @include safeFlex(row, wrap, start, center);
+  @include safeFlex(row, wrap, center, center);
   @include bleed(padding, 20px);
   & {
     margin-bottom: 5rem;

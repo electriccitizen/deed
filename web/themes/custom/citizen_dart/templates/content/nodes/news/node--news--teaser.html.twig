@@ -73,7 +73,14 @@
 
 {% extends 'node--teaser.html.twig' %}
 
-{% block nodeContent %}
-  <div class="date metatext">{{ elements['#node'].created.value|date('F j, Y') }}</div>
+
+
+
+{% block nodeTitle %}
+  {{ content.field_news_category }}
   {{ parent() }}
+{% endblock %}
+
+{% block nodeContent %}
+  {{ content.field_meta_description  }}
 {% endblock %}

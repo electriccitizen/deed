@@ -1,0 +1,29 @@
+uuid: d73ab0bf-8e27-4568-9fde-27986cfac06c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.actions
+    - field.storage.node.field_actions
+    - node.type.news
+id: node.news.field_actions
+field_name: field_actions
+entity_type: node
+bundle: news
+label: Actions
+description: 'Select a reusable block of actions to show at the bottom of the page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      actions: actions
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

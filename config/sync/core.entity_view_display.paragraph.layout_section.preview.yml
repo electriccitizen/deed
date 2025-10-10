@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.layout_section.field_section_title
-    - field.field.paragraph.layout_section.field_style
     - paragraphs.paragraphs_type.layout_section
   module:
     - layout_builder
@@ -25,14 +24,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_style:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

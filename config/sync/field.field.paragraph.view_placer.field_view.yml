@@ -24,10 +24,7 @@ settings:
     auto_create: false
   plugin_types:
     embed: embed
-    block: block
   preselect_views:
-    bios: bios
-    events: events
     news: news
   enabled_settings: {  }
 field_type: viewsreference

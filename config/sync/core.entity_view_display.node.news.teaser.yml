@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.news.body
+    - field.field.node.news.field_actions
     - field.field.node.news.field_image
     - field.field.node.news.field_meta_description
     - field.field.node.news.field_news_category
+    - field.field.node.news.field_paragraphs
     - node.type.news
   module:
     - layout_builder
@@ -23,15 +24,6 @@ targetEntityType: node
 bundle: news
 mode: teaser
 content:
-  field_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: 400x300
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_meta_description:
     type: basic_string
     label: hidden
@@ -39,9 +31,19 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_news_category:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: icon
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   addtoany: true
-  body: true
-  field_news_category: true
+  field_actions: true
+  field_image: true
+  field_paragraphs: true
   links: true
   search_api_excerpt: true
