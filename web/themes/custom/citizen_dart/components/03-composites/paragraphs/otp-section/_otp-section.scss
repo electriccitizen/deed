@@ -1,0 +1,20 @@
+/* ===================
+	OTP SECTION
+===================== */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--otp-section {
+
+  .field-section-title {
+    margin-bottom: $spaceSm; 
+  }
+
+  .field-subheader {
+    margin-bottom: $spaceXs; 
+  }
+
+  .field-intro {
+    margin-bottom: $spaceMd;
+  }
+}

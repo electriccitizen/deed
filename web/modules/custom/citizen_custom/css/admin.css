@@ -211,7 +211,7 @@ button.disabled:hover {
 
 /* FIX FORM ITEMS NOT WRAPPING 
 --------------------------------*/
-td .form-item {
+.field--type-link td .form-item {
   flex-wrap: wrap;
 }
 

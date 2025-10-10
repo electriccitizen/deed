@@ -1,0 +1,56 @@
+/* ===================
+	OTP ACTION
+===================== */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--otp-action {
+  background: $purple;
+  color: $white;
+  padding: 42px;
+
+  .field-headline {
+    @include heading2;
+    & {
+      margin-bottom: $spaceXs;  
+    }
+  }
+
+  .field-long-text-plain {
+    margin-bottom: $spaceSm;
+  }
+
+  .field-link {
+    a {
+      color: $white;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-transform: uppercase;
+      position: relative;
+      margin-right: 30px;
+
+      &:hover,&:focus {
+        text-decoration: none;
+        &:after {
+          transform: translateX(6px); 
+        }
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/elements/triangle-right-white.svg);
+        background-repeat: no-repeat;
+        background-size: 5px 10px;
+        background-position: center;
+        position: absolute;
+        right: -24px; 
+        top: 2px;
+        transition: transform 0.3s ease-in-out; 
+      }
+    }
+  }
+
+}
