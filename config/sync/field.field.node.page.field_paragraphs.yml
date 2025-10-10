@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.page
     - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.custom_embed
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
@@ -33,6 +34,7 @@ settings:
     target_bundles:
       otp_section: otp_section
       accordions: accordions
+      call_to_action: call_to_action
       custom_embed: custom_embed
       horizontal_rule: horizontal_rule
       image: image
@@ -42,45 +44,42 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
-        weight: -27
+        weight: -25
         enabled: false
       accordions:
-        weight: -28
-        enabled: true
-      action_item:
-        weight: -17
-        enabled: false
-      custom_embed:
         weight: -26
         enabled: true
-      horizontal_rule:
-        weight: -25
-        enabled: true
-      image:
+      action_item:
+        weight: -16
+        enabled: false
+      call_to_action:
         weight: -24
         enabled: true
-      layout_section:
-        weight: -20
-        enabled: false
-      otp_action:
+      custom_embed:
         weight: -23
         enabled: true
-      otp_section:
-        weight: -29
-        enabled: true
-      portal:
-        weight: -19
-        enabled: false
-      portals:
-        weight: -18
-        enabled: false
-      text:
+      horizontal_rule:
         weight: -22
         enabled: true
-      video:
+      image:
         weight: -21
         enabled: true
+      layout_section:
+        weight: -17
+        enabled: false
+      otp_action:
+        weight: -20
+        enabled: true
+      otp_section:
+        weight: -27
+        enabled: true
+      text:
+        weight: -19
+        enabled: true
+      video:
+        weight: -18
+        enabled: true
       view_placer:
-        weight: -16
+        weight: -15
         enabled: false
 field_type: entity_reference_revisions

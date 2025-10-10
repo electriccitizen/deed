@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.news
     - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.layout_section
@@ -28,6 +29,7 @@ settings:
   handler_settings:
     target_bundles:
       accordions: accordions
+      call_to_action: call_to_action
       horizontal_rule: horizontal_rule
       image: image
       layout_section: layout_section
@@ -36,45 +38,42 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
-        weight: -41
+        weight: -27
         enabled: false
       accordions:
-        weight: -40
-        enabled: true
-      action_item:
-        weight: 17
-        enabled: false
-      custom_embed:
-        weight: -36
-        enabled: false
-      horizontal_rule:
-        weight: -33
-        enabled: true
-      image:
-        weight: -32
-        enabled: true
-      layout_section:
-        weight: -31
-        enabled: true
-      otp_action:
-        weight: 22
-        enabled: false
-      otp_section:
-        weight: 23
-        enabled: false
-      portal:
-        weight: -29
-        enabled: false
-      portals:
-        weight: -28
-        enabled: false
-      text:
         weight: -26
         enabled: true
-      video:
+      action_item:
+        weight: -17
+        enabled: false
+      call_to_action:
         weight: -25
         enabled: true
-      view_placer:
+      custom_embed:
         weight: -24
+        enabled: false
+      horizontal_rule:
+        weight: -23
+        enabled: true
+      image:
+        weight: -22
+        enabled: true
+      layout_section:
+        weight: -21
+        enabled: true
+      otp_action:
+        weight: -16
+        enabled: false
+      otp_section:
+        weight: -15
+        enabled: false
+      text:
+        weight: -20
+        enabled: true
+      video:
+        weight: -19
+        enabled: true
+      view_placer:
+        weight: -18
         enabled: false
 field_type: entity_reference_revisions
